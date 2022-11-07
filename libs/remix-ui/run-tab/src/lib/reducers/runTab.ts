@@ -117,23 +117,9 @@ export const runTabInitialState: RunTabState = {
   gasLimit: 3000000,
   selectExEnv: 'vm-london',
   personalMode: false,
-  networkName: 'VM',
+  networkName: 'None',
   providers: {
     providerList: [{
-      id: 'vm-mode-london',
-      dataId: 'settingsVMLondonMode',
-      title: 'Execution environment is local to Remix.  Data is only saved to browser memory and will vanish upon reload.',
-      value: 'vm-london',
-      fork: 'london',
-      content: 'Remix VM (London)'
-    }, {
-      id: 'vm-mode-berlin',
-      dataId: 'settingsVMBerlinMode',
-      title: 'Execution environment is local to Remix.  Data is only saved to browser memory and will vanish upon reload.',
-      value: 'vm-berlin',
-      fork: 'berlin',
-      content: 'Remix VM (Berlin)'
-    }, {
       id: 'injected-mode',
       dataId: 'settingsInjectedMode',
       title: 'Execution environment has been provided by Metamask or similar provider.',
