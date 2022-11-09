@@ -32,10 +32,10 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  "Courier New", monospace;
 }
 *,
 ::after,
@@ -63,8 +63,8 @@ section {
 body {
   margin: 0;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -182,7 +182,7 @@ kbd,
 pre,
 samp {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  monospace;
   font-size: 1em;
 }
 pre {
@@ -1621,7 +1621,7 @@ pre code {
   line-height: 1.25;
   color: #dfe1ea !important;
   background-color: var(--custom-select)
- !important;
+  !important;
   background-clip: padding-box;
   border: none !important;
   border-radius: 2px !important;
@@ -1645,7 +1645,7 @@ pre code {
   border-color: #27c6ff;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 0 3px rgba(0, 122, 166, 0.25);
+  0 0 0 3px rgba(0, 122, 166, 0.25);
 }
 .form-control::placeholder {
   color: #868e96;
@@ -1819,17 +1819,17 @@ textarea.form-control {
 textarea.form-control.is-valid {
   padding-right: calc(1.25em + 1rem);
   background-position: top calc(0.3125em + 0.25rem) right
-    calc(0.3125em + 0.25rem);
+  calc(0.3125em + 0.25rem);
 }
 .custom-select.is-valid,
 .was-validated .custom-select:valid {
   border-color: #32ba89;
   padding-right: calc((1em + 0.75rem) * 3 / 4 + 1.75rem);
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
-      no-repeat right 0.75rem center/8px 10px,
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2332BA89' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
-      #2e3145 no-repeat center right 1.75rem / calc(0.625em + 0.5rem)
-      calc(0.625em + 0.5rem);
+  no-repeat right 0.75rem center/8px 10px,
+  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2332BA89' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
+  #2e3145 no-repeat center right 1.75rem / calc(0.625em + 0.5rem)
+  calc(0.625em + 0.5rem);
 }
 .custom-select.is-valid:focus,
 .was-validated .custom-select:valid:focus {
@@ -1874,22 +1874,22 @@ textarea.form-control.is-valid {
 }
 .custom-control-input.is-valid:checked ~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:valid:checked
-  ~ .custom-control-label::before {
+.custom-control-input:valid:checked
+~ .custom-control-label::before {
   border-color: #4fd0a1;
   background-color: #4fd0a1;
 }
 .custom-control-input.is-valid:focus ~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:valid:focus
-  ~ .custom-control-label::before {
+.custom-control-input:valid:focus
+~ .custom-control-label::before {
   box-shadow: 0 0 0 0.2rem rgba(50, 186, 137, 0.25);
 }
 .custom-control-input.is-valid:focus:not(:checked)
-  ~ .custom-control-label::before,
+~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:valid:focus:not(:checked)
-  ~ .custom-control-label::before {
+.custom-control-input:valid:focus:not(:checked)
+~ .custom-control-label::before {
   border-color: #32ba89;
 }
 .custom-file-input.is-valid ~ .custom-file-label,
@@ -1952,17 +1952,17 @@ textarea.form-control.is-valid {
 textarea.form-control.is-invalid {
   padding-right: calc(1.25em + 1rem);
   background-position: top calc(0.3125em + 0.25rem) right
-    calc(0.3125em + 0.25rem);
+  calc(0.3125em + 0.25rem);
 }
 .custom-select.is-invalid,
 .was-validated .custom-select:invalid {
   border-color: #b84040;
   padding-right: calc((1em + 0.75rem) * 3 / 4 + 1.75rem);
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
-      no-repeat right 0.75rem center/8px 10px,
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23B84040' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23B84040' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E")
-      #2e3145 no-repeat center right 1.75rem / calc(0.625em + 0.5rem)
-      calc(0.625em + 0.5rem);
+  no-repeat right 0.75rem center/8px 10px,
+  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23B84040' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23B84040' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E")
+  #2e3145 no-repeat center right 1.75rem / calc(0.625em + 0.5rem)
+  calc(0.625em + 0.5rem);
 }
 .custom-select.is-invalid:focus,
 .was-validated .custom-select:invalid:focus {
@@ -2007,22 +2007,22 @@ textarea.form-control.is-invalid {
 }
 .custom-control-input.is-invalid:checked ~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:invalid:checked
-  ~ .custom-control-label::before {
+.custom-control-input:invalid:checked
+~ .custom-control-label::before {
   border-color: #c96262;
   background-color: #c96262;
 }
 .custom-control-input.is-invalid:focus ~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:invalid:focus
-  ~ .custom-control-label::before {
+.custom-control-input:invalid:focus
+~ .custom-control-label::before {
   box-shadow: 0 0 0 0.2rem rgba(184, 64, 64, 0.25);
 }
 .custom-control-input.is-invalid:focus:not(:checked)
-  ~ .custom-control-label::before,
+~ .custom-control-label::before,
 .was-validated
-  .custom-control-input:invalid:focus:not(:checked)
-  ~ .custom-control-label::before {
+.custom-control-input:invalid:focus:not(:checked)
+~ .custom-control-label::before {
   border-color: #b84040;
 }
 .custom-file-input.is-invalid ~ .custom-file-label,
@@ -3167,11 +3167,11 @@ input[type="submit"].btn-block {
   padding-right: 1.75rem;
 }
 .input-group
-  > .input-group-append:last-child
-  > .btn:not(:last-child):not(.dropdown-toggle),
+> .input-group-append:last-child
+> .btn:not(:last-child):not(.dropdown-toggle),
 .input-group
-  > .input-group-append:last-child
-  > .input-group-text:not(:last-child),
+> .input-group-append:last-child
+> .input-group-text:not(:last-child),
 .input-group > .input-group-append:not(:last-child) > .btn,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-prepend > .btn,
@@ -3183,8 +3183,8 @@ input[type="submit"].btn-block {
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .input-group
-  > .input-group-prepend:first-child
-  > .input-group-text:not(:first-child),
+> .input-group-prepend:first-child
+> .input-group-text:not(:first-child),
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
   border-top-left-radius: 0;
@@ -3268,24 +3268,24 @@ input[type="submit"].btn-block {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 .custom-checkbox
-  .custom-control-input:indeterminate
-  ~ .custom-control-label::before {
+.custom-control-input:indeterminate
+~ .custom-control-label::before {
   border-color: #2e3145;
   background-color: #2e3145;
 }
 .custom-checkbox
-  .custom-control-input:indeterminate
-  ~ .custom-control-label::after {
+.custom-control-input:indeterminate
+~ .custom-control-label::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
 }
 .custom-checkbox
-  .custom-control-input:disabled:checked
-  ~ .custom-control-label::before {
+.custom-control-input:disabled:checked
+~ .custom-control-label::before {
   background-color: #2e3145;
 }
 .custom-checkbox
-  .custom-control-input:disabled:indeterminate
-  ~ .custom-control-label::before {
+.custom-control-input:disabled:indeterminate
+~ .custom-control-label::before {
   background-color: #2e3145;
 }
 .custom-radio .custom-control-label::before {
@@ -3295,8 +3295,8 @@ input[type="submit"].btn-block {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 .custom-radio
-  .custom-control-input:disabled:checked
-  ~ .custom-control-label::before {
+.custom-control-input:disabled:checked
+~ .custom-control-label::before {
   background-color: #2e3145;
 }
 .custom-switch {
@@ -3316,7 +3316,7 @@ input[type="submit"].btn-block {
   background-color: #51536b;
   border-radius: 0.5rem;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .custom-switch .custom-control-label::after {
@@ -3328,8 +3328,8 @@ input[type="submit"].btn-block {
   transform: translateX(0.75rem);
 }
 .custom-switch
-  .custom-control-input:disabled:checked
-  ~ .custom-control-label::before {
+.custom-control-input:disabled:checked
+~ .custom-control-label::before {
   background-color: #2e3145;
 }
 .custom-select {
@@ -3357,7 +3357,7 @@ input[type="submit"].btn-block {
   border-color: #27c6ff;
   outline: 0;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075),
-    0 0 5px rgba(39, 198, 255, 0.5);
+  0 0 5px rgba(39, 198, 255, 0.5);
 }
 .custom-select:focus::-ms-value {
   color: #dfe1ea;
@@ -3463,15 +3463,15 @@ input[type="submit"].btn-block {
 }
 .custom-range:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 1px var(--body-bg), inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 0 3px rgba(0, 122, 166, 0.25);
+  0 0 0 3px rgba(0, 122, 166, 0.25);
 }
 .custom-range:focus::-moz-range-thumb {
   box-shadow: 0 0 0 1px var(--body-bg), inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 0 3px rgba(0, 122, 166, 0.25);
+  0 0 0 3px rgba(0, 122, 166, 0.25);
 }
 .custom-range:focus::-ms-thumb {
   box-shadow: 0 0 0 1px var(--body-bg), inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 0 3px rgba(0, 122, 166, 0.25);
+  0 0 0 3px rgba(0, 122, 166, 0.25);
 }
 .custom-range::-moz-focus-outer {
   border: 0;
@@ -3484,7 +3484,7 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3511,7 +3511,7 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3541,7 +3541,7 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3589,7 +3589,7 @@ input[type="submit"].btn-block {
 .custom-file-label,
 .custom-select {
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .custom-control-label::before,
@@ -5147,8 +5147,8 @@ a.close.disabled {
   display: block;
   margin: 0;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5256,8 +5256,8 @@ a.close.disabled {
   display: block;
   max-width: 276px;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5712,7 +5712,7 @@ button.bg-dark:hover {
   border: 1px solid #3f4455 !important;
 }
 .border-top {
-  border-top: 1px solid #3f4455 !important;
+  border-top: 1px solid red !important;
 }
 .border-right {
   border-right: 1px solid #3f4455 !important;
@@ -8435,7 +8435,7 @@ button.bg-dark:hover {
 }
 .text-monospace {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace !important;
+  monospace !important;
 }
 .text-justify {
   text-align: justify !important;
