@@ -6,6 +6,7 @@ import Registry from '../state/registry'
 const _paq = window._paq = window._paq || []
 
 const themes = [
+  { name: 'Core Dark', quality: 'dark', url: 'assets/css/themes/remix-core_dark.css' },
   { name: 'Dark', quality: 'dark', url: 'assets/css/themes/remix-dark_tvx1s2.css' },
   { name: 'Light', quality: 'light', url: 'assets/css/themes/remix-light_powaqg.css' },
   { name: 'Midcentury', quality: 'light', url: 'assets/css/themes/remix-midcentury_hrzph3.css' },
