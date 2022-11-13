@@ -1,27 +1,13 @@
 .remixui_homeIcon {
     /* display: block; */
-    width: 42px;
-    height: 42px;
+    width: 40px;
     cursor: pointer;
-  }
-  .remixui_homeIcon:hover {
-    box-shadow: 0px 0px 14px -7px;
-  }
-
-  .remixui_homeIcon svg path {
-    fill: var(--primary);
-  }
-  .remixui_homeIcon svg polygon {
-    fill: var(--primary);
   }
   .remixui_icons {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-  }
-  .remixui_icon:hover {
-    box-shadow: 0px 0px 14px -7px;
   }
 
   .remixui_icon {
@@ -77,7 +63,7 @@
     padding-left: 5px;
     padding-right: 5px;
   }
-  
+
   .remixui_verticalIconContextcontainer {
     display: block;
     position: fixed;
@@ -98,7 +84,7 @@
   .remixui_liitem:hover {
     background-color: var(--secondary);
   }
-  
+
   .remixui_scrollbar {
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox hide scrollbar */
@@ -106,6 +92,7 @@
   }
   .remixui_requiredSection {
     text-align: center;
+    margin-top: 15px;
   }
   .remixui_scrollable-container {
     flex-basis: 510px;
