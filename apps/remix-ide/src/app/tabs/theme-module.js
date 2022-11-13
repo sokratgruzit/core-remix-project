@@ -6,6 +6,7 @@ import Registry from '../state/registry'
 const _paq = window._paq = window._paq || []
 
 const themes = [
+  { name: 'CORE', quality: 'dark', url: 'assets/css/themes/core.css' },
   { name: 'Dark', quality: 'dark', url: 'assets/css/themes/remix-dark_tvx1s2.css' },
   { name: 'Light', quality: 'light', url: 'assets/css/themes/remix-light_powaqg.css' },
   { name: 'Midcentury', quality: 'light', url: 'assets/css/themes/remix-midcentury_hrzph3.css' },
@@ -89,7 +90,7 @@ export class ThemeModule extends Plugin {
    * @param {string} [themeName] - The name of the theme
    */
   switchTheme (themeName) {
-    themeName = themeName && themeName.toLocaleLowerCase() 
+    themeName = themeName && themeName.toLocaleLowerCase()
     if (themeName && !Object.keys(this.themes).includes(themeName)) {
       throw new Error(`Theme ${themeName} doesn't exist`)
     }
