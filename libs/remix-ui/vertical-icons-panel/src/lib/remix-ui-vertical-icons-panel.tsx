@@ -41,7 +41,7 @@ const RemixUiVerticalIconsPanel = ({
       }
     })
   }
-  
+
   useEffect(() => {
     window.addEventListener('resize', evaluateScrollability)
     evaluateScrollability()
