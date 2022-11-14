@@ -2117,7 +2117,7 @@ textarea.form-control.is-invalid {
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  background-color: transparent;
+  background-color: red;
   border: 1px solid transparent;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;

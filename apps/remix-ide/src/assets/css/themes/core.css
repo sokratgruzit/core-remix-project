@@ -418,6 +418,7 @@ mark {
 .list-unstyled {
   padding-left: 0;
   list-style: none;
+  background-color: #00050F;
 }
 .list-inline {
   padding-left: 0;
@@ -1620,11 +1621,11 @@ pre code {
   font-weight: 400;
   line-height: 1.25;
   color: #dfe1ea !important;
-  background-color: var(--custom-select)
+  background-color: #00050F
   !important;
   background-clip: padding-box;
   border: none !important;
-  border-radius: 2px !important;
+  border-radius: 4px !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
@@ -5640,7 +5641,14 @@ button.bg-primary:hover {
   background-color: #005573 !important;
 }
 .bg-secondary {
-  background-color: #595c76 !important;
+  background-color: #0500FF !important;
+  height: 36px;
+  width: 305px;
+  color: white;
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 4px;
 }
 a.bg-secondary:focus,
 a.bg-secondary:hover,
@@ -6877,6 +6885,22 @@ button.bg-dark:hover {
 .pr-2,
 .px-2 {
   padding-right: 0.5rem !important;
+}
+.pb-2 {
+  color: #FFFFFF;
+}
+.py-2 {
+  background-color: #00050F;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  gap: 5px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 400;
+  color: #4C5057;
 }
 .pb-2,
 .py-2 {
