@@ -1,5 +1,5 @@
 import { fileDecoration, FileDecorationIcons } from "@remix-ui/file-decorators";
-import { CustomTooltip } from "@remix-ui/helper";
+// import { CustomTooltip } from "@remix-ui/helper";
 import { Plugin } from "@remixproject/engine";
 import React, { useState, useRef, useEffect, useReducer } from "react"; // eslint-disable-line
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -112,11 +112,12 @@ export const TabsUI = (props: TabsUIProps) => {
         title={tab.tooltip}
       >
         {tab.icon ? (
-          <img
-            className="my-1 mr-1 iconImage"
-            style={{ filter: invert }}
-            src={tab.icon}
-          />
+          // <img
+          //   className="my-1 mr-1 iconImage"
+          //   style={{ filter: invert }}
+          //   src={tab.icon}
+          // />
+          <img className="my-1 mr-1 iconImage" src="assets/img/home.svg" />
         ) : (
           <i className={classNameImg}></i>
         )}
@@ -182,14 +183,14 @@ export const TabsUI = (props: TabsUIProps) => {
 
   return (
     <div
-      className="remix-ui-tabs d-flex justify-content-between border-0 header nav-tabs"
+      className="remix-ui-tabs d-flex justify-content-between header nav-tabs"
       data-id="tabs-component"
     >
       <div
         className="d-flex flex-row"
         style={{ maxWidth: "fit-content", width: "97%" }}
       >
-        <div className="d-flex flex-row justify-content-center align-items-center m-1 mt-1">
+        {/* <div className="d-flex flex-row justify-content-center align-items-center m-1 mt-1">
           <button
             className="btn text-success py-0"
             disabled={
@@ -264,7 +265,7 @@ export const TabsUI = (props: TabsUIProps) => {
             title="Zoom in"
             onClick={() => props.onZoomIn()}
           ></span>
-        </div>
+        </div> */}
         <Tabs
           className="tab-scroll"
           selectedIndex={tabsState.selectedIndex}
@@ -294,11 +295,26 @@ export const TabsUI = (props: TabsUIProps) => {
             <TabPanel key={tab.name}></TabPanel>
           ))}
         </Tabs>
+        <div className="inactive-tab">
+          <div className="inactive-tab-inner">
+            <img
+              className="my-1 mr-1 iconImage"
+              src="assets/img/solidity.svg"
+            />
+            <p style={{ margin: "0" }}>1_Storage.so</p>
+          </div>
+        </div>
       </div>
-      <i
+      {/* <i
         className="mt-2 mr-2 fas fa-arrows-alt-h"
         title="Scroll to see all tabs"
-      ></i>
+      ></i> */}
+      <div className="run-wraper">
+        <div className="run-inner">
+          <img className="my-1 mr-1 iconImage" src="assets/img/run.svg" />
+          <p>Run It</p>
+        </div>
+      </div>
     </div>
   );
 };

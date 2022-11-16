@@ -1,26 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 :root {
   --blue: #2cc1f7;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #b84040;
-  --orange: #E5D17D;
+  --orange: #e5d17d;
   --yellow: #ffc107;
   --green: #87e07f;
   --teal: #20c997;
   --cyan: #355f7d;
   --white: #fff;
-  --gray: #8B99A6;
+  --gray: #8b99a6;
   --gray-dark: #343a40;
   --primary: #007aa6;
-  --secondary: #0E2A3E;
-  --success: #C4E07F;
-  --info: #086CB5;
+  --secondary: #0e2a3e;
+  --success: #c4e07f;
+  --info: #086cb5;
   --warning: #c97539;
   --danger: #b84040;
-  --light: #011C32;
+  --light: #011c32;
   --dark: #fff4fd;
   --text: #babbcc;
   --body-bg: #011628;
@@ -42,13 +42,13 @@
   --theme-bg-btn-dark--hover: #033863;
   --theme-border-tab: 1px solid #274052;
   --theme-border-default: 1px solid #07121ca6;
-  --theme-form-placeholder: #dfe1ea; 
+  --theme-form-placeholder: #dfe1ea;
 
   --font-family-sans-serif: "Saira", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: "Jetbrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-family-monospace: "Jetbrains Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 *,
 ::after,
@@ -75,16 +75,16 @@ section {
 }
 body {
   margin: 0;
-  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt', 'dlig';
+  font-feature-settings: "kern", "liga", "clig", "calt", "dlig";
   font-kerning: normal;
   font-weight: 400;
   line-height: 1.5;
-  color: #87A2B7;
+  color: #87a2b7;
   text-align: left;
   background-color: var(--body-bg);
 }
@@ -198,8 +198,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   font-size: 1em;
 }
 pre {
@@ -236,7 +236,7 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #959BAD;
+  color: #959bad;
   font-size: 11px;
   line-height: 12px;
 }
@@ -1637,9 +1637,9 @@ pre code {
   font-weight: 400;
   line-height: 1.25;
   color: #dfe1ea !important;
-  background-color: var(--theme-background-input)!important;
+  background-color: var(--theme-background-input) !important;
   background-clip: padding-box;
-  border: var(--theme-border-tab)!important;
+  border: var(--theme-border-tab) !important;
   border-radius: 0px !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-appearance: none !important;
@@ -1772,7 +1772,7 @@ textarea.form-control {
   margin-bottom: 0;
   font-size: 13px;
   line-height: 18px;
-  color: #D5D5D5;
+  color: #d5d5d5;
   text-transform: initial;
   display: initial;
 }
@@ -1793,7 +1793,7 @@ textarea.form-control {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #C4E07F;
+  color: #c4e07f;
 }
 .valid-tooltip {
   position: absolute;
@@ -2117,7 +2117,7 @@ textarea.form-control.is-invalid {
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  background-color: transparent;
+  background-color: red;
   border: 1px solid transparent;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
@@ -3205,7 +3205,7 @@ input[type="submit"].btn-block {
   border-bottom-left-radius: 0;
 }
 .input-group-prepend .input-group-text {
-  color: #959BAD !important;
+  color: #959bad !important;
 }
 .custom-control {
   position: relative;
@@ -3251,7 +3251,7 @@ input[type="submit"].btn-block {
 }
 .custom-control-label::before {
   position: absolute;
-  top: .15rem;
+  top: 0.15rem;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3264,7 +3264,7 @@ input[type="submit"].btn-block {
 
 .custom-control-label::after {
   position: absolute;
-  top: .15rem;
+  top: 0.15rem;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3363,7 +3363,7 @@ input[type="submit"].btn-block {
   background-size: 8px;
   background-position: right 7px center;
   border: var(--theme-border-tab) !important;
-  background-color: var(--theme-background-input)!important;
+  background-color: var(--theme-background-input) !important;
   border-radius: 2px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -4031,7 +4031,7 @@ input[type="submit"].btn-block {
   padding: 1.25rem;
 }
 .card-title {
-  color: #DFE1EA;
+  color: #dfe1ea;
   margin-bottom: 0.5rem;
 }
 .card-subtitle {
@@ -4396,7 +4396,7 @@ a.badge-info:focus {
 }
 .badge-warning {
   color: #fff;
-  background-color: #FF922E;
+  background-color: #ff922e;
 }
 a.badge-warning:focus,
 a.badge-warning:hover {
@@ -4410,7 +4410,7 @@ a.badge-warning:focus {
 }
 .badge-danger {
   color: #fff;
-  background-color: #EA3636;
+  background-color: #ea3636;
 }
 a.badge-danger:focus,
 a.badge-danger:hover {
@@ -4491,8 +4491,8 @@ a.badge-dark:focus {
 }
 .alert-primary {
   color: #fff;
-  background-color: #5CBDEE;
-  border-color: #5CBDEE;
+  background-color: #5cbdee;
+  border-color: #5cbdee;
 }
 .alert-primary hr {
   border-top-color: #a5d0df;
@@ -4512,7 +4512,7 @@ a.badge-dark:focus {
   color: #181920;
 }
 .alert-success {
-  color: #A2FFB0;
+  color: #a2ffb0;
   background: #27443f;
   border: 1px solid #2b5f4b;
 }
@@ -4523,7 +4523,7 @@ a.badge-dark:focus {
   color: #0f392a;
 }
 .alert-info {
-  color: #88E2FF;
+  color: #88e2ff;
   background: #273853;
   border: 1px solid #2b476b;
 }
@@ -4534,7 +4534,7 @@ a.badge-dark:focus {
   color: #0d161d;
 }
 .alert-warning {
-  color: #FFB684;
+  color: #ffb684;
   background: #433337;
   border: 1px solid #5e4037;
 }
@@ -4545,7 +4545,7 @@ a.badge-dark:focus {
   color: #412613;
 }
 .alert-danger {
-  color: #FF8A8A;
+  color: #ff8a8a;
   background: #402938;
   border: 1px solid #572c38;
 }
@@ -5068,7 +5068,7 @@ a.close.disabled {
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: #10111B;
+  background-color: #10111b;
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -5157,9 +5157,9 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5267,9 +5267,9 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5772,7 +5772,7 @@ button.bg-dark:hover {
   border-color: var(--theme-background) !important;
 }
 .border-dark {
-  border-color: #2C3244 !important;
+  border-color: #2c3244 !important;
 }
 .border-white {
   border-color: #fff !important;
@@ -8446,8 +8446,8 @@ button.bg-dark:hover {
   }
 }
 .text-monospace {
-  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace !important;
+  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace !important;
 }
 .text-justify {
   text-align: justify !important;
@@ -8583,14 +8583,14 @@ a.text-warning:hover {
   color: #8f5227 !important;
 }
 .text-danger {
-  color: #FF5858 !important;
+  color: #ff5858 !important;
 }
 a.text-danger:focus,
 a.text-danger:hover {
   color: #7f2c2c !important;
 }
 .text-light {
-  color: #747B90 !important;
+  color: #747b90 !important;
 }
 a.text-light:focus,
 a.text-light:hover {
@@ -8604,7 +8604,7 @@ a.text-dark:hover {
   color: #6f7087 !important;
 }
 .text-body {
-  color: #D5D5D5 !important;
+  color: #d5d5d5 !important;
 }
 .text-muted {
   color: var(--theme-form-placeholder) !important;
@@ -8734,12 +8734,12 @@ a.text-dark:hover {
 }
 .plugins-header {
   background-color: var(--body-bg) !important;
-  border-bottom: 1px solid #2C3244 !important;
+  border-bottom: 1px solid #2c3244 !important;
 }
 .plugins-list-header {
   justify-content: flex-start !important;
   padding: 1rem 1.5rem;
-  background-color: var(--body-bg) !important
+  background-color: var(--body-bg) !important;
 }
 .plugins-list-title {
   margin: 0 0.5rem 0 0 !important;
@@ -8767,7 +8767,7 @@ a.text-dark:hover {
   border-bottom-right-radius: 2px;
 }
 .plugins-list-group-item + .plugins-list-group-item {
-  border-top: 1px solid #2C3244;
+  border-top: 1px solid #2c3244;
 }
 .plugin-name {
   margin: 0;
@@ -8776,11 +8776,11 @@ a.text-dark:hover {
   text-transform: uppercase;
 }
 .plugin-text {
-  color: #D5D5D5 !important;
+  color: #d5d5d5 !important;
 }
 .plugin-version {
-  color: #D5D5D5;
-  border: 1px solid #D5D5D5;
+  color: #d5d5d5;
+  border: 1px solid #d5d5d5;
 }
 .settings-button {
   height: 32px;
@@ -8792,7 +8792,7 @@ a.text-dark:hover {
 
 /* Deploy & Run transaction Colors */
 .run-tab i {
-  color: #8A93B0;
+  color: #8a93b0;
 }
 .run-tab .fa-clipboard::before {
   content: "\f0c5";
@@ -8810,16 +8810,16 @@ a.text-dark:hover {
   border: none !important;
 }
 .run-instance-multi-title {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 .run-instance-multi-arg label {
-  color: #747B90 !important;
+  color: #747b90 !important;
 }
 .run-instance-list {
   padding: 0 !important;
   margin: 0 !important;
   border: 0 !important;
-  color: #DFE1EA !important; 
+  color: #dfe1ea !important;
 }
 .run-instance-list li {
   margin: 0 !important;
@@ -8827,16 +8827,18 @@ a.text-dark:hover {
 
 /* Settings */
 .tokens-link {
-  color: #4DA5C5;
+  color: #4da5c5;
 }
 
 /* Theme Palette, Typography custom */
-#journal, .ace-content, .monaco-editor {
-    font-family: "JetBrains Mono", monospace!important;
+#journal,
+.ace-content,
+.monaco-editor {
+  font-family: "JetBrains Mono", monospace !important;
 }
 
 #plugins {
-  border-bottom: 1px solid var(--theme-background-input)!important;
+  border-bottom: 1px solid var(--theme-background-input) !important;
 }
 
 .theme-context-view {
@@ -8845,76 +8847,79 @@ a.text-dark:hover {
   margin-bottom: -1px;
 }
 .mainview--tabs-proxy {
-  background-color: var(--text-background)!important;
+  background-color: var(--text-background) !important;
   border-bottom: 1.2px solid var(--theme-divider-color);
 }
 
 .ace-chaos {
-    background-color: var(--theme-background)!important;
+  background-color: var(--theme-background) !important;
 }
 
 .ace-chaos .ace_gutter {
-    background-color: var(--theme-background)!important;
-    color: var(--theme-foreground-gray) !important;
-    border-right: 1px solid var(--theme-divider-color)!important;
+  background-color: var(--theme-background) !important;
+  color: var(--theme-foreground-gray) !important;
+  border-right: 1px solid var(--theme-divider-color) !important;
 }
 
 .ace-chaos .ace_comment {
-    color: var(--theme-foreground-comment)!important;
+  color: var(--theme-foreground-comment) !important;
 }
 
 .nav-tabs .nav-link {
-    padding: 4px 8px !important;
-    border-radius: 0px !important;
-    border-top-color: var(--orange) !important;
+  padding: 4px 8px !important;
+  border-radius: 0px !important;
+  border-top-color: var(--orange) !important;
 }
 
 remix-tab .close {
-    line-height: 1.1!important;
-    padding-bottom: 2px !important;
+  line-height: 1.1 !important;
+  padding-bottom: 2px !important;
 }
 
 remix-tab .fak {
-    line-height: 1.2!important;
+  line-height: 1.2 !important;
 }
 
 div[data-id="remixIdeSidePanel"] {
-  margin-right: -1px
+  margin-right: -1px;
 }
 
 /* Monaco Editor */
-.view-lines, .monaco-mouse-cursor-text {
+.view-lines,
+.monaco-mouse-cursor-text {
   font-family: "Jetbrains Mono" !important;
 }
 
 .monaco-editor .scroll-decoration {
-  box-shadow: #03030fbd 0 6px 6px -6px inset!important;
+  box-shadow: #03030fbd 0 6px 6px -6px inset !important;
 }
 
 /* Remix utils */
 .remix_ui_terminal_welcome {
-  font-family: "Saira"!important;
-  margin-left: -.25rem;
+  font-family: "Saira" !important;
+  margin-left: -0.25rem;
 }
 
-.remix_ui_terminal_journal, .remix_ui_terminal_autoCompleteItem, .remix_ui_terminal_block ul {
+.remix_ui_terminal_journal,
+.remix_ui_terminal_autoCompleteItem,
+.remix_ui_terminal_block ul {
   font-family: "Saira" !important;
 }
 
 .remix_ui_terminal_block {
-  font-family: "Jetbrains Mono"!important;
+  font-family: "Jetbrains Mono" !important;
 }
 
 .remixui_icon img {
-  filter: invert(0.75)!important;
+  filter: invert(0.75) !important;
 }
 
 .custom-dropdown-items {
-  background: #011627!important; // override --custom-select
+  background: #011627 !important; // override --custom-select
 }
 
 .remix-ui-tabs {
-  border-bottom: var(--theme-border-default)!important;
+  border-bottom: var(--theme-border-default) !important;
 }
 
 /* use to create light padding top in the editor */
@@ -8923,16 +8928,16 @@ div[data-id="remixIdeSidePanel"] {
   background-color: var(--text-background);
 }
 
-.monaco-scrollable-element > .visible,  
-.monaco-scrollable-element > .visible .scrollbar, 
-.monaco-scrollable-element > .invisible, 
-.monaco-scrollable-element > .invisible .scrollbar, 
+.monaco-scrollable-element > .visible,
+.monaco-scrollable-element > .visible .scrollbar,
+.monaco-scrollable-element > .invisible,
+.monaco-scrollable-element > .invisible .scrollbar,
 .monaco-scrollable-element > .invisible .fade {
-  background-color: var(--light)!important;
-  color: var(--light)!important;
+  background-color: var(--light) !important;
+  color: var(--light) !important;
 }
 .monaco-scrollable-element > .scrollbar > .slider {
-  background: #011627!important;
+  background: #011627 !important;
 }
 
 .monaco-editor .vertical {
