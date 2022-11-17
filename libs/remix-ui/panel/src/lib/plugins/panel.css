@@ -24,6 +24,7 @@
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
+    background-color: #00050F;
 }
 
 .icons i {
@@ -103,3 +104,24 @@ iframe {
 .terminal-wrap.minimized {
     height: 2rem !important;
 }
+.pluginInfo {
+    display: flex;
+    padding-left: 16px;
+    gap: 5px;
+    color: #4C5057;
+}
+.mb-1 {
+    color: #ffff;
+}
+.maxHeight {
+    max-height: 100px;
+    transition: 0.8s;
+    border: 1px solid #3f4455;
+    padding: 0 0 5px 5px;
+    border-radius: 4px;
+}
+.noHeight {
+    max-height: 0;
+    transition: .8s;
+}
+

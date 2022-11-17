@@ -24,7 +24,7 @@
   --text: #babbcc;
   --text-background: #222336;
   --text-bg-mark: #8388b2;
-  --custom-select: #35384c;
+  --custom-select: #0D1016;
   --body-bg: #222336;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -5640,7 +5640,12 @@ button.bg-primary:hover {
   background-color: #005573 !important;
 }
 .bg-secondary {
-  background-color: #595c76 !important;
+  background-color: #0500FF !important;
+  height: 36px;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  padding-left: 8px;
 }
 a.bg-secondary:focus,
 a.bg-secondary:hover,
@@ -6017,6 +6022,7 @@ button.bg-dark:hover {
 }
 .flex-column {
   flex-direction: column !important;
+  background-color: #00050F;
 }
 .flex-row-reverse {
   flex-direction: row-reverse !important;
@@ -6729,6 +6735,7 @@ button.bg-dark:hover {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
+  border-left: 1px solid #1B1D22;
 }
 .ml-0,
 .mx-0 {
@@ -6851,7 +6858,7 @@ button.bg-dark:hover {
 .p-1 {
   padding: 0.25rem !important;
 }
-.pt-1,
+/* .pt-1, */
 .py-1 {
   padding-top: 0.25rem !important;
 }
@@ -8810,4 +8817,10 @@ a.text-dark:hover {
 /* Settings */
 .tokens-link {
   color: #4DA5C5;
+}
+/* plugin manager/// */
+.align-items-center {
+  height: 36px;
+  color: #ffff;
+  font-size: 12px;
 }

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react' // eslint-disable-lin
 import { PluginRecord } from '../types'
 import './panel.css'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { CustomTooltip } from '@remix-ui/helper'
+// import { CustomTooltip } from '@remix-ui/helper'
 
 export interface RemixPanelProps {
   plugins: Record<string, PluginRecord>;
@@ -26,9 +26,9 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
     setToggleExpander(!toggleExpander)
   }
 
-  const tooltipChild = (
-    <i className={`px-1 ml-2 pt-1 pb-2 ${!toggleExpander ? 'fas fa-angle-right' : 'fas fa-angle-down bg-light'}`} aria-hidden="true"></i>
-  )
+  // const tooltipChild = (
+  //   <i className={`px-1 ml-2 pt-1 pb-2 ${!toggleExpander ? 'fas fa-angle-right' : 'fas fa-angle-down bg-light'}`} aria-hidden="true"></i>
+  // )
 
   return (
     <header className='d-flex flex-column'>
@@ -49,20 +49,32 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
               </OverlayTrigger>
             )}
           </div>
-          <div className="swapitHeaderInfoSection d-flex justify-content-between" data-id='swapitHeaderInfoSectionId' onClick={toggleClass}>
-            <CustomTooltip
+          
+        </div>
+      </div>
+      <div className="d-flex w-100 flex-row py-2 bg-clr">
+      <div className="swapitHeaderInfoSection d-flex justify-content-between" data-id='swapitHeaderInfoSectionId' onClick={toggleClass}>
+            <div className='pluginInfo'>
+              <p style={{color: toggleExpander ? "#0500FF" : "#343841",transition: '.8s'}}>
+                Plugin Info
+              </p>
+              <div >
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill='none' style={{transform: toggleExpander ? 'rotateX(180deg)': 'rotateX(0deg)',transition: '.8s'}}>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.33263 0.25529C0.743926 -0.113292 1.37614 -0.078666 1.74472 0.33263L5 3.96515L8.25528 0.33263C8.62386 -0.078666 9.25607 -0.113292 9.66737 0.25529C10.0787 0.623873 10.1133 1.25609 9.74471 1.66738L6.45179 5.34191C5.66546 6.21936 4.33454 6.21936 3.54821 5.34191L0.25529 1.66738C-0.113292 1.25609 -0.078666 0.623873 0.33263 0.25529Z" fill={toggleExpander ? "#0500FF" : "#343841"}/>
+                </svg>
+              </div>
+            </div>
+            {/* <CustomTooltip
               placement="right-end"
               tooltipText="Plugin info"
               tooltipId="pluginInfoTooltip"
               tooltipClasses="text-nowrap"
             >
               {tooltipChild}
-            </CustomTooltip>
+            </CustomTooltip> */}
           </div>
-        </div>
       </div>
-      <div className="d-flex w-100 flex-row py-2"></div>
-      <div className={`bg-light mx-3 mb-2 p-3 pt-1 border-bottom flex-column ${toggleExpander ? "d-flex" : "d-none"}`}>
+      <div className={`bg-light mx-3 mb-2 pt-1 flex-column ${toggleExpander ? 'maxHeight' : 'noHeight'}`} >
         {plugin?.profile?.author && <span className="d-flex flex-row align-items-center">
           <label className="mb-0 pr-2">Author:</label>
           <span> { plugin?.profile.author } </span>
