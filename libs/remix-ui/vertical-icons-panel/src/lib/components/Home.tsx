@@ -4,12 +4,12 @@ interface HomeProps {
   verticalIconPlugin: any
 }
 
-function Home ({ verticalIconPlugin }: HomeProps) {
+function Home({ verticalIconPlugin }: HomeProps) {
   return (
     <div
       className="mt-2 my-1 remixui_homeIcon"
       onClick={async () => await verticalIconPlugin.activateHome()}
-      {...{ plugin: 'home'}}
+      {...{ plugin: 'home' }}
       title="Home"
       data-id="verticalIconsHomeIcon"
       id="verticalIconsHomeIcon"
