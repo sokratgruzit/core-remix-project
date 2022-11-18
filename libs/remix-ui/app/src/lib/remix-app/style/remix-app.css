@@ -25,12 +25,13 @@ pre {
   display            : flex;
   flex-direction     : column;
   overflow           : hidden;
-  width              : 50px;
+  width              : 80px;
   user-select        : none;
+  border-right: 1px solid rgba(22, 27, 36, 1);
 }
 .sidepanel           {
   display            : flex;
-  flex-direction     : row-reverse;
+  flex-direction      : row-reverse;
   width              : 320px;
   transition         : width 0.25s;
 }
