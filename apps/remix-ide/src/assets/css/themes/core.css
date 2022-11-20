@@ -219,7 +219,7 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #959bad;
+  color: #fff;
   font-size: 11px;
   line-height: 12px;
 }
@@ -1756,7 +1756,6 @@ textarea.form-control {
   margin-bottom: 0;
   font-size: 13px;
   line-height: 18px;
-  color: #a2a3bd;
   text-transform: initial;
   display: initial;
 }
@@ -3644,7 +3643,30 @@ input[type="submit"].btn-block {
   margin: 0 !important;
   color: #808287;
 }
-
+.height {
+  height: 30px;
+  align-items: center;
+}
+.workspace-setting {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+.workspace-setting-inner {
+  gap: 15px;
+  display: flex;
+}
+.line {
+  border-left: 1px solid #1b1d22;
+}
+.file-explorer {
+  margin: 8px;
+}
+.icon-header {
+  display: flex;
+  gap: 5px;
+}
 /* oposs added styles */
 .nav-tabs {
   border-bottom: 1px solid #161b24;
