@@ -1,8 +1,63 @@
-.mainview            {
-    display           : flex;
-    flex-direction    : column;
-    height            : 100%;
-    width             : 100%;
-    position: relative;
-  }  
+.mainview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  /* oposs added styles */
+  background-color: #00050f;
+}
 
+/* oposs added styles */
+
+.right-panel {
+  z-index: 99;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 140px;
+  background-color: #00050f;
+  height: 100%;
+}
+.right-panel-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.right-panel-inner p {
+  text-align: center;
+  width: 70%;
+}
+.core-logo {
+  width: 62px;
+  height: 17px;
+}
+.social {
+  display: flex;
+  gap: 10px;
+}
+.files {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 20px;
+  height: 100%;
+}
+.files div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.p {
+  width: 60%;
+  text-align: center;
+}
+.files svg {
+  width: 50%;
+  height: 50%;
+}
+/* oposs added styles */

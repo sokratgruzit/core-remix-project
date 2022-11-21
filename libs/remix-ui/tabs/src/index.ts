@@ -1,1 +1,1 @@
-export * from './lib/remix-ui-tabs'
+export * from "./lib/remix-ui-tabs";
