@@ -6,11 +6,7 @@ import Registry from "../state/registry";
 const _paq = (window._paq = window._paq || []);
 
 const themes = [
-  {
-    name: "Core Dark",
-    quality: "dark",
-    url: "assets/css/themes/remix-core_dark.css",
-  },
+  { name: "CORE", quality: "dark", url: "assets/css/themes/core.css" },
   {
     name: "Dark",
     quality: "dark",

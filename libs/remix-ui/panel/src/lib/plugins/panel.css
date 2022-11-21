@@ -24,6 +24,7 @@
     align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
+    background-color: #00050F;
 }
 
 .icons i {

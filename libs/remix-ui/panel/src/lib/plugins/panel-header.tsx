@@ -61,7 +61,11 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
           </div>
         </div>
       </div>
-      <div className="d-flex w-100 flex-row py-2"></div>
+      <div className="d-flex w-100 flex-row py-2">Plugin info
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.266104 0.204232C0.595141 -0.0906337 1.10091 -0.0629328 1.39578 0.266104L4 3.17212L6.60422 0.266104C6.89909 -0.0629328 7.40486 -0.0906337 7.7339 0.204232C8.06293 0.499098 8.09063 1.00487 7.79577 1.33391L5.16143 4.27353C4.53237 4.97549 3.46763 4.97549 2.83857 4.27353L0.204232 1.33391C-0.0906337 1.00487 -0.0629328 0.499098 0.266104 0.204232Z" fill="#4C5057"/>
+        </svg>
+      </div>
       <div className={`bg-light mx-3 mb-2 p-3 pt-1 border-bottom flex-column ${toggleExpander ? "d-flex" : "d-none"}`}>
         {plugin?.profile?.author && <span className="d-flex flex-row align-items-center">
           <label className="mb-0 pr-2">Author:</label>

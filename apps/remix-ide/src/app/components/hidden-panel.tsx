@@ -1,50 +1,52 @@
 // eslint-disable-next-line no-use-before-define
-import React from 'react'
-import { AbstractPanel } from './panel'
-import * as packageJson from '../../../../../package.json'
-import { RemixPluginPanel } from '@remix-ui/panel'
-import { PluginViewWrapper } from '@remix-ui/helper'
+import React from "react";
+import { AbstractPanel } from "./panel";
+import * as packageJson from "../../../../../package.json";
+import { RemixPluginPanel } from "@remix-ui/panel";
+import { PluginViewWrapper } from "@remix-ui/helper";
 
 const profile = {
-  name: 'hiddenPanel',
-  displayName: 'Hidden Panel',
-  description: 'Remix IDE hidden panel',
+  name: "hiddenPanel",
+  displayName: "Hidden Panel",
+  description: "Remix IDE hidden panel",
   version: packageJson.version,
-  methods: ['addView', 'removeView']
-}
+  methods: ["addView", "removeView"],
+};
 
 export class HiddenPanel extends AbstractPanel {
-  el: HTMLElement
-  dispatch: React.Dispatch<any> = () => {}
-  constructor () {
-    super(profile)
-    this.el = document.createElement('div')
-    this.el.setAttribute('class', 'pluginsContainer')
+  el: HTMLElement;
+  dispatch: React.Dispatch<any> = () => {};
+  constructor() {
+    super(profile);
+    this.el = document.createElement("div");
+    this.el.setAttribute("class", "pluginsContainer");
   }
 
-  addView (profile: any, view: any): void {
-    super.removeView(profile)
-    super.addView(profile, view)
-    this.renderComponent()
+  addView(profile: any, view: any): void {
+    super.removeView(profile);
+    super.addView(profile, view);
+    this.renderComponent();
   }
 
-  updateComponent (state: any) {
-    return <RemixPluginPanel header={<></>} plugins={state.plugins}/>
+  updateComponent(state: any) {
+    return <RemixPluginPanel header={<></>} plugins={state.plugins} />;
   }
 
-  setDispatch (dispatch: React.Dispatch<any>) {
-    this.dispatch = dispatch
+  setDispatch(dispatch: React.Dispatch<any>) {
+    this.dispatch = dispatch;
   }
 
-  render() {      
+  render() {
     return (
-      <div className='pluginsContainer'><PluginViewWrapper plugin={this} /></div>
+      <div className="pluginsContainer">
+        <PluginViewWrapper plugin={this} />
+      </div>
     );
   }
 
-  renderComponent () {
+  renderComponent() {
     this.dispatch({
       plugins: this.plugins,
-    })
+    });
   }
 }

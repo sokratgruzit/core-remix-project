@@ -1,38 +1,39 @@
-import { ViewPlugin } from '@remixproject/engine-web'
-import React from 'react' // eslint-disable-line
-import {RemixUiPluginManager} from '@remix-ui/plugin-manager' // eslint-disable-line
-import * as packageJson from '../../../../../package.json'
-import { PluginViewWrapper } from '@remix-ui/helper'
-const _paq = window._paq = window._paq || []
+import { ViewPlugin } from "@remixproject/engine-web";
+import React from "react"; // eslint-disable-line
+import { RemixUiPluginManager } from "@remix-ui/plugin-manager"; // eslint-disable-line
+import * as packageJson from "../../../../../package.json";
+import { PluginViewWrapper } from "@remix-ui/helper";
+const _paq = (window._paq = window._paq || []);
 
 const profile = {
-  name: 'pluginManager',
-  displayName: 'Plugin manager',
+  name: "pluginManager",
+  displayName: "Plugin manager",
   methods: [],
   events: [],
-  icon: 'assets/img/pluginManager.webp',
-  description: 'Start/stop services, modules and plugins',
-  kind: 'settings',
-  location: 'sidePanel',
-  documentation: 'https://remix-ide.readthedocs.io/en/latest/plugin_manager.html',
-  version: packageJson.version
-}
+  icon: "assets/img/pluginManager.webp",
+  description: "Start/stop services, modules and plugins",
+  kind: "settings",
+  location: "sidePanel",
+  documentation:
+    "https://remix-ide.readthedocs.io/en/latest/plugin_manager.html",
+  version: packageJson.version,
+};
 
 class PluginManagerComponent extends ViewPlugin {
-  constructor (appManager, engine) {
-    super(profile)
-    this.appManager = appManager
-    this.engine = engine
-    this.htmlElement = document.createElement('div')
-    this.htmlElement.setAttribute('id', 'pluginManager')
-    this.filter = ''
+  constructor(appManager, engine) {
+    super(profile);
+    this.appManager = appManager;
+    this.engine = engine;
+    this.htmlElement = document.createElement("div");
+    this.htmlElement.setAttribute("id", "pluginManager");
+    this.filter = "";
 
-    this.activePlugins = []
-    this.inactivePlugins = []
-    this.activeProfiles = this.appManager.actives
-    this._paq = _paq
-    this.dispatch = null
-    this.listenOnEvent()
+    this.activePlugins = [];
+    this.inactivePlugins = [];
+    this.activeProfiles = this.appManager.actives;
+    this._paq = _paq;
+    this.dispatch = null;
+    this.listenOnEvent();
   }
 
   /**
@@ -41,9 +42,9 @@ class PluginManagerComponent extends ViewPlugin {
    * RemixAppManager
    * @param {string} name name of Plugin
    */
-  isActive = (name) =>{
-    return this.appManager.actives.includes(name)
-  }
+  isActive = (name) => {
+    return this.appManager.actives.includes(name);
+  };
 
   /**
    * Delegates to method activatePlugin in
@@ -51,9 +52,9 @@ class PluginManagerComponent extends ViewPlugin {
    * @param {string} name name of Plugin
    */
   activateP = (name) => {
-    this.appManager.activatePlugin(name)
-    _paq.push(['trackEvent', 'manager', 'activate', name])
-  }
+    this.appManager.activatePlugin(name);
+    _paq.push(["trackEvent", "manager", "activate", name]);
+  };
 
   /**
    * Takes the name of a local plugin and does both
@@ -63,12 +64,15 @@ class PluginManagerComponent extends ViewPlugin {
    */
   activateAndRegisterLocalPlugin = async (localPlugin) => {
     if (localPlugin) {
-      this.engine.register(localPlugin)
-      this.appManager.activatePlugin(localPlugin.profile.name)
-      this.getAndFilterPlugins()
-      localStorage.setItem('plugins/local', JSON.stringify(localPlugin.profile))
+      this.engine.register(localPlugin);
+      this.appManager.activatePlugin(localPlugin.profile.name);
+      this.getAndFilterPlugins();
+      localStorage.setItem(
+        "plugins/local",
+        JSON.stringify(localPlugin.profile)
+      );
     }
-  }
+  };
 
   /**
    * Calls and triggers the event deactivatePlugin
@@ -77,73 +81,89 @@ class PluginManagerComponent extends ViewPlugin {
    * @param {string} name name of Plugin
    */
   deactivateP = (name) => {
-    this.call('manager', 'deactivatePlugin', name)
-    _paq.push(['trackEvent', 'manager', 'deactivate', name])
+    this.call("manager", "deactivatePlugin", name);
+    _paq.push(["trackEvent", "manager", "deactivate", name]);
+  };
+
+  setDispatch(dispatch) {
+    this.dispatch = dispatch;
+    this.renderComponent();
   }
 
-  setDispatch (dispatch) {
-    this.dispatch = dispatch
-    this.renderComponent()
+  updateComponent(state) {
+    return <RemixUiPluginManager pluginComponent={state} />;
   }
 
-  updateComponent(state){
-    return <RemixUiPluginManager
-      pluginComponent={state}/>
+  renderComponent() {
+    if (this.dispatch)
+      this.dispatch({
+        ...this,
+        activePlugins: this.activePlugins,
+        inactivePlugins: this.inactivePlugins,
+      });
   }
 
-  renderComponent () {
-    if(this.dispatch) this.dispatch({...this, activePlugins: this.activePlugins, inactivePlugins: this.inactivePlugins})
-  }
-
-  render () {
+  render() {
     return (
-      <div id='pluginManager'><PluginViewWrapper plugin={this} /></div>
+      <div id="pluginManager">
+        <PluginViewWrapper plugin={this} />
+      </div>
     );
-    
   }
 
   getAndFilterPlugins = (filter) => {
-    this.filter = typeof filter === 'string' ? filter.toLowerCase() : this.filter
+    this.filter =
+      typeof filter === "string" ? filter.toLowerCase() : this.filter;
 
-    const isFiltered = (profile) => (profile.displayName ? profile.displayName : profile.name).toLowerCase().includes(this.filter)
-    const isNotRequired = (profile) => !this.appManager.isRequired(profile.name)
-    const isNotDependent = (profile) => !this.appManager.isDependent(profile.name)
-    const isNotHome = (profile) => profile.name !== 'home'
+    const isFiltered = (profile) =>
+      (profile.displayName ? profile.displayName : profile.name)
+        .toLowerCase()
+        .includes(this.filter);
+    const isNotRequired = (profile) =>
+      !this.appManager.isRequired(profile.name);
+    const isNotDependent = (profile) =>
+      !this.appManager.isDependent(profile.name);
+    const isNotHome = (profile) => profile.name !== "home";
     const sortByName = (profileA, profileB) => {
-      const nameA = ((profileA.displayName) ? profileA.displayName : profileA.name).toUpperCase()
-      const nameB = ((profileB.displayName) ? profileB.displayName : profileB.name).toUpperCase()
-      return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0
-    }
-    const activatedPlugins = []
-    const deactivatedPlugins = []
-    const tempArray = this.appManager.getAll()
+      const nameA = (
+        profileA.displayName ? profileA.displayName : profileA.name
+      ).toUpperCase();
+      const nameB = (
+        profileB.displayName ? profileB.displayName : profileB.name
+      ).toUpperCase();
+      return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+    };
+    const activatedPlugins = [];
+    const deactivatedPlugins = [];
+    const tempArray = this.appManager
+      .getAll()
       .filter(isFiltered)
       .filter(isNotRequired)
       .filter(isNotDependent)
       .filter(isNotHome)
-      .sort(sortByName)
+      .sort(sortByName);
 
-    tempArray.forEach(profile => {
+    tempArray.forEach((profile) => {
       if (this.appManager.actives.includes(profile.name)) {
-        activatedPlugins.push(profile)
+        activatedPlugins.push(profile);
       } else {
-        deactivatedPlugins.push(profile)
+        deactivatedPlugins.push(profile);
       }
-    })
-    this.activePlugins = activatedPlugins
-    this.inactivePlugins = deactivatedPlugins
-    this.renderComponent()
-  }
+    });
+    this.activePlugins = activatedPlugins;
+    this.inactivePlugins = deactivatedPlugins;
+    this.renderComponent();
+  };
 
-  listenOnEvent () {
-    this.engine.event.on('onRegistration', () => this.renderComponent())
-    this.appManager.event.on('activate', () => {
-      this.getAndFilterPlugins()
-    })
-    this.appManager.event.on('deactivate', () => {
-      this.getAndFilterPlugins()
-    })
+  listenOnEvent() {
+    this.engine.event.on("onRegistration", () => this.renderComponent());
+    this.appManager.event.on("activate", () => {
+      this.getAndFilterPlugins();
+    });
+    this.appManager.event.on("deactivate", () => {
+      this.getAndFilterPlugins();
+    });
   }
 }
 
-module.exports = PluginManagerComponent
+module.exports = PluginManagerComponent;
