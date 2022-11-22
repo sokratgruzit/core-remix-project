@@ -209,7 +209,13 @@ function HomeTabTitle() {
       </div>
       <div
         className="d-flex pb-1 align-items-center"
-        style={{ display: "none !important" }}
+        style={{
+          position: "absolute",
+          top: "34px",
+          marginLeft: "-8px",
+          width: "100%",
+          zIndex: "2",
+        }}
       >
         <input
           ref={searchInputRef}
