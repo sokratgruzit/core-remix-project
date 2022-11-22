@@ -54,9 +54,11 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
     <div
       className="d-flex flex-column-reverse"
       style={{
-        height: window.outerHeight,
+        minHeight: window.outerHeight,
+        height: "fit-content",
         width: "calc(100% - 140px)",
         position: "relative",
+        background: "#010713",
       }}
       data-id="remixUIHTAll"
     >
@@ -65,19 +67,17 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
           className="px-2 pl-3 justify-content-start d-flex border-right flex-column"
           id="remixUIHTLeft"
           style={{
-            height: "50%",
-            overflow: "auto",
+            height: "fit-content",
           }}
         >
           <HomeTabTitle />
           <HomeTabFile plugin={plugin} />
-          <HomeTabLearn plugin={plugin} />
+          {/* <HomeTabLearn plugin={plugin} /> */}
         </div>
         <div
           className="pl-2 pr-3 justify-content-start d-flex flex-column"
           style={{
-            height: "50%",
-            overflow: "auto",
+            height: "fit-content",
           }}
           id="remixUIHTRight"
         >

@@ -85,13 +85,13 @@
   height: 130px;
 }
 .remixui_home_workspaceTemplate {
-  width: 220px;
-  height: 80px;
+  width: 313px;
+  height: 89px;
 }
 .remixui_home_media {
   overflow: hidden;
   max-width: 400px;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
   z-index: 1000;
 }
 .remixui_home_migrationBtn {

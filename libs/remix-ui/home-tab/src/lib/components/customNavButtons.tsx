@@ -14,6 +14,7 @@ const CustomNavButtons = ({ next, previous, goToSlide, ...rest }) => {
         // className={
         //   currentSlide === 0 ? "disable py-1 border btn" : "py-1 border btn"
         // }
+        style={{ background: "none", border: "none" }}
         disabled={currentSlide === 0}
         onClick={() => previous()}
       >
@@ -39,11 +40,12 @@ const CustomNavButtons = ({ next, previous, goToSlide, ...rest }) => {
         </svg>
       </button>
       <button
-        className={
-          (totalItems - currentSlide) * itemWidth + 5 < containerWidth
-            ? "disable py-1 border btn"
-            : "py-1 border btn"
-        }
+        // className={
+        //   (totalItems - currentSlide) * itemWidth + 5 < containerWidth
+        //     ? "disable py-1 border btn"
+        //     : "py-1 border btn"
+        // }
+        style={{ background: "none", border: "none" }}
         onClick={() => {
           if (currentSlide + 1 < totalItems) goToSlide(currentSlide + 1);
         }}

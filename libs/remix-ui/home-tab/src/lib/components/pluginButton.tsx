@@ -2,7 +2,8 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../themeContext";
 import { CustomTooltip } from "@remix-ui/helper";
-import CornerDecor from "../../../../app/src/lib/remix-app/components/CornerDecor/CornerDecor";
+import { CornerDecor } from "@remix-ui/helper";
+import { inherits } from "util";
 interface PluginButtonProps {
   imgPath: string;
   envID: string;
@@ -25,14 +26,29 @@ function PluginButton({
   const themeFilter = useContext(ThemeContext);
 
   return (
-    <div className="d-flex remixui_home_envButton">
+    <div
+      className="d-flex remixui_home_envButton"
+      style={{
+        position: "relative",
+        height: "100%",
+        width: remixMaintained ? "303px" : "262.5px",
+        minWidth: remixMaintained ? "303px" : "262.5px",
+        marginRight: remixMaintained ? "10px" : "",
+        background: "#040A15",
+      }}
+    >
+      <CornerDecor />
+
       <button
-        className="btn d-flex flex-column  pb-2 text-nowrap justify-content-center align-items-center mr-2 remixui_home_envButton"
+        className="btn d-flex flex-column  pb-2 text-nowrap justify-content-center align-items-center remixui_home_envButton"
         data-id={"landingPageStart" + envText}
-        style={{ position: "relative", background: "#040A15" }}
+        style={{
+          position: "relative",
+          width: "inherit",
+          height: "inherit",
+        }}
         onClick={() => callback()}
       >
-        <CornerDecor />
         <img
           className="px-2 mb-2 align-self-center remixui_home_envLogo"
           id={envID}
