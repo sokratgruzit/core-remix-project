@@ -84,10 +84,19 @@
   color: #fff;
 }
 .remixui_home_envButton {
-  width: 220px;
+  max-width: 262.5px;
+  width: 100%;
   cursor: pointer;
-  height: 130px;
+  height: 100%;
+  position: relative;
 }
+.solidityPluginItem {
+  margin-right: 10px;
+  max-width: 303px;
+  width: 35%;
+  background-color: #040a15;
+}
+
 .remixui_home_workspaceTemplate {
   width: 333px;
   height: 89px;

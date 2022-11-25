@@ -27,15 +27,9 @@ function PluginButton({
 
   return (
     <div
-      className="d-flex remixui_home_envButton"
-      style={{
-        position: "relative",
-        height: "100%",
-        width: remixMaintained ? "303px" : "262.5px",
-        minWidth: remixMaintained ? "303px" : "262.5px",
-        marginRight: remixMaintained ? "10px" : "",
-        background: remixMaintained ? null : "#040A15",
-      }}
+      className={`d-flex remixui_home_envButton ${
+        remixMaintained && "solidityPluginItem"
+      }`}
     >
       <CornerDecor />
       {remixMaintained && (
@@ -43,8 +37,8 @@ function PluginButton({
           src={"assets/img/pluginsSolidity.webp"}
           style={{
             flex: "1",
-            height: "332px",
-            maxWidth: "303px",
+            height: "100%",
+            width: "100%",
             position: "absolute",
             zIndex: "0",
           }}

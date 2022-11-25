@@ -116,7 +116,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
       <div
         ref={carouselRefDiv}
         className="w-100 d-flex flex-row"
-        style={{ position: "relative", height: "332px" }}
+        style={{ position: "relative", height: "332px", maxWidth: "100%" }}
       >
         <PluginButton
           imgPath="assets/img/solidityLogo.webp"

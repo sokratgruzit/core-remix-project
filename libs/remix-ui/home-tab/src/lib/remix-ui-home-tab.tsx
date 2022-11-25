@@ -1,4 +1,10 @@
-import React, { useState, useEffect } from "react"; // eslint-disable-line
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useLayoutEffect,
+} from "react"; // eslint-disable-line
 
 import "./remix-ui-home-tab.css";
 import { ThemeContext, themes } from "./themeContext";
@@ -21,6 +27,18 @@ export interface RemixUiHomeTabProps {
 
 export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
   const { plugin } = props;
+
+  // const dashboardRef = useRef(null);
+
+  const [height, setHeight] = useState(0);
+  const onRefChange = useCallback((node) => {
+    setHeight(node); // trigger re-render on changes
+    // ...
+  }, []);
+
+  useEffect(() => {
+    console.log(height);
+  }, [height]);
 
   const [state, setState] = useState<{
     themeQuality: { filter: string; name: string };
@@ -61,6 +79,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
         overflow: "hidden",
       }}
       data-id="remixUIHTAll"
+      ref={onRefChange}
     >
       <ThemeContext.Provider value={state.themeQuality}>
         <div

@@ -38,14 +38,16 @@ const CustomNavButtons = ({ next, previous, goToSlide, ...rest }) => {
         </svg>
       </button>
       <button
-        className={
-          (totalItems - currentSlide) * itemWidth + 5 < containerWidth
-            ? "disable  btn"
-            : " btn"
-        }
+        className={currentSlide > totalItems ? "disable  btn" : " btn"}
         style={{ background: "none", border: "none" }}
         onClick={() => {
           if (currentSlide - 1 < totalItems) goToSlide(currentSlide + 1);
+          console.log(
+            currentSlide,
+            totalItems,
+            currentSlide - 1 < totalItems,
+            currentSlide > totalItems
+          );
         }}
         disabled={currentSlide > totalItems}
       >
