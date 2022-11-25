@@ -240,7 +240,7 @@ label {
   margin-bottom: 0.5rem;
   font-size: 11px;
   line-height: 12px;
-  color: #747B90;
+  color: #747b90;
 }
 
 button {
@@ -277,7 +277,7 @@ select {
   word-wrap: normal;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.02426 9.48731C7.18128 9.29086 7.04141 9 6.78992 9L1.21005 9C0.958559 9 0.818689 9.29086 0.975709 9.48731L3.76564 12.9778C3.88574 13.1281 4.11423 13.1281 4.23433 12.9778L7.02426 9.48731Z' fill='%238A93B0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.02426 4.51269C7.18128 4.70914 7.04141 5 6.78992 5L1.21005 5C0.958559 5 0.818689 4.70914 0.975709 4.51269L3.76564 1.02218C3.88574 0.871926 4.11423 0.871926 4.23433 1.02218L7.02426 4.51269Z' fill='%238A93B0'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M7.02426 9.48731C7.18128 9.29086 7.04141 9 6.78992 9L1.21005 9C0.958559 9 0.818689 9.29086 0.975709 9.48731L3.76564 12.9778C3.88574 13.1281 4.11423 13.1281 4.23433 12.9778L7.02426 9.48731Z' fill='%238A93B0'/%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M7.02426 4.51269C7.18128 4.70914 7.04141 5 6.78992 5L1.21005 5C0.958559 5 0.818689 4.70914 0.975709 4.51269L3.76564 1.02218C3.88574 0.871926 4.11423 0.871926 4.23433 1.02218L7.02426 4.51269Z' fill='%238A93B0'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-size: 8px;
   background-position: right 7px center;
@@ -1830,7 +1830,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-label {
-  color: #747B90;
+  color: #747b90;
 }
 
 .col-form-label {
@@ -1938,7 +1938,7 @@ textarea.form-control {
   margin-bottom: 0;
   font-size: 13px;
   line-height: 18px;
-  color: #747B90;
+  color: #747b90;
   text-transform: initial;
   display: initial;
 }
@@ -3488,7 +3488,7 @@ input[type="button"].btn-block {
   border-bottom-left-radius: 0;
 }
 .input-group-prepend .input-group-text {
-  color: #747B90 !important;
+  color: #747b90 !important;
 }
 .custom-control {
   position: relative;
@@ -3537,7 +3537,7 @@ input[type="button"].btn-block {
 }
 .custom-control-label::before {
   position: absolute;
-  top: .15rem;
+  top: 0.15rem;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3549,7 +3549,7 @@ input[type="button"].btn-block {
 }
 .custom-control-label::after {
   position: absolute;
-  top: .15rem;
+  top: 0.15rem;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3650,12 +3650,12 @@ input[type="button"].btn-block {
   color: #495057;
   vertical-align: middle;
   background-color: #fff;
-  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.02426 9.48731C7.18128 9.29086 7.04141 9 6.78992 9L1.21005 9C0.958559 9 0.818689 9.29086 0.975709 9.48731L3.76564 12.9778C3.88574 13.1281 4.11423 13.1281 4.23433 12.9778L7.02426 9.48731Z' fill='%238A93B0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.02426 4.51269C7.18128 4.70914 7.04141 5 6.78992 5L1.21005 5C0.958559 5 0.818689 4.70914 0.975709 4.51269L3.76564 1.02218C3.88574 0.871926 4.11423 0.871926 4.23433 1.02218L7.02426 4.51269Z' fill='%238A93B0'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M7.02426 9.48731C7.18128 9.29086 7.04141 9 6.78992 9L1.21005 9C0.958559 9 0.818689 9.29086 0.975709 9.48731L3.76564 12.9778C3.88574 13.1281 4.11423 13.1281 4.23433 12.9778L7.02426 9.48731Z' fill='%238A93B0'/%3E%3Cpath fillRule='evenodd' clipRule='evenodd' d='M7.02426 4.51269C7.18128 4.70914 7.04141 5 6.78992 5L1.21005 5C0.958559 5 0.818689 4.70914 0.975709 4.51269L3.76564 1.02218C3.88574 0.871926 4.11423 0.871926 4.23433 1.02218L7.02426 4.51269Z' fill='%238A93B0'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-size: 8px;
   background-position: right 7px center;
   border-radius: 2px !important;
-  border: 1px solid #DBDDE7 !important;
+  border: 1px solid #dbdde7 !important;
   appearance: none;
 }
 .custom-select:focus {
@@ -4913,7 +4913,7 @@ a.badge-dark:focus {
 }
 
 .alert-info {
-  color: #4C91A7;
+  color: #4c91a7;
   background-color: #d2e4f3;
   border-color: #b3d1eb;
 }
@@ -4925,7 +4925,7 @@ a.badge-dark:focus {
 }
 
 .alert-warning {
-  color: #CC5D0C;
+  color: #cc5d0c;
   background-color: #efdfd7;
   border-color: #e7cab7;
 }
@@ -4937,7 +4937,7 @@ a.badge-dark:focus {
 }
 
 .alert-danger {
-  color: #BE3737;
+  color: #be3737;
   background-color: #ebd5d8;
   border-color: #dfb6b8;
 }
@@ -5698,11 +5698,11 @@ a.close.disabled {
 }
 
 .tooltip-inner {
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   color: var(--text);
   text-align: center;
   background-color: var(--light);
-  border-radius: .25rem
+  border-radius: 0.25rem;
 }
 
 .popover {
@@ -6288,7 +6288,7 @@ button.bg-dark:focus {
 }
 
 .border-dark {
-  border-color: #E4E6F0 !important;
+  border-color: #e4e6f0 !important;
 }
 
 .border-white {
@@ -9355,7 +9355,7 @@ a.text-light:focus {
 }
 
 .text-dark {
-  color: #747B90 !important;
+  color: #747b90 !important;
 }
 
 a.text-dark:hover,
@@ -9489,27 +9489,27 @@ a.text-dark:focus {
 
 /* Plugins manager */
 .plugin-manager {
-  background: #F8FAFE;
+  background: #f8fafe;
 }
 .plugins-header {
-  background: #F8FAFE !important;
+  background: #f8fafe !important;
   border: none !important;
 }
 .remix-bg-opacity {
-  background: rgba(248, 250, 254, 0.80) !important; 
+  background: rgba(248, 250, 254, 0.8) !important;
 }
 
 .plugins-list-header {
   background: transparent !important;
 }
 .plugin-name {
-  color: #2E3145 !important;
+  color: #2e3145 !important;
 }
 .plugin-text {
-  color: #747B90 !important;
+  color: #747b90 !important;
 }
 .plugin-version {
-  color: #A2A3BD !important;
+  color: #a2a3bd !important;
 }
 
 /* Layout */
@@ -9557,12 +9557,12 @@ a.text-dark:focus {
 
 /* Deploy & Run transaction Colors */
 .run-tab i {
-  color: #8A93B0;
+  color: #8a93b0;
 }
 .run-tab .list-group-item {
   background: none !important;
   border-top: none;
 }
 .run-instance-multi-title {
-  color: #2E3145;
+  color: #2e3145;
 }

@@ -58,6 +58,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
         width: "calc(100% - 140px)",
         position: "relative",
         background: "#010713",
+        overflow: "hidden",
       }}
       data-id="remixUIHTAll"
     >

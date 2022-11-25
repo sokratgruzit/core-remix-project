@@ -18,7 +18,7 @@ function HomeTabFeatured() {
       <div className="mb-2">
         <div
           className="w-100 d-flex flex-column border-bottom"
-          style={{ height: "280px", marginTop: "70px" }}
+          style={{ height: "280px", marginTop: "90px" }}
         >
           <ThemeContext.Provider value={themeFilter}>
             <Carousel

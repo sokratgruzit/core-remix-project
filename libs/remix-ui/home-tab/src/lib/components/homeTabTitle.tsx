@@ -63,7 +63,7 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
 
   return (
     <div
-      className="px-2 pb-2 d-flex flex-column border-bottom border-top justify-content-between"
+      className="px-2 pb-5 d-flex flex-column border-bottom border-top justify-content-between"
       style={{ paddingTop: "55px", paddingBottom: "30px" }}
       id="hTTitleSection"
     >
@@ -81,13 +81,13 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
         <input
           ref={searchInputRef}
           type="text"
-          className="border form-control border-right-0"
+          className="border form-control pl-5 searchDocumentation"
           id="searchInput"
           placeholder="Search Documentation"
           data-id="terminalInputSearch"
         />
         <button
-          className=" d-flex align-items-center justify-content-center position-absolute"
+          className=" d-flex align-items-center justify-content-center position-absolute btn"
           onClick={(e) => {
             _paq.push([
               "trackEvent",
@@ -98,7 +98,13 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
             openLink();
           }}
           disabled={state.searchDisable}
-          style={{ width: "30px", background: "none", border: "none" }}
+          style={{
+            width: "50px",
+            height: "56px",
+            background: "none",
+            border: "none",
+            boxShadow: "none !important",
+          }}
         >
           <svg
             width="26"
@@ -108,13 +114,13 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M12.0927 3.75C7.95189 3.75 4.59512 6.99594 4.59512 11C4.59512 15.0041 7.95189 18.25 12.0927 18.25C16.2335 18.25 19.5902 15.0041 19.5902 11C19.5902 6.99594 16.2335 3.75 12.0927 3.75ZM3.0439 11C3.0439 6.16751 7.09518 2.25 12.0927 2.25C17.0902 2.25 21.1415 6.16751 21.1415 11C21.1415 15.8325 17.0902 19.75 12.0927 19.75C7.09518 19.75 3.0439 15.8325 3.0439 11Z"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M17.3872 16.1196C17.6901 15.8267 18.1812 15.8267 18.4841 16.1196L22.9826 20.4696C23.2855 20.7625 23.2855 21.2373 22.9826 21.5302C22.6797 21.8231 22.1886 21.8231 21.8857 21.5302L17.3872 17.1802C17.0843 16.8873 17.0843 16.4125 17.3872 16.1196Z"
             />
           </svg>
@@ -146,8 +152,8 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M5.61888 10.6202C7.40191 8.37079 9.73781 6.57378 12.4209 5.3874C15.104 4.20102 18.0519 3.66167 21.0051 3.81684C23.9583 3.97202 26.8262 4.81696 29.3562 6.27726C31.8862 7.73756 34.0008 9.76842 35.5136 12.191L36.8203 11.499L38.9982 10.2811C37.0444 7.14783 34.2694 4.55261 30.9458 2.75017C27.6221 0.947727 23.8639 0 20.0399 0C16.216 0 12.4578 0.947727 9.1341 2.75017C5.81042 4.55261 3.0355 7.14783 1.08167 10.2811L0 11.9004L1.72777 12.8761L8.41379 16.6612C7.32019 19.2829 7.24406 22.1906 8.19911 24.861C9.15415 27.5315 11.0777 29.7894 13.6235 31.2284C16.1694 32.6674 19.1705 33.1931 22.0868 32.7109C25.0031 32.2287 27.6431 30.7703 29.5318 28.598L34.4029 31.366C32.6194 33.6174 30.2821 35.4157 27.597 36.6023C24.9119 37.789 21.9617 38.3274 19.0067 38.1701C16.0517 38.0128 13.1827 37.1647 10.6529 35.7005C8.12316 34.2363 6.01033 32.201 4.50091 29.7744L1.05263 31.7189C3.00646 34.8522 5.78138 37.4474 9.10506 39.2498C12.4287 41.0523 16.187 42 20.0109 42C23.8348 42 27.593 41.0523 30.9167 39.2498C34.2404 37.4474 37.0153 34.8522 38.9692 31.7189L40 30.0719L38.2722 29.0962L32.784 25.9892L28.0508 23.3874C27.4746 25.1358 26.2881 26.6436 24.6885 27.6602C23.0889 28.6769 21.1725 29.1412 19.2577 28.976C17.343 28.8108 15.5452 28.026 14.1631 26.7521C12.7809 25.4782 11.8978 23.7918 11.6603 21.9732C11.4228 20.1546 11.8453 18.3133 12.8576 16.7552C13.8699 15.1972 15.411 14.0163 17.2248 13.4086C19.0387 12.801 21.016 12.8033 22.8283 13.4152C24.6406 14.027 26.1787 15.2116 27.1869 16.772L30.6642 14.8621C29.6427 13.247 28.2314 11.8878 26.5478 10.8974C24.8641 9.90703 22.9568 9.31408 20.9843 9.16789C19.0118 9.0217 17.0312 9.32648 15.2072 10.0569C13.3832 10.7873 11.7684 11.9223 10.4973 13.3674L5.61888 10.6202Z"
                 fill="#4C5057"
               />
