@@ -80,8 +80,18 @@ function HomeTabGetStarted({ plugin }: HomeTabGetStartedProps) {
   };
 
   return (
-    <div className="pl-2" id="hTGetStartedSection">
-      <p style={{ fontSize: "14px", lineHeight: "20px", color: "#FFF" }}>
+    <div
+      className="pl-2"
+      id="hTGetStartedSection"
+      style={{ paddingTop: "30px" }}
+    >
+      <p
+        style={{
+          fontSize: "14px",
+          lineHeight: "20px",
+          color: "#FFF",
+        }}
+      >
         Get Started - Project Templates
       </p>
       <div

@@ -18,14 +18,14 @@ function WorkspaceTemplate({
   return (
     <div className="d-flex remixui_home_workspaceTemplate">
       <button
-        className="btn  d-flex flex-column  text-nowrap justify-content-center align-items-center mr-2 remixui_home_workspaceTemplate"
+        className="btn  d-flex flex-column  text-nowrap justify-content-center align-items-center remixui_home_workspaceTemplate"
         data-id={"landingPageStart" + gsID}
-        style={{ position: "relative" }}
+        style={{ position: "relative", padding: "20px", marginRight: "20px" }}
         onClick={() => callback()}
       >
         <CornerDecor />
-        <div className="mb-2 w-100  h-100 align-items-start d-flex flex-column">
-          <label className="h6 pb-1 text-uppercase remixui_home_cursorStyle">
+        <div className="w-100  h-100 align-items-start d-flex flex-column">
+          <label className="text-uppercase remixui_home_cursorStyle">
             {workspaceTitle}
           </label>
           <div

@@ -165,7 +165,7 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
       </ModalDialog>
       <Toaster message={state.toasterMsg} />
       <div
-        className="justify-content-start mt-1 p-2 border-bottom d-flex flex-column"
+        className="justify-content-start d-flex flex-column"
         id="hTFileSection"
       >
         {/* <label style={{fontSize: "1rem"}}>Files</label>
@@ -177,10 +177,10 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
           uploadFile(event.target)
         }} multiple />
         <button className="btn p-2 border my-1" style={{width: 'fit-content'}} onClick={() => connectToLocalhost()}>Connect to Localhost</button> */}
-        <label className="pt-2">Load From</label>
+        <label className="text-white font-12">Load From:</label>
         <div className="d-flex">
           <button
-            className="btn p-2 border mr-2"
+            className="btn p-2 border mr-2 text-dark font-12"
             data-id="landingPageImportFromGitHubButton"
             onClick={() =>
               showFullMessage("GitHub", "github URL", [
@@ -192,14 +192,14 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
             GitHub
           </button>
           <button
-            className="btn p-2 border mr-2"
+            className="btn p-2 border mr-2 text-dark font-12"
             data-id="landingPageImportFromGistButton"
             onClick={() => importFromGist()}
           >
             Gist
           </button>
           <button
-            className="btn p-2 border mr-2"
+            className="btn p-2 border mr-2 text-dark font-12"
             onClick={() =>
               showFullMessage("Ipfs", "ipfs URL", ["ipfs://<ipfs-hash>"])
             }
@@ -207,7 +207,7 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
             IPFS
           </button>
           <button
-            className="btn p-2 border"
+            className="btn p-2 border text-dark font-12"
             onClick={() =>
               showFullMessage("Https", "http/https raw content", [
                 "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol",

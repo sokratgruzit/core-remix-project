@@ -2,9 +2,7 @@
 import React, { useEffect, useRef, useContext } from "react";
 import PluginButton from "./pluginButton";
 import { ThemeContext } from "../themeContext";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import CustomNavButtons from "./customNavButtons";
 const itemsToShow = 5;
 declare global {
   interface Window {
@@ -104,8 +102,15 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
   };
 
   return (
-    <div className="pl-2 w-100 mt-2" id="hTFeaturedPlugins">
-      <p style={{ color: "#FFF", fontSize: "14px", lineHeight: "20px" }}>
+    <div className="pl-2 w-100" id="hTFeaturedPlugins">
+      <p
+        style={{
+          color: "#FFF",
+          fontSize: "14px",
+          lineHeight: "20px",
+          paddingTop: "55px",
+        }}
+      >
         Featured Plugins
       </p>
       <div

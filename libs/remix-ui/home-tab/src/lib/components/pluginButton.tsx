@@ -34,10 +34,23 @@ function PluginButton({
         width: remixMaintained ? "303px" : "262.5px",
         minWidth: remixMaintained ? "303px" : "262.5px",
         marginRight: remixMaintained ? "10px" : "",
-        background: "#040A15",
+        background: remixMaintained ? null : "#040A15",
       }}
     >
       <CornerDecor />
+      {remixMaintained && (
+        <img
+          src={"assets/img/pluginsSolidity.webp"}
+          style={{
+            flex: "1",
+            height: "332px",
+            maxWidth: "303px",
+            position: "absolute",
+            zIndex: "0",
+          }}
+          alt=""
+        ></img>
+      )}
 
       <button
         className="btn d-flex flex-column  pb-2 text-nowrap justify-content-center align-items-center remixui_home_envButton"
@@ -46,18 +59,19 @@ function PluginButton({
           position: "relative",
           width: "inherit",
           height: "inherit",
+          padding: "20px",
         }}
         onClick={() => callback()}
       >
         <img
-          className="px-2 mb-2 align-self-center remixui_home_envLogo"
+          className="px-2 mb-3  remixui_home_envLogo"
           id={envID}
           src={imgPath}
           alt=""
           style={{ filter: themeFilter.filter }}
         />
-        <div className="mb-2 h-100 d-flex flex-column">
-          <label className="text-uppercase text-dark remixui_home_cursorStyle">
+        <div className="mb-3 h-100 w-100 d-flex flex-column">
+          <label className="text-uppercase remixui_home_cursorStyle">
             {envText}
           </label>
           <div className="remixui_home_envLogoDescription">{description}</div>

@@ -8,7 +8,7 @@ const CustomNavButtons = ({ next, previous, goToSlide, ...rest }) => {
   return (
     <div
       className="mt-1 d-flex justify-content-end carousel-button-group"
-      style={{ position: "absolute", top: "-35px", right: 0 }}
+      style={{ position: "absolute", top: "-41px", right: 0 }}
     >
       <button
         // className={

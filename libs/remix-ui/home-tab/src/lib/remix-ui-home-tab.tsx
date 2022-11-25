@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react"; // eslint-disable-line
 import "./remix-ui-home-tab.css";
 import { ThemeContext, themes } from "./themeContext";
 import HomeTabTitle from "./components/homeTabTitle";
-import HomeTabFile from "./components/homeTabFile";
 import HomeTabLearn from "./components/homeTabLearn";
 import HomeTabScamAlert from "./components/homeTabScamAlert";
 import HomeTabGetStarted from "./components/homeTabGetStarted";
@@ -64,14 +63,13 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
     >
       <ThemeContext.Provider value={state.themeQuality}>
         <div
-          className="px-2 pl-3 justify-content-start d-flex border-right flex-column"
+          className="px-2 pl-3 justify-content-start d-flex flex-column"
           id="remixUIHTLeft"
           style={{
             height: "fit-content",
           }}
         >
-          <HomeTabTitle />
-          <HomeTabFile plugin={plugin} />
+          <HomeTabTitle plugin={plugin} />
           {/* <HomeTabLearn plugin={plugin} /> */}
         </div>
         <div
