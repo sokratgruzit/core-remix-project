@@ -818,7 +818,7 @@ export function Workspace() {
           <div>
             <header>
               <div className="mx-2 mb-2 d-flex flex-column">
-                <div className="d-flex justify-content-between height">
+                <div className="d-flex justify-content-between">
                   <span className="d-flex align-items-end">
                     <label
                       className="pl-1 form-check-label"
@@ -827,15 +827,7 @@ export function Workspace() {
                       WORKSPACES
                     </label>
                   </span>
-                  <div className="workspace-setting">
-                    <div className="workspace-setting-inner">
-                      <img src="assets/img/serv.svg" />
-                      <img src="assets/img/add.svg" />
-                      <span className="line"></span>
-                      <img src="assets/img/setting.svg" />
-                    </div>
-                  </div>
-                  {/* {currentWorkspace !== LOCALHOST ? (
+                  {currentWorkspace !== LOCALHOST ? (
                     <span className="remixui_menu remixui_topmenu d-flex justify-content-between align-items-end w-75">
                       <CustomTooltip
                         placement="top-end"
@@ -886,7 +878,7 @@ export function Workspace() {
                         </Dropdown.Menu>
                       </Dropdown>
                     </span>
-                  ) : null} */}
+                  ) : null}
                 </div>
 
                 <Dropdown
@@ -989,7 +981,7 @@ export function Workspace() {
               </div>
             </header>
           </div>
-          {/* <div
+          <div
             className="h-100 remixui_fileExplorerTree"
             onFocus={() => {
               toggleDropdown(false);
@@ -1109,16 +1101,6 @@ export function Workspace() {
                     />
                   </div>
                 )}
-            </div>
-          </div> */}
-          <div className="file-explorer">
-            <div className="file-explorer-inner">
-              <div className="icon-header">
-                <img src="assets/img/file.svg" />
-                <img src="assets/img/folder1.svg" />
-                <img src="assets/img/git-hub.svg" />
-                <img src="assets/img/download.svg" />
-              </div>
             </div>
           </div>
         </div>

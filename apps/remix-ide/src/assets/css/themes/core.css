@@ -3613,6 +3613,21 @@ input[type="submit"].btn-block {
   pointer-events: none;
   cursor: default;
 }
+
+.run-it {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #161b24;
+}
+.run-it-inner {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.run-it-inner p {
+  margin: 0 0 0 5px !important;
+}
 /* oposs added styles */
 
 .inactive-tab {
@@ -3647,26 +3662,6 @@ input[type="submit"].btn-block {
   height: 30px;
   align-items: center;
 }
-.workspace-setting {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
-}
-.workspace-setting-inner {
-  gap: 15px;
-  display: flex;
-}
-.line {
-  border-left: 1px solid #1b1d22;
-}
-.file-explorer {
-  margin: 8px;
-}
-.icon-header {
-  display: flex;
-  gap: 5px;
-}
 /* oposs added styles */
 .nav-tabs {
   border-bottom: 1px solid #161b24;
@@ -3675,9 +3670,12 @@ input[type="submit"].btn-block {
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent;
   border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-right-radius: 2px; */
+  border-radius: 4px;
+  margin: 13px 0 0 20px;
+  background-color: #1b1d22;
 }
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
@@ -5694,7 +5692,7 @@ button.bg-primary:hover {
 .bg-secondary {
   background-color: #0500ff !important;
   height: 36px;
-  width: 305px;
+  width: 294px;
   color: white;
   padding-left: 10px;
   font-weight: 400;
