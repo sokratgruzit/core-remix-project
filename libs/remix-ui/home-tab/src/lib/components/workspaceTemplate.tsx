@@ -7,6 +7,7 @@ interface WorkspaceTemplateProps {
   workspaceTitle: string;
   callback: any;
   description: string;
+  width: number | undefined;
 }
 
 function WorkspaceTemplate({
@@ -14,11 +15,18 @@ function WorkspaceTemplate({
   workspaceTitle,
   description,
   callback,
+  width,
 }: WorkspaceTemplateProps) {
   return (
-    <div className="d-flex remixui_home_workspaceTemplate">
+    <div
+      className={`d-flex remixui_home_workspaceTemplate ${
+        width < 840 && "sml_workspaceTemplate"
+      }`}
+    >
       <button
-        className="btn  d-flex flex-column  text-nowrap justify-content-center align-items-center remixui_home_workspaceTemplate"
+        className={`btn  d-flex flex-column  text-nowrap justify-content-center align-items-center remixui_home_workspaceTemplate ${
+          width < 840 && "sml_workspaceTemplate"
+        }`}
         data-id={"landingPageStart" + gsID}
         style={{ position: "relative", padding: "20px", marginRight: "20px" }}
         onClick={() => callback()}

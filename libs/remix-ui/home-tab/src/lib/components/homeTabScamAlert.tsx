@@ -12,7 +12,7 @@ function HomeTabScamAlert() {
     >
       <div
         className="ml-2 mb-1 d-flex flex-column  position-relative"
-        style={{ padding: "34px", height: "165px" }}
+        style={{ padding: "34px", height: "fit-content", minHeight: "165px" }}
       >
         <CornerDecorRed />
         <span

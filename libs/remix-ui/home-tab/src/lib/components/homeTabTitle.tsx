@@ -10,9 +10,10 @@ const _paq = (window._paq = window._paq || []); // eslint-disable-line
 
 interface HomeTabFileProps {
   plugin: any;
+  width: number | undefined;
 }
 
-function HomeTabTitle({ plugin }: HomeTabFileProps) {
+function HomeTabTitle({ plugin, width }: HomeTabFileProps) {
   useEffect(() => {
     document.addEventListener("keyup", (e) => handleSearchKeyDown(e));
     return () => {
@@ -60,7 +61,6 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
       window.open(url, "_blank");
     }
   };
-
   return (
     <div
       className="px-2 pb-5 d-flex flex-column border-bottom border-top justify-content-between"
@@ -126,10 +126,14 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
           </svg>
         </button>
       </div>
-      <div className="d-flex justify-content-between align-items-center">
+      <div
+        className={`d-flex justify-content-between align-items-center  ${
+          width < 440 && "smlCoreDetails"
+        }`}
+      >
         <div
           className="d-flex flex-column "
-          style={{ width: "170px", gap: "10px" }}
+          style={{ width: width < 440 ? "100%" : "170px", gap: "10px" }}
         >
           <div
             className="mr-4 d-flex align-items-center"
@@ -172,16 +176,6 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
             </svg>
           </div>
           <b className="pb-1 text-dark">The Native IDE for Web3 Development.</b>
-        </div>
-        <div style={{ width: "330px" }}>
-          <HomeTabFile plugin={plugin} />
-        </div>
-      </div>
-      <div className="d-flex justify-content-between">
-        <div
-          className="d-flex justify-content-between"
-          style={{ width: "170px" }}
-        >
           <span>
             <CustomTooltip
               placement={"top"}
@@ -262,8 +256,21 @@ function HomeTabTitle({ plugin }: HomeTabFileProps) {
             </CustomTooltip>
           </span>
         </div>
-        <div style={{ width: "330px" }}>
-          <label className="text-white font-12">Resources:</label>
+        <div
+          style={{
+            width: width < 440 ? "100%" : "330px",
+            paddingTop: width < 440 && "50px",
+          }}
+        >
+          <HomeTabFile plugin={plugin} />
+          <label
+            className="text-white font-12"
+            style={{
+              paddingTop: width < 440 && "30px",
+            }}
+          >
+            Resources:
+          </label>
 
           <div className="pb-1" id="hTGeneralLinks">
             <a

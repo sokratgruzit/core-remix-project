@@ -12,9 +12,13 @@ declare global {
 const _paq = (window._paq = window._paq || []); //eslint-disable-line
 interface HomeTabFeaturedPluginsProps {
   plugin: any;
+  width: number | undefined;
 }
 
-function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
+function HomeTabFeaturedPlugins({
+  plugin,
+  width,
+}: HomeTabFeaturedPluginsProps) {
   const themeFilter = useContext(ThemeContext);
   const carouselRef = useRef(null);
   const carouselRefDiv = useRef(null);
@@ -102,7 +106,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
   };
 
   return (
-    <div className="pl-2 w-100" id="hTFeaturedPlugins">
+    <div className={`pl-2 w-100 `} id="hTFeaturedPlugins">
       <p
         style={{
           color: "#FFF",
@@ -115,8 +119,14 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
       </p>
       <div
         ref={carouselRefDiv}
-        className="w-100 d-flex flex-row"
-        style={{ position: "relative", height: "332px", maxWidth: "100%" }}
+        className={`w-100 d-flex flex-row ${
+          width < 840 && "smlFeaturedPlugins"
+        }`}
+        style={{
+          position: "relative",
+          height: width < 840 ? "100%" : "332px",
+          maxWidth: "100%",
+        }}
       >
         <PluginButton
           imgPath="assets/img/solidityLogo.webp"
@@ -125,12 +135,16 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
           description="Compile, test and analyse smart contract."
           remixMaintained={true}
           callback={() => startSolidity()}
+          width={width}
         />
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: width < 440 ? "column" : "row",
             gap: "10px",
+            width: width < 840 ? "100%" : "calc(100% - 303px)",
+            maxWidth: width < 840 ? "100%" : "535px",
           }}
         >
           <PluginButton
@@ -140,6 +154,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
             description="Compile and deploy contracts with Cairo, a native language for StarkNet."
             l2={true}
             callback={() => startStarkNet()}
+            width={width}
           />
           <PluginButton
             imgPath="assets/img/solhintLogo.webp"
@@ -147,6 +162,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
             envText="Solhint linter"
             description="Solhint is an open source project for linting Solidity code."
             callback={() => startSolhint()}
+            width={width}
           />
           <PluginButton
             imgPath="assets/img/sourcifyNewLogo.webp"
@@ -154,6 +170,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
             envText="Sourcify"
             description="Solidity contract and metadata verification service."
             callback={() => startSourceVerify()}
+            width={width}
           />
           <PluginButton
             imgPath="assets/img/unitTesting.webp"
@@ -161,6 +178,7 @@ function HomeTabFeaturedPlugins({ plugin }: HomeTabFeaturedPluginsProps) {
             envText="Solidity unit testing"
             description="Write and run unit tests for your contracts in Solidity."
             callback={() => startSolidityUnitTesting()}
+            width={width}
           />
         </div>
       </div>

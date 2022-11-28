@@ -28,17 +28,29 @@ export interface RemixUiHomeTabProps {
 export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
   const { plugin } = props;
 
-  // const dashboardRef = useRef(null);
+  const [width, setWidth] = useState<number | undefined>();
 
-  const [height, setHeight] = useState(0);
-  const onRefChange = useCallback((node) => {
-    setHeight(node); // trigger re-render on changes
-    // ...
-  }, []);
+  const myObserver = new ResizeObserver((entries) => {
+    // this will get called whenever div dimension changes
+    entries.forEach((entry) => {
+      setWidth(entry.contentRect.width);
+    });
+  });
+  const someEl = document.querySelector(".trackWidth");
 
   useEffect(() => {
-    console.log(height);
-  }, [height]);
+    if (someEl) {
+      myObserver.observe(someEl);
+    }
+
+    return () => {
+      myObserver.disconnect();
+    };
+  }, [someEl]);
+
+  useEffect(() => {
+    console.log(width);
+  }, [width]);
 
   const [state, setState] = useState<{
     themeQuality: { filter: string; name: string };
@@ -69,7 +81,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
 
   return (
     <div
-      className="d-flex flex-column-reverse"
+      className="d-flex flex-column-reverse trackWidth"
       style={{
         minHeight: window.outerHeight,
         height: "fit-content",
@@ -79,7 +91,6 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
         overflow: "hidden",
       }}
       data-id="remixUIHTAll"
-      ref={onRefChange}
     >
       <ThemeContext.Provider value={state.themeQuality}>
         <div
@@ -89,7 +100,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
             height: "fit-content",
           }}
         >
-          <HomeTabTitle plugin={plugin} />
+          <HomeTabTitle plugin={plugin} width={width} />
           {/* <HomeTabLearn plugin={plugin} /> */}
         </div>
         <div
@@ -100,8 +111,11 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
           id="remixUIHTRight"
         >
           <HomeTabFeatured></HomeTabFeatured>
-          <HomeTabGetStarted plugin={plugin}></HomeTabGetStarted>
-          <HomeTabFeaturedPlugins plugin={plugin}></HomeTabFeaturedPlugins>
+          <HomeTabGetStarted plugin={plugin} width={width}></HomeTabGetStarted>
+          <HomeTabFeaturedPlugins
+            plugin={plugin}
+            width={width}
+          ></HomeTabFeaturedPlugins>
           <HomeTabScamAlert></HomeTabScamAlert>
         </div>
       </ThemeContext.Provider>

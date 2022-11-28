@@ -13,9 +13,10 @@ declare global {
 const _paq = (window._paq = window._paq || []); //eslint-disable-line
 interface HomeTabGetStartedProps {
   plugin: any;
+  width: number | undefined;
 }
 
-function HomeTabGetStarted({ plugin }: HomeTabGetStartedProps) {
+function HomeTabGetStarted({ plugin, width }: HomeTabGetStartedProps) {
   const themeFilter = useContext(ThemeContext);
   const carouselRef = useRef(null);
   const carouselRefDiv = useRef(null);
@@ -137,30 +138,35 @@ function HomeTabGetStarted({ plugin }: HomeTabGetStartedProps) {
               workspaceTitle="Blank"
               description="Create an empty workspace."
               callback={() => createWorkspace("blank")}
+              width={width}
             />
             <WorkspaceTemplate
               gsID="solhintLogo"
               workspaceTitle="Remix Default"
               description="Create a workspace with sample files."
               callback={() => createWorkspace("remixDefault")}
+              width={width}
             />
             <WorkspaceTemplate
               gsID="sourcifyLogo"
               workspaceTitle="OpenZeppelin ERC20"
               description="Create an ERC20 token by importing OpenZeppelin library."
               callback={() => createWorkspace("ozerc20")}
+              width={width}
             />
             <WorkspaceTemplate
               gsID="sUTLogo"
               workspaceTitle="OpenZeppelin ERC721"
               description="Create an NFT token by importing OpenZeppelin library."
               callback={() => createWorkspace("ozerc721")}
+              width={width}
             />
             <WorkspaceTemplate
               gsID="sUTLogo"
               workspaceTitle="0xProject ERC20"
               description="Create an ERC20 token by importing 0xProject contract."
               callback={() => createWorkspace("zeroxErc20")}
+              width={width}
             />
           </Carousel>
         </ThemeContext.Provider>

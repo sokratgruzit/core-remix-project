@@ -12,6 +12,7 @@ interface PluginButtonProps {
   l2?: boolean;
   description: string;
   remixMaintained?: boolean;
+  width: number | undefined;
 }
 
 function PluginButton({
@@ -22,6 +23,7 @@ function PluginButton({
   l2,
   description,
   remixMaintained,
+  width,
 }: PluginButtonProps) {
   const themeFilter = useContext(ThemeContext);
 
@@ -29,7 +31,8 @@ function PluginButton({
     <div
       className={`d-flex remixui_home_envButton ${
         remixMaintained && "solidityPluginItem"
-      }`}
+      } ${remixMaintained && width < 840 && "smlSolidityPluginItem"}`}
+      style={{ width: width < 440 && "100%" }}
     >
       <CornerDecor />
       {remixMaintained && (
@@ -51,8 +54,8 @@ function PluginButton({
         data-id={"landingPageStart" + envText}
         style={{
           position: "relative",
-          width: "inherit",
-          height: "inherit",
+          width: "100%",
+          height: "100%",
           padding: "20px",
         }}
         onClick={() => callback()}
