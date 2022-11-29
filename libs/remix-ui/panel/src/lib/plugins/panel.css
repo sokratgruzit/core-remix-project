@@ -106,3 +106,25 @@ iframe {
 .terminal-wrap.minimized {
   height: 2rem !important;
 }
+.pluginInfo {
+  display: flex;
+  padding-left: 16px;
+  gap: 5px;
+  color: #4c5057;
+}
+.mb-1 {
+  color: #ffff;
+}
+.maxHeight {
+  max-height: 100px;
+  transition: 0.8s;
+  /* border: 1px solid #3f4455; */
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+.noHeight {
+  max-height: 0;
+  transition: 0.8s;
+  overflow: hidden;
+}

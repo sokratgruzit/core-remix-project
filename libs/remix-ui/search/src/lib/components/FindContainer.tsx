@@ -5,7 +5,7 @@ import { Find } from './Find'
 import { OverWriteCheck } from './OverWriteCheck'
 import { Replace } from './Replace'
 
-export const FindContainer = props => {
+export const FindContainer = (props) => {
   const { setReplaceEnabled } = useContext(SearchContext)
   const [expanded, setExpanded] = useState<boolean>(false)
   const toggleExpand = () => setExpanded(!expanded)
@@ -34,8 +34,12 @@ export const FindContainer = props => {
       </CustomTooltip>
       <div className="search_plugin_find_container_internal">
         <Find></Find>
-        {expanded ? 
-        <><Replace></Replace><OverWriteCheck></OverWriteCheck></> : null}
+        {expanded ? (
+          <>
+            <Replace></Replace>
+            <OverWriteCheck></OverWriteCheck>
+          </>
+        ) : null}
       </div>
     </div>
   )

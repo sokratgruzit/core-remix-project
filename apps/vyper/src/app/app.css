@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
 }
-html, body, #root, main {
+html,
+body,
+#root,
+main {
   height: 100%;
   margin: 0;
 }
@@ -80,7 +83,6 @@ html, body, #root, main {
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-
 
 #result nav a {
   padding: 0.5rem 1rem;
