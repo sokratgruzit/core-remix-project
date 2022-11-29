@@ -1,4 +1,4 @@
-const csjs = require('csjs-inject')
+const csjs = require("csjs-inject");
 
 const css = csjs`
   .supportTabView {
@@ -46,8 +46,6 @@ const css = csjs`
     padding: 0;
     border: none;
   }
-  .infoBox {
-  }
   .remixdinstallation {
     padding: 3px;
     border-radius: 2px;
@@ -75,6 +73,6 @@ const css = csjs`
     overflow: auto;
     clear: both;
   }
-`
+`;
 
-module.exports = css
+module.exports = css;

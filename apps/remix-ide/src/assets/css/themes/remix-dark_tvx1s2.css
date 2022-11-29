@@ -8579,11 +8579,7 @@ a.text-light:hover {
   color: #0b0c11 !important;
 }
 .text-dark {
-  color: #babbcc !important;
-}
-a.text-dark:focus,
-a.text-dark:hover {
-  color: #6f7087 !important;
+  color: #808287 !important;
 }
 .text-body {
   color: #a2a3bd !important;
@@ -8805,4 +8801,19 @@ a.text-dark:hover {
 /* Settings */
 .tokens-link {
   color: #4da5c5;
+}
+
+.font-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.createBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0500ff;
+  border-radius: 4px;
+  width: 100%;
+  height: 42px;
 }
