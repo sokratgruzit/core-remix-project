@@ -1,5 +1,5 @@
 import { fileDecoration, FileDecorationIcons } from "@remix-ui/file-decorators";
-// import { CustomTooltip } from "@remix-ui/helper";
+import { CustomTooltip } from "@remix-ui/helper";
 import { Plugin } from "@remixproject/engine";
 import React, { useState, useRef, useEffect, useReducer } from "react"; // eslint-disable-line
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -112,12 +112,11 @@ export const TabsUI = (props: TabsUIProps) => {
         title={tab.tooltip}
       >
         {tab.icon ? (
-          // <img
-          //   className="my-1 mr-1 iconImage"
-          //   style={{ filter: invert }}
-          //   src={tab.icon}
-          // />
-          <img className="my-1 mr-1 iconImage" src="assets/img/home.svg" />
+          <img
+            className="my-1 mr-1 iconImage"
+            style={{ filter: invert }}
+            src={tab.icon}
+          />
         ) : (
           <i className={classNameImg}></i>
         )}
@@ -295,23 +294,14 @@ export const TabsUI = (props: TabsUIProps) => {
             <TabPanel key={tab.name}></TabPanel>
           ))}
         </Tabs>
-        <div className="inactive-tab">
-          <div className="inactive-tab-inner">
-            <img
-              className="my-1 mr-1 iconImage"
-              src="assets/img/solidity.svg"
-            />
-            <p style={{ margin: "0" }}>1_Storage.so</p>
-          </div>
-        </div>
       </div>
       {/* <i
         className="mt-2 mr-2 fas fa-arrows-alt-h"
         title="Scroll to see all tabs"
       ></i> */}
-      <div className="run-wraper">
-        <div className="run-inner">
-          <img className="my-1 mr-1 iconImage" src="assets/img/run.svg" />
+      <div className="run-it">
+        <div className="run-it-inner">
+          <img src="assets/img/run.svg" alt="run it"></img>
           <p>Run It</p>
         </div>
       </div>

@@ -39,6 +39,7 @@
 .inputFolder {
   width: 100%;
   height: 42px;
-  border: 1px solid #161b24;
+  border: 1px solid #161b24 !important;
   border-radius: 4px;
+  background: none;
 }

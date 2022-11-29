@@ -880,7 +880,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
         </p>
         <label className="font-14 text-white">Test directory:</label>
         <div>
-          <div className="d-flex flex-column" style={{ gap: "10px" }}>
+          <div className="d-flex flex-column" style={{ gap: "13px" }}>
             <datalist id="utPathList">
               {pathOptions.map(function (path) {
                 return <option key={path}>{path}</option>;
@@ -916,7 +916,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
               tooltipText="Create a test folder"
             >
               <button
-                className="btn border createBtn"
+                className="btn createBtn"
                 data-id="testTabGenerateTestFolder"
                 disabled={disableCreateButton}
                 onClick={handleCreateFolder}
@@ -928,7 +928,10 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
         </div>
       </div>
       <div>
-        <div className="d-flex flex-column">
+        <div
+          className="d-flex flex-column"
+          style={{ gap: "13px", paddingTop: "30px" }}
+        >
           <CustomTooltip
             tooltipId="generateTestsButtontooltip"
             tooltipClasses="text-nowrap"
@@ -936,7 +939,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
             placement={"bottom-start"}
           >
             <button
-              className="btn border w-100"
+              className="btn w-100 grayBtn"
               data-id="testTabGenerateTestFile"
               disabled={disableGenerateButton}
               onClick={async () => {
@@ -956,15 +959,40 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
             placement={"bottom-start"}
           >
             <a
-              className="btn border text-decoration-none pr-0 d-flex w-100"
+              className="btn text-decoration-none pr-0 d-flex w-100 grayBtn"
               target="__blank"
               href="https://remix-ide.readthedocs.io/ en/latest/unittesting.html#test-directory"
             >
-              <label className="btn p-1 ml-2 m-0">How to use...</label>
+              <span
+                className="btn font-12 d-flex justify-content-center align-items-center"
+                style={{ gap: "10px" }}
+              >
+                How to use{" "}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.65806 2.59014C3.23091 3.05015 3 3.74323 3 4.66658V11.3333C3 12.2566 3.23091 12.9497 3.65806 13.4097C4.07899 13.863 4.76197 14.1666 5.83333 14.1666H11.1667C12.238 14.1666 12.921 13.863 13.3419 13.4097C13.7691 12.9497 14 12.2566 14 11.3333V4.66658C14 3.74323 13.7691 3.05015 13.3419 2.59014C12.921 2.13684 12.238 1.83325 11.1667 1.83325H5.83333C4.76197 1.83325 4.07899 2.13684 3.65806 2.59014ZM2.92527 1.90969C3.58768 1.19633 4.57137 0.833252 5.83333 0.833252H11.1667C12.4286 0.833252 13.4123 1.19633 14.0747 1.90969C14.7309 2.61635 15 3.58994 15 4.66658V11.3333C15 12.4099 14.7309 13.3835 14.0747 14.0901C13.4123 14.8035 12.4286 15.1666 11.1667 15.1666H5.83333C4.57137 15.1666 3.58768 14.8035 2.92527 14.0901C2.26909 13.3835 2 12.4099 2 11.3333V4.66658C2 3.58994 2.26909 2.61635 2.92527 1.90969Z"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.1673 2.5C10.4435 2.5 10.6673 2.72386 10.6673 3V4.33333C10.6673 4.79052 11.0435 5.16667 11.5007 5.16667H12.834C13.1101 5.16667 13.334 5.39052 13.334 5.66667C13.334 5.94281 13.1101 6.16667 12.834 6.16667H11.5007C10.4912 6.16667 9.66732 5.34281 9.66732 4.33333V3C9.66732 2.72386 9.89118 2.5 10.1673 2.5ZM5.33398 8.66667C5.33398 8.39052 5.55784 8.16667 5.83398 8.16667H8.50065C8.77679 8.16667 9.00065 8.39052 9.00065 8.66667C9.00065 8.94281 8.77679 9.16667 8.50065 9.16667H5.83398C5.55784 9.16667 5.33398 8.94281 5.33398 8.66667ZM5.33398 11.3333C5.33398 11.0572 5.55784 10.8333 5.83398 10.8333H11.1673C11.4435 10.8333 11.6673 11.0572 11.6673 11.3333C11.6673 11.6095 11.4435 11.8333 11.1673 11.8333H5.83398C5.55784 11.8333 5.33398 11.6095 5.33398 11.3333Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
             </a>
           </CustomTooltip>
         </div>
-        <div className="d-flex p-2">
+        <div className="d-flex" style={{ paddingTop: "13px" }}>
           <CustomTooltip
             placement={"top-start"}
             tooltipClasses="text-nowrap"
@@ -978,10 +1006,8 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
               disabled={disableRunButton}
               onClick={runTests}
             >
-              <span className="fas fa-play ml-2"></span>
-              <label className="labelOnBtn btn btn-primary p-1 ml-2 m-0">
-                Run
-              </label>
+              <span className="far fa-play ml-2"></span>
+              <span className="labelOnBtn font-12">Run</span>
             </button>
           </CustomTooltip>
           <button
@@ -998,47 +1024,56 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
               tooltipText="Stop running tests"
             >
               <span>
-                <span className="fas fa-stop ml-2"></span>
-                <label
-                  className="labelOnBtn btn btn-secondary p-1 ml-2 m-0"
+                <span className="far fa-stop mr-2"></span>
+                <span
+                  className="labelOnBtn btn font-12"
                   id="runTestsTabStopActionLabel"
                 >
                   {stopButtonLabel}
-                </label>
+                </span>
               </span>
             </CustomTooltip>
           </button>
         </div>
-        <div className="d-flex align-items-center mx-3 pb-2 mt-2 border-bottom">
+        <div
+          className="d-flex align-items-center mx-3 pb-2 mt-2 border-bottom custom-control custom-checkbox"
+          style={{ gap: "8px", paddingTop: "30px" }}
+        >
           <input
             id="checkAllTests"
             type="checkbox"
             data-id="testTabCheckAllTests"
+            className="custom-control-input"
             onClick={checkAll}
             checked={checkSelectAll}
             onChange={() => {}} // eslint-disable-line
           />
-          <label className="text-nowrap pl-2 mb-0" htmlFor="checkAllTests">
-            {" "}
-            Select all{" "}
+          <label
+            className="text-nowrap font-12 text-white mb-0 pb-0 custom-control-label"
+            htmlFor="checkAllTests"
+          >
+            Select all
           </label>
         </div>
-        <div className="testList py-2 mt-0 border-bottom">
+        <div className="testList py-2 mt-0">
           {testFiles.length
             ? testFiles.map((testFileObj: TestObject, index) => {
                 const elemId = `singleTest${testFileObj.fileName}`;
                 return (
-                  <div className="d-flex align-items-center py-1" key={index}>
+                  <div
+                    className="d-flex align-items-center py-1 custom-control custom-checkbox"
+                    key={index}
+                  >
                     <input
                       data-id="singleTest"
-                      className="singleTest"
+                      className="singleTest custom-control-input"
                       id={elemId}
                       onChange={(e) => toggleCheckbox(e.target.checked, index)}
                       type="checkbox"
                       checked={testFileObj.checked}
                     />
                     <label
-                      className="singleTestLabel text-nowrap pl-2 mb-0"
+                      className="singleTestLabel text-nowrap pl-2 mb-0 custom-control-label font-12 text-white"
                       htmlFor={elemId}
                     >
                       {testFileObj.fileName}

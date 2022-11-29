@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from "react";
 import { CornerDecor } from "@remix-ui/helper";
-
 interface WorkspaceTemplateProps {
   gsID: string;
   workspaceTitle: string;

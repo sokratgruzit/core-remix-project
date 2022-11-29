@@ -219,7 +219,7 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #959bad;
+  color: #fff;
   font-size: 11px;
   line-height: 12px;
 }
@@ -1756,7 +1756,6 @@ textarea.form-control {
   margin-bottom: 0;
   font-size: 13px;
   line-height: 18px;
-  color: #a2a3bd;
   text-transform: initial;
   display: initial;
 }
@@ -3612,6 +3611,21 @@ input[type="submit"].btn-block {
   pointer-events: none;
   cursor: default;
 }
+
+.run-it {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #161b24;
+}
+.run-it-inner {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.run-it-inner p {
+  margin: 0 0 0 5px !important;
+}
 /* oposs added styles */
 
 .inactive-tab {
@@ -3642,7 +3656,10 @@ input[type="submit"].btn-block {
   margin: 0 !important;
   color: #808287;
 }
-
+.height {
+  height: 30px;
+  align-items: center;
+}
 /* oposs added styles */
 .nav-tabs {
   border-bottom: 1px solid #161b24;
@@ -3651,9 +3668,12 @@ input[type="submit"].btn-block {
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent;
   border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-right-radius: 2px; */
+  border-radius: 4px;
+  margin: 13px 0 0 20px;
+  background-color: #1b1d22;
 }
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
@@ -5670,7 +5690,7 @@ button.bg-primary:hover {
 .bg-secondary {
   background-color: #0500ff !important;
   height: 36px;
-  width: 305px;
+  width: 294px;
   color: white;
   padding-left: 10px;
   font-weight: 400;

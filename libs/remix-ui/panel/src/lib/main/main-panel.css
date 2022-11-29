@@ -18,6 +18,7 @@
   width: 140px;
   background-color: #00050f;
   height: 100%;
+  border-left: 1px solid #161b24;
 }
 .right-panel-inner {
   display: flex;
