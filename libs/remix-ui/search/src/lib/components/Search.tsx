@@ -7,8 +7,7 @@ import { Exclude } from './Exclude'
 import { FindContainer } from './FindContainer'
 import { Undo } from './Undo'
 
-export const SearchTab = props => {
-
+export const SearchTab = (props) => {
   const plugin = props.plugin
 
   return (

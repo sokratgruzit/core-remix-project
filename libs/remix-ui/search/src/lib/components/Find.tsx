@@ -10,16 +10,16 @@ export const Find = () => {
     state,
     toggleCaseSensitive,
     toggleMatchWholeWord,
-    toggleUseRegex
+    toggleUseRegex,
   } = useContext(SearchContext)
 
   const [inputValue, setInputValue] = useState('')
-  const change = async e => {
+  const change = async (e) => {
     setInputValue(e.target.value)
     await cancelSearch()
   }
 
-  const handleKeypress = async e => {
+  const handleKeypress = async (e) => {
     if (e.charCode === 13 || e.keyCode === 13) {
       startSearch()
     }
@@ -36,10 +36,10 @@ export const Find = () => {
         <div className="search_plugin_search-input">
           <input
             id="search_input"
-            placeholder="Search ( Enter to search )"
+            placeholder="Search"
             className="form-control"
             value={inputValue}
-            onChange={async e => await change(e)}
+            onChange={async (e) => await change(e)}
             onKeyUp={handleKeypress}
           ></input>
           <div className="search_plugin_controls">

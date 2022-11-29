@@ -24,7 +24,7 @@
   --text: #babbcc;
   --text-background: #222336;
   --text-bg-mark: #8388b2;
-  --custom-select: #0D1016;
+  --custom-select: #0d1016;
   --body-bg: #222336;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -219,7 +219,8 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: #4c5057;
+  letter-spacing: 0.4px;
   font-size: 11px;
   line-height: 12px;
 }
@@ -1615,15 +1616,15 @@ pre code {
 .form-control {
   display: block;
   width: 100%;
-  height: calc(1.25em + 1rem + 2px);
-  padding: 0.5rem 0.75rem !important;
+  height: 42px;
+  padding: 13px;
   font-size: 0.875rem !important;
   font-weight: 400;
   line-height: 1.25;
   color: #dfe1ea !important;
   background-color: #00050f !important;
   background-clip: padding-box;
-  border: none !important;
+  border: 1px solid #161b24;
   border-radius: 4px !important;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-appearance: none !important;
@@ -6072,7 +6073,7 @@ button.bg-dark:hover {
 }
 .flex-column {
   flex-direction: column !important;
-  background-color: #00050F;
+  background-color: #00050f;
 }
 .flex-row-reverse {
   flex-direction: row-reverse !important;
@@ -6785,7 +6786,7 @@ button.bg-dark:hover {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
-  border-left: 1px solid #1B1D22;
+  border-left: 1px solid #1b1d22;
 }
 .ml-0,
 .mx-0 {
@@ -8793,7 +8794,7 @@ a.text-dark:hover {
 }
 /* Plugins manager */
 .plugin-manager {
-  background: var(--body-bg);
+  background-color: #00050f;
 }
 .plugins-header {
   background-color: var(--body-bg) !important;
