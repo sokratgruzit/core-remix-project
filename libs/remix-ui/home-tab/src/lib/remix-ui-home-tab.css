@@ -61,13 +61,15 @@
   opacity: 0.7;
 }
 .remixui_home_envLogo {
-  height: 2.5rem;
+  height: 34px;
+  align-self: flex-start;
 }
 .remixui_home_envLogoDescription {
   white-space: pre-wrap;
-  font-size: small;
-  line-height: 0.9rem;
   text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+  color: #808287;
 }
 .remixui_home_gtDescription {
   white-space: pre-wrap;
@@ -78,30 +80,56 @@
 .remixui_home_cursorStyle {
   cursor: pointer;
   font-size: 0.8rem;
+  width: fit-content;
+  color: #fff;
 }
 .remixui_home_envButton {
-  width: 220px;
+  width: calc(50% - 5px);
   cursor: pointer;
-  height: 130px;
+  height: 161px;
+  position: relative;
 }
+.solidityPluginItem {
+  margin-right: 10px;
+  width: 303px;
+  min-width: 303px;
+  height: 332px;
+  background-color: #040a15;
+}
+.smlSolidityPluginItem {
+  width: 100%;
+  min-width: 100%;
+  height: 161px;
+  margin-bottom: 10px;
+}
+
 .remixui_home_workspaceTemplate {
-  width: 220px;
-  height: 80px;
+  width: 333px;
+  height: 89px;
+}
+.sml_workspaceTemplate {
+  width: 250px;
+  height: 95px;
 }
 .remixui_home_media {
   overflow: hidden;
   max-width: 400px;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
   z-index: 1000;
 }
 .remixui_home_migrationBtn {
   width: 100px;
 }
 .remixui_home_l2Label {
-  top: 120px;
-  right: 180px;
+  top: 71px;
+  left: 83px;
 }
 .remixui_home_maintainedLabel {
-  top: 120px;
-  right: 180px;
+  top: 71px;
+  left: 83px;
+}
+
+.smlCoreDetails {
+  flex-direction: column;
+  align-items: flex-start !important;
 }
