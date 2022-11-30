@@ -26,8 +26,7 @@
 
 .search_plugin_controls {
   display: flex;
-  position: absolute;
-  top: 280px;
+  margin-top: 10px;
 }
 
 .search_plugin_search_tab .search_plugin_search_line_container {
@@ -89,8 +88,7 @@
 
 .search_plugin_search-input {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
 }
 
 .search_plugin_search_tab .checked {
@@ -148,5 +146,25 @@
   overflow: hidden;
 }
 .search_plugin_stop {
+  cursor: pointer;
+}
+.replace {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-right: auto;
+}
+.replace p {
+  color: #0500ff;
+  margin: 0 0 0 10px;
+}
+.search-field {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
   cursor: pointer;
 }

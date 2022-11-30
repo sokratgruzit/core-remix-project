@@ -1,51 +1,57 @@
-import React from "react"
+import React from "react";
 import {
   HashRouter as Router,
   Route,
   Routes,
   RouteProps,
-} from "react-router-dom"
+} from "react-router-dom";
 
-import { ErrorView, HomeView, ReceiptsView, CaptureKeyView } from "./views"
-import { DefaultLayout } from "./layouts"
+import { ErrorView, HomeView, ReceiptsView, CaptureKeyView } from "./views";
+import { DefaultLayout } from "./layouts";
 
 interface Props extends RouteProps {
-  component: any // TODO: new (props: any) => React.Component
-  from: string
+  component: any; // TODO: new (props: any) => React.Component
+  from: string;
 }
 
 const RouteWithHeader = ({ component: Component, ...rest }: Props) => {
   return (
-    <Route
-      {...rest}      
-    >
+    <Route {...rest}>
       <DefaultLayout {...rest}>
-          <Component />
-        </DefaultLayout>
+        <Component />
+      </DefaultLayout>
     </Route>
-  )
-}
+  );
+};
 
 export const DisplayRoutes = () => (
   <Router>
-    <Routes>    
+    <Routes>
       <Route
         path="/"
-        element={<DefaultLayout from="/">
-                  <HomeView />
-                </DefaultLayout>} />
-      <Route path="/error"
-      element={<ErrorView />} />
+        element={
+          <DefaultLayout from="/">
+            <HomeView />
+          </DefaultLayout>
+        }
+      />
+      <Route path="/error" element={<ErrorView />} />
       <Route
         path="/receipts"
-        element={<DefaultLayout from="/receipts">
-                  <ReceiptsView />
-                </DefaultLayout>} />
+        element={
+          <DefaultLayout from="/receipts">
+            <ReceiptsView />
+          </DefaultLayout>
+        }
+      />
       <Route
         path="/settings"
-        element={<DefaultLayout from="/settings">
-                  <CaptureKeyView />
-                </DefaultLayout>} />
+        element={
+          <DefaultLayout from="/settings">
+            <CaptureKeyView />
+          </DefaultLayout>
+        }
+      />
     </Routes>
   </Router>
-)
+);
