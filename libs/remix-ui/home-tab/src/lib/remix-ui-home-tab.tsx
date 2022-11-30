@@ -48,10 +48,6 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
     };
   }, [someEl]);
 
-  useEffect(() => {
-    console.log(width);
-  }, [width]);
-
   const [state, setState] = useState<{
     themeQuality: { filter: string; name: string };
   }>({

@@ -885,34 +885,50 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
       <article>
         <div className="pt-0 remixui_compilerSection">
           <div className="mb-1">
-            <label
-              className="remixui_compilerLabel form-check-label"
-              htmlFor="versionSelector"
-            >
-              Compiler
-            </label>
-            <CustomTooltip
-              placement="top"
-              tooltipId="promptCompilerTooltip"
-              tooltipClasses="text-nowrap"
-              tooltipText={"Add a custom compiler with URL"}
-            >
-              <span
-                className="far fa-plus border-0 p-0 ml-3"
-                onClick={() => promptCompiler()}
-              ></span>
-            </CustomTooltip>
-            <CustomTooltip
-              placement="top"
-              tooltipId="showCompilerTooltip"
-              tooltipClasses="text-nowrap"
-              tooltipText={"See compiler license"}
-            >
-              <span
-                className="fa fa-file-text-o border-0 p-0 ml-2"
-                onClick={() => showCompilerLicense()}
-              ></span>
-            </CustomTooltip>
+            <div className="d-flex justify-content-between pt-2">
+              <label
+                className="remixui_compilerLabel form-check-label font-14 text-white"
+                htmlFor="versionSelector"
+              >
+                Compiler
+              </label>
+              <div className="d-flex" style={{ gap: "10px" }}>
+                <CustomTooltip
+                  placement="top"
+                  tooltipId="promptCompilerTooltip"
+                  tooltipClasses="text-nowrap"
+                  tooltipText={"Add a custom compiler with URL"}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => promptCompiler()}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M10 3.25C8.20979 3.25 6.4929 3.96116 5.22703 5.22703C3.96116 6.4929 3.25 8.20979 3.25 10C3.25 10.8864 3.42459 11.7642 3.76381 12.5831C4.10303 13.4021 4.60023 14.1462 5.22703 14.773C5.85382 15.3998 6.59794 15.897 7.41689 16.2362C8.23583 16.5754 9.11358 16.75 10 16.75C10.8864 16.75 11.7642 16.5754 12.5831 16.2362C13.4021 15.897 14.1462 15.3998 14.773 14.773C15.3998 14.1462 15.897 13.4021 16.2362 12.5831C16.5754 11.7642 16.75 10.8864 16.75 10C16.75 8.20979 16.0388 6.4929 14.773 5.22703C13.5071 3.96116 11.7902 3.25 10 3.25ZM4.16637 4.16637C5.71354 2.61919 7.81196 1.75 10 1.75C12.188 1.75 14.2865 2.61919 15.8336 4.16637C17.3808 5.71354 18.25 7.81196 18.25 10C18.25 11.0834 18.0366 12.1562 17.622 13.1571C17.2074 14.1581 16.5997 15.0675 15.8336 15.8336C15.0675 16.5997 14.1581 17.2074 13.1571 17.622C12.1562 18.0366 11.0834 18.25 10 18.25C8.91659 18.25 7.8438 18.0366 6.84286 17.622C5.84192 17.2074 4.93245 16.5997 4.16637 15.8336C3.40029 15.0675 2.7926 14.1581 2.37799 13.1571C1.96339 12.1562 1.75 11.0834 1.75 10C1.75 7.81196 2.61919 5.71354 4.16637 4.16637ZM10 6.75C10.4142 6.75 10.75 7.08579 10.75 7.5V9.25H12.5C12.9142 9.25 13.25 9.58579 13.25 10C13.25 10.4142 12.9142 10.75 12.5 10.75H10.75V12.5C10.75 12.9142 10.4142 13.25 10 13.25C9.58579 13.25 9.25 12.9142 9.25 12.5V10.75H7.5C7.08579 10.75 6.75 10.4142 6.75 10C6.75 9.58579 7.08579 9.25 7.5 9.25H9.25V7.5C9.25 7.08579 9.58579 6.75 10 6.75Z"
+                    />
+                  </svg>
+
+                  {/* <span className="fas fa-plus  p-0 ml-3"></span> */}
+                </CustomTooltip>
+                <CustomTooltip
+                  placement="top"
+                  tooltipId="showCompilerTooltip"
+                  tooltipClasses="text-nowrap"
+                  tooltipText={"See compiler license"}
+                >
+                  <span
+                    className="far fa-file border-0 p-0 fa-lg fileIcon"
+                    onClick={() => showCompilerLicense()}
+                  ></span>
+                </CustomTooltip>
+              </div>
+            </div>
             <select
               value={state.selectedVersion || state.defaultVersion}
               onChange={(e) => handleLoadVersion(e.target.value)}
@@ -966,7 +982,7 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
               })}
             </select>
           </div>
-          <div className="mb-2 flex-row-reverse remixui_nightlyBuilds custom-control custom-checkbox">
+          <div className=" d-flex flex-row-reverse justify-content-end custom-control custom-checkbox">
             <input
               className="mr-2 custom-control-input"
               id="nightlies"
@@ -982,7 +998,7 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
               Include nightly builds
             </label>
           </div>
-          <div className="mt-2 remixui_compilerConfig custom-control custom-checkbox">
+          <div className="mt-1 remixui_compilerConfig custom-control custom-checkbox">
             <input
               className="remixui_autocompile custom-control-input"
               type="checkbox"
@@ -1107,12 +1123,16 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
           onClick={toggleConfigurations}
         >
           <div className="d-flex">
-            <label className="mt-1 remixui_compilerConfigSection">
+            <label className="mt-1 remixui_compilerConfigSection font-14 text-white">
               Advanced Configurations
             </label>
           </div>
           <div>
-            <span data-id="scConfigExpander" onClick={toggleConfigurations}>
+            <span
+              data-id="scConfigExpander"
+              onClick={toggleConfigurations}
+              style={{ color: "#343841" }}
+            >
               <i
                 className={
                   !toggleExpander ? "fas fa-angle-right" : "fas fa-angle-down"
@@ -1361,7 +1381,7 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
               </span>
             </CustomTooltip>
           </button>
-          <div className="d-flex align-items-center">
+          <div className="d-flex flex-column align-items-center">
             <button
               id="compileAndRunBtn"
               data-id="compilerContainerCompileAndRunBtn"
@@ -1391,54 +1411,105 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
                 <span>Compile and Run script</span>
               </CustomTooltip>
             </button>
-            <CustomTooltip
-              placement="auto"
-              tooltipId="overlay-tooltip-compile-run-doc"
-              tooltipText={
-                <div className="text-left p-2">
-                  <div>
-                    Choose the script to execute right after compilation by
-                    adding the `dev-run-script` natspec tag, as in:
+            <div
+              className="d-flex "
+              style={{ gap: "13px", paddingTop: "20px" }}
+            >
+              <CustomTooltip
+                placement="auto"
+                tooltipId="overlay-tooltip-compile-run-doc"
+                tooltipText={
+                  <div className="text-left p-2">
+                    <div>
+                      Choose the script to execute right after compilation by
+                      adding the `dev-run-script` natspec tag, as in:
+                    </div>
+                    <pre>
+                      <code>
+                        /**
+                        <br />
+                        * @title ContractName
+                        <br />
+                        * @dev ContractDescription
+                        <br />
+                        * @custom:dev-run-script file_path
+                        <br />
+                        */
+                        <br />
+                        contract ContractName {"{}"}
+                        <br />
+                      </code>
+                    </pre>
+                    Click to know more
                   </div>
-                  <pre>
-                    <code>
-                      /**
-                      <br />
-                      * @title ContractName
-                      <br />
-                      * @dev ContractDescription
-                      <br />
-                      * @custom:dev-run-script file_path
-                      <br />
-                      */
-                      <br />
-                      contract ContractName {"{}"}
-                      <br />
-                    </code>
-                  </pre>
-                  Click to know more
-                </div>
-              }
-            >
-              <a
-                href="https://remix-ide.readthedocs.io/en/latest/running_js_scripts.html#compile-a-contract-and-run-a-script-on-the-fly"
-                target="_blank"
+                }
               >
-                <i className="pl-2 ml-2 mt-3 mb-1 fas fa-info text-dark"></i>
-              </a>
-            </CustomTooltip>
-            <CopyToClipboard
-              tip="Click to copy the custom NatSpec tag"
-              getContent={() => "@custom:dev-run-script file_path"}
-              direction="top"
-            >
-              <button className="btn remixui_copyButton  ml-2 mt-3 mb-1 text-dark">
-                <i
-                  className="remixui_copyIcon far fa-copy"
-                  aria-hidden="true"
-                ></i>
-              </button>
-            </CopyToClipboard>
+                <a
+                  href="https://remix-ide.readthedocs.io/en/latest/running_js_scripts.html#compile-a-contract-and-run-a-script-on-the-fly"
+                  target="_blank"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6.45825V10.8333"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M17.5665 7.15011V12.8501C17.5665 13.7834 17.0665 14.6501 16.2582 15.1251L11.3082 17.9834C10.4998 18.4501 9.49981 18.4501 8.68315 17.9834L3.73314 15.1251C2.92481 14.6584 2.4248 13.7917 2.4248 12.8501V7.15011C2.4248 6.21678 2.92481 5.35008 3.73314 4.87508L8.68315 2.01675C9.49148 1.55008 10.4915 1.55008 11.3082 2.01675L16.2582 4.87508C17.0665 5.35008 17.5665 6.20844 17.5665 7.15011Z"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M10 13.5V13.5833"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </CustomTooltip>
+              <CopyToClipboard
+                tip="Click to copy the custom NatSpec tag"
+                getContent={() => "@custom:dev-run-script file_path"}
+                direction="top"
+              >
+                <button className="btn text-dark p-0">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.3337 10.7501V14.2501C13.3337 17.1667 12.167 18.3334 9.25033 18.3334H5.75033C2.83366 18.3334 1.66699 17.1667 1.66699 14.2501V10.7501C1.66699 7.83341 2.83366 6.66675 5.75033 6.66675H9.25033C12.167 6.66675 13.3337 7.83341 13.3337 10.7501Z"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M18.3337 5.75008V9.25008C18.3337 12.1667 17.167 13.3334 14.2503 13.3334H13.3337V10.7501C13.3337 7.83341 12.167 6.66675 9.25033 6.66675H6.66699V5.75008C6.66699 2.83341 7.83366 1.66675 10.7503 1.66675H14.2503C17.167 1.66675 18.3337 2.83341 18.3337 5.75008Z"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </CopyToClipboard>
+            </div>
           </div>
         </div>
       </article>
