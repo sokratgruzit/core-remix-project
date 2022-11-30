@@ -24,7 +24,6 @@ pre {
 .iconpanel           {
   display            : flex;
   flex-direction     : column;
-  overflow           : hidden;
   width              : 80px;
   user-select        : none;
   border-right: 1px solid rgba(22, 27, 36, 1);
