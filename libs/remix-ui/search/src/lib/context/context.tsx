@@ -4,7 +4,7 @@ import {
   findLinesInStringWithMatch,
   getDirectory,
   replaceAllInFile,
-  replaceTextInLine
+  replaceTextInLine,
 } from '../components/results/SearchHelper'
 import { SearchReducer } from '../reducers/Reducer'
 import {
@@ -13,7 +13,7 @@ import {
   SearchResultLine,
   SearchResultLineLine,
   SearchingInitialState,
-  undoBufferRecord
+  undoBufferRecord,
 } from '../types'
 import { filePathFilter } from '@jsdevtools/file-path-filter'
 import { escapeRegExp } from 'lodash'
@@ -55,7 +55,7 @@ export const SearchProvider = ({
   children = [],
   reducer = SearchReducer,
   initialState = SearchingInitialState,
-  plugin = undefined
+  plugin = undefined,
 } = {}) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [files, setFiles] = useState([])
@@ -66,129 +66,129 @@ export const SearchProvider = ({
       plugin.cancel('fileManager')
       dispatch({
         type: 'SET_FIND',
-        payload: value
+        payload: value,
       })
     },
     setReplace: (value: string) => {
       dispatch({
         type: 'SET_REPLACE',
-        payload: value
+        payload: value,
       })
     },
     setReplaceEnabled: (value: boolean) => {
       dispatch({
         type: 'SET_REPLACE_ENABLED',
-        payload: value
+        payload: value,
       })
     },
     setInclude: (value: string) => {
       dispatch({
         type: 'SET_INCLUDE',
-        payload: value
+        payload: value,
       })
     },
     setExclude(value: string) {
       dispatch({
         type: 'SET_EXCLUDE',
-        payload: value
+        payload: value,
       })
     },
     setCaseSensitive(value: boolean) {
       dispatch({
         type: 'SET_CASE_SENSITIVE',
-        payload: value
+        payload: value,
       })
     },
     setWholeWord(value: boolean) {
       dispatch({
         type: 'SET_WHOLE_WORD',
-        payload: value
+        payload: value,
       })
     },
     setRegex(value: boolean) {
       dispatch({
         type: 'SET_REGEX',
-        payload: value
+        payload: value,
       })
     },
     setSearchResults(value: SearchResult[]) {
       dispatch({
         type: 'SET_SEARCH_RESULTS',
-        payload: value
+        payload: value,
       })
     },
     reloadFile: async (file: string) => {
       dispatch({
         type: 'RELOAD_FILE',
-        payload: file
+        payload: file,
       })
     },
     toggleUseRegex: () => {
       dispatch({
         type: 'TOGGLE_USE_REGEX',
-        payload: undefined
+        payload: undefined,
       })
     },
     toggleCaseSensitive: () => {
       dispatch({
         type: 'TOGGLE_CASE_SENSITIVE',
-        payload: undefined
+        payload: undefined,
       })
     },
     toggleMatchWholeWord: () => {
       dispatch({
         type: 'TOGGLE_MATCH_WHOLE_WORD',
-        payload: undefined
+        payload: undefined,
       })
     },
     setReplaceWithoutConfirmation: (value: boolean) => {
       dispatch({
         type: 'SET_REPLACE_WITHOUT_CONFIRMATION',
-        payload: value
+        payload: value,
       })
     },
     disableForceReload: (file: string) => {
       dispatch({
         type: 'DISABLE_FORCE_RELOAD',
-        payload: file
+        payload: file,
       })
     },
     setCurrentFile: (file: string) => {
       dispatch({
         type: 'SET_CURRENT_FILE',
-        payload: file
+        payload: file,
       })
     },
     setCurrentWorkspace: (workspace: any) => {
       dispatch({
         type: 'SET_CURRENT_WORKSPACE',
-        payload: workspace
+        payload: workspace,
       })
     },
     updateCount: (count: number, file: string) => {
       dispatch({
         type: 'UPDATE_COUNT',
-        payload: { count, file }
+        payload: { count, file },
       })
     },
     setSearching(file: string) {
       dispatch({
         type: 'SET_SEARCHING',
-        payload: file
+        payload: file,
       })
     },
 
     startSearch: () => {
       dispatch({
         type: 'START_SEARCH',
-        payload: undefined
+        payload: undefined,
       })
     },
 
     setRun(value: boolean) {
       dispatch({
         type: 'SET_RUN',
-        payload: value
+        payload: value,
       })
     },
 
@@ -203,7 +203,10 @@ export const SearchProvider = ({
           createRegExFromFind()
         )
         clearTimeout(clearSearchingTimeout.current)
-        clearSearchingTimeout.current = setTimeout(() => value.setSearching(null), 500)
+        clearSearchingTimeout.current = setTimeout(
+          () => value.setSearching(null),
+          500
+        )
         return result
       } catch (e) {
         console.log(e)
@@ -260,8 +263,8 @@ export const SearchProvider = ({
         payload: {
           path,
           workspace,
-          content
-        }
+          content,
+        },
       })
     },
     undoReplace: async (buffer: undoBufferRecord) => {
@@ -280,7 +283,7 @@ export const SearchProvider = ({
     clearUndo: () => {
       dispatch({
         type: 'CLEAR_UNDO',
-        payload: undefined
+        payload: undefined,
       })
     },
 
@@ -288,7 +291,7 @@ export const SearchProvider = ({
       plugin.call('editor', 'discardHighlight')
       dispatch({
         type: 'CLEAR_STATS',
-        payload: undefined
+        payload: undefined,
       })
     },
 
@@ -301,9 +304,9 @@ export const SearchProvider = ({
     setClipped: (value: boolean) => {
       dispatch({
         type: 'SET_CLIPPED',
-        payload: value
+        payload: value,
       })
-    }
+    },
   }
 
   const reloadStateForFile = async (file: string) => {
@@ -311,27 +314,27 @@ export const SearchProvider = ({
   }
 
   useEffect(() => {
-    plugin.on('filePanel', 'setWorkspace', async workspace => {
+    plugin.on('filePanel', 'setWorkspace', async (workspace) => {
       value.setSearchResults(null)
       value.clearUndo()
       value.setCurrentWorkspace(workspace.name)
       setFiles(await getDirectory('/', plugin))
     })
-    plugin.on('fileManager', 'fileSaved', async file => {
+    plugin.on('fileManager', 'fileSaved', async (file) => {
       await reloadStateForFile(file)
       await checkUndoState(file)
     })
-    plugin.on('fileManager', 'rootFolderChanged', async file => {
+    plugin.on('fileManager', 'rootFolderChanged', async (file) => {
       const workspace = await plugin.call('filePanel', 'getCurrentWorkspace')
       if (workspace) value.setCurrentWorkspace(workspace.name)
       setFiles(await getDirectory('/', plugin))
     })
 
-    plugin.on('fileManager', 'fileAdded', async file => {
+    plugin.on('fileManager', 'fileAdded', async (file) => {
       setFiles(await getDirectory('/', plugin))
       await reloadStateForFile(file)
     })
-    plugin.on('fileManager', 'currentFileChanged', async file => {
+    plugin.on('fileManager', 'currentFileChanged', async (file) => {
       value.setCurrentFile(file)
       await checkUndoState(file)
     })
@@ -350,7 +353,6 @@ export const SearchProvider = ({
       await fetchWorkspace()
     }, 500)
 
-
     return () => {
       plugin.off('fileManager', 'fileChanged')
       plugin.off('filePanel', 'setWorkspace')
@@ -360,7 +362,7 @@ export const SearchProvider = ({
   //*.sol, **/*.txt, contracts/*
   const setGlobalExpression = (paths: string) => {
     const results = []
-    paths.split(',').forEach(path => {
+    paths.split(',').forEach((path) => {
       path = path.trim()
       if (path.startsWith('*.')) path = path.replace(/(\*\.)/g, '**/*.')
       if (path.endsWith('/*') && !path.endsWith('/**/*'))
@@ -391,11 +393,11 @@ export const SearchProvider = ({
       oldContent,
       newContent,
       path,
-      workspace: workspace.name
+      workspace: workspace.name,
     }
     dispatch({
       type: 'SET_UNDO',
-      payload: undo
+      payload: undo,
     })
   }
 
@@ -418,7 +420,7 @@ export const SearchProvider = ({
 
   useEffect(() => {
     if (state.find) {
-      (async () => {
+      ;(async () => {
         try {
           const pathFilter: any = {}
           if (state.include) {
@@ -429,14 +431,14 @@ export const SearchProvider = ({
           }
           const filteredFiles = files
             .filter(filePathFilter(pathFilter))
-            .map(file => {
+            .map((file) => {
               const r: SearchResult = {
                 filename: file,
                 lines: [],
                 path: file,
                 timeStamp: Date.now(),
                 forceReload: false,
-                count: 0
+                count: 0,
               }
               return r
             })

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../context/context'
 
-export const OverWriteCheck = props => {
+export const OverWriteCheck = (props) => {
   const { setReplaceWithoutConfirmation, state } = useContext(SearchContext)
 
-  const change = e => {
+  const change = (e) => {
     setReplaceWithoutConfirmation(e.target.checked)
   }
 
