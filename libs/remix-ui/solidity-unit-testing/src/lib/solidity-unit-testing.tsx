@@ -1036,7 +1036,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
           </button>
         </div>
         <div
-          className="d-flex align-items-center mx-3 pb-2 mt-2 border-bottom custom-control custom-checkbox"
+          className="d-flex align-items-center mx-3 pb-4 mt-2 border-bottom custom-control custom-checkbox"
           style={{ gap: "8px", paddingTop: "30px" }}
         >
           <input
@@ -1055,7 +1055,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
             Select all
           </label>
         </div>
-        <div className="testList py-2 mt-0">
+        <div className="testList mt-0">
           {testFiles.length
             ? testFiles.map((testFileObj: TestObject, index) => {
                 const elemId = `singleTest${testFileObj.fileName}`;

@@ -885,9 +885,9 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
       <article>
         <div className="pt-0 remixui_compilerSection">
           <div className="mb-1">
-            <div className="d-flex justify-content-between pt-2">
+            <div className="d-flex justify-content-between align-items-end pt-2 pb-2">
               <label
-                className="remixui_compilerLabel form-check-label font-14 text-white"
+                className=" form-check-label font-14 text-white mb-0"
                 htmlFor="versionSelector"
               >
                 Compiler
@@ -922,10 +922,16 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
                   tooltipClasses="text-nowrap"
                   tooltipText={"See compiler license"}
                 >
-                  <span
-                    className="far fa-file border-0 p-0 fa-lg fileIcon"
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="white"
                     onClick={() => showCompilerLicense()}
-                  ></span>
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M16.6663 7.45008C16.6577 7.37353 16.6409 7.29811 16.6163 7.22508V7.15008C16.5763 7.0644 16.5228 6.98564 16.458 6.91675L11.458 1.91675C11.3891 1.85193 11.3104 1.79848 11.2247 1.75841H11.1497L10.883 1.66675H5.83301C5.16997 1.66675 4.53408 1.93014 4.06524 2.39898C3.5964 2.86782 3.33301 3.50371 3.33301 4.16675V15.8334C3.33301 16.4965 3.5964 17.1323 4.06524 17.6012C4.53408 18.07 5.16997 18.3334 5.83301 18.3334H14.1663C14.8294 18.3334 15.4653 18.07 15.9341 17.6012C16.4029 17.1323 16.6663 16.4965 16.6663 15.8334V7.50008C16.6663 7.50008 16.6663 7.50008 16.6663 7.45008ZM11.6663 4.50841L13.8247 6.66675H11.6663V4.50841ZM14.9997 15.8334C14.9997 16.0544 14.9119 16.2664 14.7556 16.4227C14.5993 16.579 14.3874 16.6667 14.1663 16.6667H5.83301C5.61199 16.6667 5.40003 16.579 5.24375 16.4227C5.08747 16.2664 4.99967 16.0544 4.99967 15.8334V4.16675C4.99967 3.94573 5.08747 3.73377 5.24375 3.57749C5.40003 3.42121 5.61199 3.33341 5.83301 3.33341H9.99967V7.50008C9.99967 7.7211 10.0875 7.93306 10.2438 8.08934C10.4 8.24562 10.612 8.33341 10.833 8.33341H14.9997V15.8334Z" />
+                  </svg>
                 </CustomTooltip>
               </div>
             </div>
