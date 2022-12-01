@@ -3627,6 +3627,12 @@ input[type="submit"].btn-block {
 .run-it-inner p {
   margin: 0 0 0 5px !important;
 }
+.run-it-inner img {
+  transition: 0.5s;
+}
+.run-it-inner:hover img {
+  opacity: 0.7;
+}
 /* oposs added styles */
 
 .inactive-tab {
@@ -3661,6 +3667,9 @@ input[type="submit"].btn-block {
   height: 30px;
   align-items: center;
 }
+.nav-link.active:hover {
+  opacity: 0.7;
+}
 /* oposs added styles */
 .nav-tabs {
   border-bottom: 1px solid #161b24;
@@ -3669,9 +3678,6 @@ input[type="submit"].btn-block {
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
-  /* border: 1px solid transparent;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px; */
   border-radius: 4px;
   margin: 13px 0 0 20px;
   background-color: #1b1d22;
@@ -3692,6 +3698,8 @@ input[type="submit"].btn-block {
   border: none;
   border-radius: 4px;
   margin: 14px 0 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
