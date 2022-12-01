@@ -219,7 +219,7 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #4c5057;
+  color: #808287;
   letter-spacing: 0.4px;
   font-size: 11px;
   line-height: 12px;
@@ -1751,7 +1751,7 @@ textarea.form-control {
   margin-left: -1.25rem;
 }
 .form-check-input:disabled ~ .form-check-label {
-  color: #868e96;
+  color: red;
 }
 .form-check-label {
   margin-bottom: 0;
@@ -3202,6 +3202,9 @@ input[type="submit"].btn-block {
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   background-color: #0500ff;
+}
+.custom-control-input:checked ~ .custom-control-label {
+  color: #fff;
 }
 .custom-control-input:focus ~ .custom-control-label::before {
 }
@@ -8781,12 +8784,12 @@ a.text-dark:hover {
 }
 
 .font-12 {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 12px !important;
+  line-height: 16px !important;
 }
 .font-14 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 14px !important;
+  line-height: 20px !important;
 }
 /* Plugins manager */
 .plugin-manager {
