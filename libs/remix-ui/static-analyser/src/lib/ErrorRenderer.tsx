@@ -57,7 +57,7 @@ const ErrorRenderer = ({ message, opt, editor, name }: ErrorRendererProps) => {
     <div>
       <div className={`sol ${opt.type}`}>
         <span
-          className="d-flex flex-column p-3 mb-2"
+          className="d-flex flex-column p-4 mt-3"
           data-id={`${name}Button`}
           onClick={async () =>
             await handlePointToErrorOnClick(opt.location, opt.fileName)

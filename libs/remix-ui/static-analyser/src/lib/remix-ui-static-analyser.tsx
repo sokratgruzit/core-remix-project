@@ -568,6 +568,10 @@ export const RemixUiStaticAnalyser = (props: RemixUiStaticAnalyserProps) => {
                   {category[0].categoryDisplayName}
                 </label>
               }
+              labelClass="flex-row-reverse justify-content-between"
+              iconX="fas fa-chevron-down"
+              iconY="fas fa-chevron-up"
+              isExpandedClass="staticAnalysisExpanded"
               expand={false}
             >
               <div>
@@ -717,7 +721,7 @@ export const RemixUiStaticAnalyser = (props: RemixUiStaticAnalyserProps) => {
             {Object.entries(warningState).map((element, index) => (
               <div key={index}>
                 {element[1]["length"] > 0 ? (
-                  <span className="text-dark h6">{element[0]}</span>
+                  <span className="text-dark h6 mb-2">{element[0]}</span>
                 ) : null}
                 {element[1]["map"](
                   (

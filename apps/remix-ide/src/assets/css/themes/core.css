@@ -2254,8 +2254,8 @@ fieldset:disabled a.btn {
 }
 .btn-warning {
   color: #fff;
-  background-color: #c97539;
-  border-color: #c97539;
+  background-color: #d19042;
+  border-color: #d19042;
 }
 .btn-warning:hover {
   color: #fff;
@@ -2269,8 +2269,8 @@ fieldset:disabled a.btn {
 .btn-warning.disabled,
 .btn-warning:disabled {
   color: #fff;
-  background-color: #c97539;
-  border-color: #c97539;
+  background-color: #d19042;
+  border-color: #d19042;
 }
 .btn-warning:not(:disabled):not(.disabled).active,
 .btn-warning:not(:disabled):not(.disabled):active,
@@ -8924,4 +8924,9 @@ a.text-dark:hover {
   height: 42px;
   font-size: 12px;
   line-height: 16px;
+}
+
+.staticAnalysisExpanded {
+  border-radius: 4px;
+  background: #0f1218;
 }

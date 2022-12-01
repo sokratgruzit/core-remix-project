@@ -1,46 +1,41 @@
 .buttons {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .stepButtons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 .stepButton {
 }
 
 .stepButtonDisabled {
-    background-color: #005573;
-    border-color: #005573;
+  opacity: 0.3;
 }
 
 .stepButton:hover {
-    color: #fff;
-    background-color: #005573;
-    border-color: #005573;
+  color: #fff;
+  opacity: 0.65;
 }
 .jumpButtons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 .jumpButton {
 }
 
 .jumpButtonDisabled {
-    background-color: #005573;
-    border-color: #005573;
+  opacity: 03;
 }
 
 .jumButton:hover {
-    color: #fff;
-    background-color: #005573;
-    border-color: #005573;
+  opacity: 0.65;
 }
 .navigator {
 }
@@ -48,5 +43,5 @@
 }
 
 .cursorPointerRemixDebugger {
-    cursor: pointer;
+  cursor: pointer;
 }
