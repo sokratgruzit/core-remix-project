@@ -1751,14 +1751,14 @@ textarea.form-control {
   margin-left: -1.25rem;
 }
 .form-check-input:disabled ~ .form-check-label {
-  color: red;
+  color: #868e96;
 }
 .form-check-label {
   margin-bottom: 0;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 16px;
   text-transform: initial;
-  display: initial;
+  display: block;
 }
 .form-check-inline {
   display: inline-flex;
@@ -2173,13 +2173,11 @@ fieldset:disabled a.btn {
 /* .btn-secondary.focus,
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(114, 116, 139, 0.5);
-}
+} */
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-  color: #fff;
-  background-color: #595c76;
-  border-color: #595c76;
-} */
+  opacity: 0.3;
+}
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active,
 .show > .btn-secondary.dropdown-toggle {
@@ -3187,7 +3185,7 @@ input[type="submit"].btn-block {
 .custom-control {
   position: relative;
   display: block;
-  min-height: 1.5rem;
+  min-height: 16px;
   padding-left: 1.5rem;
 }
 .custom-control-inline {
@@ -3230,7 +3228,7 @@ input[type="submit"].btn-block {
 
 .custom-control-label::before {
   position: absolute;
-  top: 0.15rem;
+  top: 0;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3244,7 +3242,7 @@ input[type="submit"].btn-block {
 
 .custom-control-label::after {
   position: absolute;
-  top: 0.15rem;
+  top: 0;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -6789,7 +6787,7 @@ button.bg-dark:hover {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
-  border-left: 1px solid #1b1d22;
+  /* border-left: 1px solid #1b1d22; */
 }
 .ml-0,
 .mx-0 {
@@ -8937,4 +8935,12 @@ a.text-dark:hover {
 .staticAnalysisExpanded {
   border-radius: 4px;
   background: #0f1218;
+}
+
+.outsideLinks {
+  color: #0500ff;
+  transition: 0.5s;
+}
+.outsideLinks:hover {
+  color: #d19042;
 }

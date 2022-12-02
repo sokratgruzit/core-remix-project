@@ -31,7 +31,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
   // )
 
   return (
-    <header className="d-flex flex-column">
+    <header className="d-flex flex-column" style={{ background: "#00050F" }}>
       <div className="swapitHeader px-3 pt-2 pb-0 d-flex flex-row">
         <h6 className="pt-0 mb-1" data-id="sidePanelSwapitTitle">
           {plugin?.profile.displayName || plugin?.profile.name}
@@ -105,7 +105,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
         </div>
       </div>
       <div
-        className={`bg-light mx-3 mb-2 pt-1 flex-column ${
+        className={`bg-light mx-3 mb-2 flex-column ${
           toggleExpander ? "maxHeight" : "noHeight"
         }`}
       >

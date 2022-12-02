@@ -43,6 +43,7 @@ export const RemixUiCheckbox = ({
           display: display,
           alignItems: "center",
           visibility: visibility,
+          marginTop: "4px",
         } as CSSProperties
       }
       onClick={onClick}
@@ -59,7 +60,6 @@ export const RemixUiCheckbox = ({
       <label
         className="form-check-label custom-control-label"
         id={`heading${categoryId}`}
-        style={{ paddingTop: "0.15rem" }}
       >
         {name ? <div className="font-weight-bold">{itemName}</div> : ""}
         {label}

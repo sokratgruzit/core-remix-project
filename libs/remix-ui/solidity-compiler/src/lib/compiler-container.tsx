@@ -884,7 +884,7 @@ export const CompilerContainer = (props: CompilerContainerProps) => {
     <section>
       <article>
         <div className="pt-0 remixui_compilerSection">
-          <div className="mb-1">
+          <div className="mb-2">
             <div className="d-flex justify-content-between align-items-end pt-2 pb-2">
               <label
                 className=" form-check-label font-14 text-white mb-0"
