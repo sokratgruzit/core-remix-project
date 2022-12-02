@@ -123,6 +123,7 @@
 }
 .udapp_ataddressinput {
   padding: 0.25rem;
+  padding-left: 13px;
 }
 .udapp_recorderSection:hover {
   cursor: pointer;

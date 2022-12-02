@@ -448,10 +448,13 @@ export const RemixUiTerminal = (props: RemixUiTerminalProps) => {
   return (
     <div style={{ flexGrow: 1 }} className='remix_ui_terminal_panel' ref={panelRef}>
       <div className="remix_ui_terminal_bar d-flex">
-        <div className="remix_ui_terminal_menu d-flex w-100 align-items-center position-relative border-top border-dark bg-light" ref={terminalMenu} data-id="terminalToggleMenu">
-          <i className={`mx-2 remix_ui_terminal_toggleTerminal fas ${isOpen ? 'fa-angle-double-down' : 'fa-angle-double-up'}`} data-id="terminalToggleIcon" onClick={handleToggleTerminal}></i>
+        <div className="remix_ui_terminal_menu d-flex w-100 align-items-center position-relative border-top border-bottom" ref={terminalMenu} data-id="terminalToggleMenu">
+          {/* <i className={`mx-2 remix_ui_terminal_toggleTerminal fas ${isOpen ? 'fa-angle-down' : 'fa-angle-up'} font-14`} data-id="terminalToggleIcon" onClick={handleToggleTerminal}></i> */}
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="white" xmlns="http://www.w3.org/2000/svg" className="mx-2 remix_ui_terminal_toggleTerminal" data-id="terminalToggleIcon" onClick={handleToggleTerminal} style={{rotate: !isOpen && '180deg'}} >
+               <path d="M1.41 -4.62904e-07L6 4.58L10.59 -6.16331e-08L12 1.41L6 7.41L-6.16331e-08 1.41L1.41 -4.62904e-07Z"/>
+          </svg>
           <div className="mx-2 remix_ui_terminal_console" id="clearConsole" data-id="terminalClearConsole" onClick={handleClearConsole} >
-            <i className="fas fa-ban" aria-hidden="true" title="Clear console"
+            <i className="far fa-ban" aria-hidden="true" title="Clear console"
             ></i>
           </div>
           <div className="mx-2" title='Pending Transactions'>0</div>
@@ -482,7 +485,7 @@ export const RemixUiTerminal = (props: RemixUiTerminalProps) => {
               type="text"
               className="remix_ui_terminal_filter border form-control"
               id="searchInput"
-              placeholder="Search with transaction hash or address"
+              placeholder="Search Documentation"
               data-id="terminalInputSearch" />
           </div>
         </div>

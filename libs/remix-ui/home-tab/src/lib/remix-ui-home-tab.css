@@ -1,10 +1,11 @@
 .remixui_home_text {
-  font-size: 0.8rem;
-  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
   max-width: 300px;
+  transition: 0.5s;
 }
 .remixui_home_text:hover {
-  text-decoration: underline;
+  color: #0500ff;
 }
 .remixui_home_homeContainer {
   overflow-y: hidden;
@@ -106,6 +107,12 @@
 .remixui_home_workspaceTemplate {
   width: 333px;
   height: 89px;
+}
+.remixui_home_cursorStyle {
+  transition: 0.5s;
+}
+.remixui_home_workspaceTemplate:hover .remixui_home_cursorStyle {
+  color: #0500ff;
 }
 .sml_workspaceTemplate {
   width: 250px;

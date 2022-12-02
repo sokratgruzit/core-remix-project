@@ -1639,6 +1639,7 @@ pre code {
 .form-control:focus {
   color: #dfe1ea;
   outline: 0;
+  border-color: #0500ff;
 }
 .form-control::placeholder {
   color: #868e96;
@@ -1929,11 +1930,11 @@ textarea.form-control.is-valid {
   background-position: center right calc(0.3125em + 0.25rem);
   background-size: calc(0.625em + 0.5rem) calc(0.625em + 0.5rem);
 }
-.form-control.is-invalid:focus,
+/* .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
   border-color: #b84040;
   box-shadow: 0 0 0 0.2rem rgba(184, 64, 64, 0.25);
-}
+} */
 .form-control.is-invalid ~ .invalid-feedback,
 .form-control.is-invalid ~ .invalid-tooltip,
 .was-validated .form-control:invalid ~ .invalid-feedback,

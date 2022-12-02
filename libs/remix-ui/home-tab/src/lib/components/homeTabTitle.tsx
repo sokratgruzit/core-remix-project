@@ -175,7 +175,7 @@ function HomeTabTitle({ plugin, width }: HomeTabFileProps) {
             </svg>
           </div>
           <b className="pb-1 text-dark">The Native IDE for Web3 Development.</b>
-          <span>
+          <span className="socialWrapper">
             <CustomTooltip
               placement={"top"}
               tooltipId="overlay-tooltip"
