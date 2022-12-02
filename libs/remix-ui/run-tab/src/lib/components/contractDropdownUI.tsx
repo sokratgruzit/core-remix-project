@@ -375,8 +375,13 @@ export function ContractDropdownUI(props: ContractDropdownProps) {
     <div className="udapp_container" data-id="contractDropdownContainer">
       <div className="d-flex justify-content-between">
         <div className="d-flex justify-content-between align-items-end">
-          <label className="text-dark font-14 pr-1">Contract</label>
-          <div className="d-flex">
+          <label
+            className="text-dark font-14 pr-1"
+            style={{ marginBottom: "4px" }}
+          >
+            Contract
+          </label>
+          <div className="d-flex" style={{ marginBottom: "4px" }}>
             {compilerName && compilerName !== "" && (
               <label
                 style={{ maxHeight: "0.6rem", lineHeight: "1rem" }}

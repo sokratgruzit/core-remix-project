@@ -13,7 +13,7 @@
 .right-panel {
   z-index: 99;
   position: fixed;
-  top: 60px;
+  top: 53px;
   right: 0;
   width: 140px;
   background-color: #00050f;
@@ -40,6 +40,13 @@
   display: flex;
   gap: 10px;
 }
+.social-icon {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.social-icon:hover {
+  opacity: 0.7;
+}
 .files {
   display: flex;
   flex-direction: column;
@@ -48,17 +55,79 @@
   margin-top: 20px;
   height: 100%;
 }
-.files div {
+.files-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
-.p {
-  width: 60%;
+.files-wrap p {
   text-align: center;
+  width: 60%;
 }
-.files svg {
-  width: 50%;
-  height: 50%;
+.icon-hover svg {
+  overflow: unset;
+  vertical-align: inherit;
+}
+.icon-hover-orange svg {
+  overflow: unset;
+  vertical-align: inherit;
+}
+.icon-hover {
+  background-color: #fff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.icon-hover-orange {
+  background-color: #ff7152;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.icon-hover-black {
+  background-color: #00050f;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.icon-hover-orange svg path {
+  transition: 0.5s;
+}
+.icon-hover-black svg path {
+  transition: 0.5s;
+}
+.icon-hover svg path {
+  transition: 0.5s;
+}
+.icon-hover:hover {
+  background-color: #ff7152;
+}
+.icon-hover-orange:hover {
+  background-color: #fff;
+}
+.icon-hover-orange:hover svg path {
+  stroke: #ff7152;
+}
+.icon-hover-black:hover {
+  background-color: #fff;
+}
+.icon-hover-black:hover svg path {
+  fill: #00050f;
 }
 /* oposs added styles */

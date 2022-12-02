@@ -265,7 +265,7 @@ function HomeTabTitle({ plugin, width }: HomeTabFileProps) {
           <label
             className="text-white font-12"
             style={{
-              paddingTop: width < 440 && "30px",
+              paddingTop: "30px",
             }}
           >
             Resources:

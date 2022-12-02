@@ -16,6 +16,7 @@ export const TreeViewItem = (props: TreeViewItemProps) => {
     controlBehaviour = false,
     innerRef,
     showIcon = true,
+    isExpandedClass,
     ...otherProps
   } = props;
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,7 +36,9 @@ export const TreeViewItem = (props: TreeViewItemProps) => {
       <div
         key={`treeViewDiv${id}`}
         data-id={`treeViewDiv${id}`}
-        className={`d-flex flex-row align-items-center ${labelClass} `}
+        className={`d-flex flex-row align-items-center ${labelClass} ${
+          isExpanded && isExpandedClass
+        }`}
         onClick={() => !controlBehaviour && setIsExpanded(!isExpanded)}
       >
         {children && showIcon ? (

@@ -219,7 +219,7 @@ label {
   margin-bottom: 0.5rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #4c5057;
+  color: #808287;
   letter-spacing: 0.4px;
   font-size: 11px;
   line-height: 12px;
@@ -1755,10 +1755,10 @@ textarea.form-control {
 }
 .form-check-label {
   margin-bottom: 0;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 16px;
   text-transform: initial;
-  display: initial;
+  display: block;
 }
 .form-check-inline {
   display: inline-flex;
@@ -2173,13 +2173,11 @@ fieldset:disabled a.btn {
 /* .btn-secondary.focus,
 .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(114, 116, 139, 0.5);
-}
+} */
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-  color: #fff;
-  background-color: #595c76;
-  border-color: #595c76;
-} */
+  opacity: 0.3;
+}
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active,
 .show > .btn-secondary.dropdown-toggle {
@@ -2254,8 +2252,8 @@ fieldset:disabled a.btn {
 }
 .btn-warning {
   color: #fff;
-  background-color: #c97539;
-  border-color: #c97539;
+  background-color: #d19042;
+  border-color: #d19042;
 }
 .btn-warning:hover {
   color: #fff;
@@ -2269,8 +2267,8 @@ fieldset:disabled a.btn {
 .btn-warning.disabled,
 .btn-warning:disabled {
   color: #fff;
-  background-color: #c97539;
-  border-color: #c97539;
+  background-color: #d19042;
+  border-color: #d19042;
 }
 .btn-warning:not(:disabled):not(.disabled).active,
 .btn-warning:not(:disabled):not(.disabled):active,
@@ -3187,7 +3185,7 @@ input[type="submit"].btn-block {
 .custom-control {
   position: relative;
   display: block;
-  min-height: 1.5rem;
+  min-height: 16px;
   padding-left: 1.5rem;
 }
 .custom-control-inline {
@@ -3202,6 +3200,9 @@ input[type="submit"].btn-block {
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   background-color: #0500ff;
+}
+.custom-control-input:checked ~ .custom-control-label {
+  color: #fff;
 }
 .custom-control-input:focus ~ .custom-control-label::before {
 }
@@ -3227,7 +3228,7 @@ input[type="submit"].btn-block {
 
 .custom-control-label::before {
   position: absolute;
-  top: 0.15rem;
+  top: 0;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3241,7 +3242,7 @@ input[type="submit"].btn-block {
 
 .custom-control-label::after {
   position: absolute;
-  top: 0.15rem;
+  top: 0;
   left: -1.5rem;
   display: block;
   width: 1rem;
@@ -3619,6 +3620,12 @@ input[type="submit"].btn-block {
 .run-it-inner p {
   margin: 0 0 0 5px !important;
 }
+.run-it-inner img {
+  transition: 0.5s;
+}
+.run-it-inner:hover img {
+  opacity: 0.7;
+}
 /* oposs added styles */
 
 .inactive-tab {
@@ -3653,6 +3660,9 @@ input[type="submit"].btn-block {
   height: 30px;
   align-items: center;
 }
+.nav-link.active:hover {
+  opacity: 0.7;
+}
 /* oposs added styles */
 .nav-tabs {
   border-bottom: 1px solid #161b24;
@@ -3661,9 +3671,6 @@ input[type="submit"].btn-block {
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
-  /* border: 1px solid transparent;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px; */
   border-radius: 4px;
   margin: 13px 0 0 20px;
   background-color: #1b1d22;
@@ -3684,6 +3691,8 @@ input[type="submit"].btn-block {
   border: none;
   border-radius: 4px;
   margin: 14px 0 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -6778,7 +6787,7 @@ button.bg-dark:hover {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
-  border-left: 1px solid #1b1d22;
+  /* border-left: 1px solid #1b1d22; */
 }
 .ml-0,
 .mx-0 {
@@ -8781,12 +8790,12 @@ a.text-dark:hover {
 }
 
 .font-12 {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 12px !important;
+  line-height: 16px !important;
 }
 .font-14 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 14px !important;
+  line-height: 20px !important;
 }
 /* Plugins manager */
 .plugin-manager {
@@ -8921,4 +8930,17 @@ a.text-dark:hover {
   height: 42px;
   font-size: 12px;
   line-height: 16px;
+}
+
+.staticAnalysisExpanded {
+  border-radius: 4px;
+  background: #0f1218;
+}
+
+.outsideLinks {
+  color: #0500ff;
+  transition: 0.5s;
+}
+.outsideLinks:hover {
+  color: #d19042;
 }

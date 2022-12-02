@@ -10,7 +10,7 @@
   align-items: center;
   padding-right: 8px;
   padding-left: 2px;
-  cursor: default;
+  cursor: pointer;
   /*to make it unselectable*/
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
