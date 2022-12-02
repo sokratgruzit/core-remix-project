@@ -12,10 +12,26 @@
 
 .remixui_icon {
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.remixui_icon:after{
+  content: '';
+  height: 24px;
+  width: 2px;
+  background: rgba(5, 0, 255, 1);
+  position: absolute;
+  right: -27px;
+  top: 2px;
+  transition: .6s cubic-bezier(0.79, 0.01, 0.15, 0.99);
+  transform: scaleY(0);
+}
+.remixui_icon:hover:after{
+  transform: scaleY(1);
 }
 .remixui_icon img {
   width: 28px;
@@ -92,7 +108,7 @@
 }
 .remixui_requiredSection {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 35px;
 }
 .remixui_scrollable-container {
   flex-basis: 510px;

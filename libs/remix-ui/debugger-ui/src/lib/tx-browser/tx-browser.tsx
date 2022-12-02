@@ -1,33 +1,39 @@
-import { CustomTooltip } from '@remix-ui/helper'
-import React, { useState, useEffect, useRef } from 'react'  //eslint-disable-line
-import './tx-browser.css'
+import { CustomTooltip } from "@remix-ui/helper";
+import React, { useState, useEffect, useRef } from "react"; //eslint-disable-line
+import "./tx-browser.css";
 
-export const TxBrowser = ({ requestDebug, updateTxNumberFlag, unloadRequested, transactionNumber, debugging }) => {
+export const TxBrowser = ({
+  requestDebug,
+  updateTxNumberFlag,
+  unloadRequested,
+  transactionNumber,
+  debugging,
+}) => {
   const [state, setState] = useState({
-    txNumber: ''
-  })
+    txNumber: "",
+  });
 
-  const inputValue = useRef(null)
+  const inputValue = useRef(null);
   useEffect(() => {
-    setState(prevState => {
+    setState((prevState) => {
       return {
         ...prevState,
-        txNumber: transactionNumber
-      }
-    })
-  }, [transactionNumber])
+        txNumber: transactionNumber,
+      };
+    });
+  }, [transactionNumber]);
 
   const handleSubmit = () => {
     if (debugging) {
-      unload()
+      unload();
     } else {
-      requestDebug(undefined, state.txNumber)
+      requestDebug(undefined, state.txNumber);
     }
-  }
+  };
 
   const unload = () => {
-    unloadRequested()
-  }
+    unloadRequested();
+  };
 
   const txInputChanged = (value) => {
     // todo check validation of txnumber in the input element, use
@@ -35,62 +41,67 @@ export const TxBrowser = ({ requestDebug, updateTxNumberFlag, unloadRequested, t
     // oninvalid="setCustomValidity('Please provide a valid transaction number, must start with 0x and have length of 22')"
     // pattern="^0[x,X]+[0-9a-fA-F]{22}"
     // this.state.txNumberInput.setCustomValidity('')
-    setState(prevState => {
+    setState((prevState) => {
       return {
         ...prevState,
-        txNumber: value
-      }
-    })
-  }
+        txNumber: value,
+      };
+    });
+  };
 
   const txInputOnInput = () => {
-    updateTxNumberFlag(!inputValue.current.value)
-  }
+    updateTxNumberFlag(!inputValue.current.value);
+  };
   const customJSX = (
-    <div id="debuggerTransactionStartButtonContainer" data-id="debuggerTransactionStartButton" onClick={handleSubmit} className="btn btn-primary btn-sm btn-block text-decoration-none">
-              <button
-                className='btn btn-link btn-sm btn-block h-75 p-0 m-0 text-decoration-none'
-                id='load'
-                onClick={handleSubmit}
-                data-id='debuggerTransactionStartButton'
-                disabled={!state.txNumber }
-                style={{ pointerEvents: 'none', color: 'white' }}
-              >
-                  <span>{ debugging ? 'Stop' : 'Start' } debugging</span>
-              </button>
-            </div>
-  )
+    <div
+      id="debuggerTransactionStartButtonContainer"
+      data-id="debuggerTransactionStartButton"
+      onClick={handleSubmit}
+      className="btn btn-primary d-flex btn-sm btn-block text-decoration-none"
+    >
+      <button
+        className="btn btn-link btn-sm btn-block h-75 p-0 m-0 text-decoration-none"
+        id="load"
+        onClick={handleSubmit}
+        data-id="debuggerTransactionStartButton"
+        disabled={!state.txNumber}
+        style={{ pointerEvents: "none", color: "white" }}
+      >
+        <span>{debugging ? "Stop" : "Start"} debugging</span>
+      </button>
+    </div>
+  );
   return (
-    <div className='pb-2 container px-0'>
-      <div className='txContainer'>
-        <div className='py-1 d-flex justify-content-center w-100 input-group'>
+    <div className="pb-2 container px-0">
+      <div className="txContainer">
+        <div className="py-1 d-flex justify-content-center w-100 input-group">
           <input
             ref={inputValue}
             value={state.txNumber}
-            className='form-control m-0 txinput'
-            id='txinput'
-            type='text'
+            className="form-control m-0 txinput"
+            id="txinput"
+            type="text"
             onChange={({ target: { value } }) => txInputChanged(value)}
             onInput={txInputOnInput}
-            placeholder={'Transaction hash, should start with 0x'}
-            data-id='debuggerTransactionInput'
+            placeholder={"Transaction hash, should start with 0x"}
+            data-id="debuggerTransactionInput"
             disabled={debugging}
           />
         </div>
-        <div className='d-flex justify-content-center w-100 btn-group py-1'>
+        <div className="d-flex justify-content-center w-100 btn-group py-1">
           <CustomTooltip
             placement="bottom"
-            tooltipText={debugging ? 'Stop debugging' : 'Start debugging'}
-            tooltipId={'debuggingButtontooltip'}
+            tooltipText={debugging ? "Stop debugging" : "Start debugging"}
+            tooltipId={"debuggingButtontooltip"}
             tooltipClasses="text-nowrap"
           >
             {customJSX}
           </CustomTooltip>
         </div>
       </div>
-      <span id='error' />
+      <span id="error" />
     </div>
-  )
-}
+  );
+};
 
-export default TxBrowser
+export default TxBrowser;

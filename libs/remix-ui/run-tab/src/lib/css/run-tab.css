@@ -18,9 +18,7 @@
   align-self: center;
 }
 .udapp_settingsLabel {
-  font-size: 11px;
   margin-bottom: 4px;
-  text-transform: uppercase;
 }
 .udapp_environment {
   display: flex;
@@ -75,7 +73,6 @@
 }
 .udapp_contractNames {
   width: 100%;
-  border: 1px solid;
 }
 .udapp_subcontainer {
   display: flex;
@@ -108,10 +105,16 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
+  text-align: start;
+  padding: 0;
+  margin-bottom: 4px;
 }
 .udapp_atAddressSect {
   margin-top: 8px;
-  height: 32px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .udapp_atAddressSect input {
   height: 32px;
@@ -129,7 +132,8 @@
 }
 .udapp_recorderSectionLabel {
   cursor: pointer;
-  font-size: 1rem;
+  margin-bottom: 0px;
+  margin-left: 15px;
 }
 .udapp_input {
   font-size: 10px !important;
@@ -168,7 +172,6 @@
 .udapp_icon {
   cursor: pointer;
   font-size: 12px;
-  cursor: pointer;
   margin-left: 5px;
 }
 .udapp_icon:hover {
@@ -198,7 +201,6 @@
 }
 .udapp_orLabel {
   text-align: center;
-  text-transform: uppercase;
 }
 .udapp_infoDeployAction {
   margin-left: 1px;
@@ -220,7 +222,6 @@
 }
 .udapp_deployDropdown {
   text-align: center;
-  text-transform: uppercase;
 }
 .udapp_checkboxAlign {
   padding-top: 2px;
@@ -536,4 +537,23 @@
 }
 .udapp_selectExEnvOptions {
   width: 100%;
+}
+
+.connectToENV {
+  background-color: #00050f !important;
+  border: 1px solid #161b24 !important;
+  border-radius: 4px !important;
+}
+.connectButton {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #1b1d22;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-dark {
+  color: #4c5057;
 }

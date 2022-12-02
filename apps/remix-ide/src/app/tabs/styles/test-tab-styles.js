@@ -1,10 +1,7 @@
-var csjs = require('csjs-inject')
+var csjs = require("csjs-inject");
 
 var css = csjs`
   .testTabView {}
-  .infoBox  {
-    margin: 5%;
-  }
   .tests {}
   .testList {
     line-height: 2em;
@@ -47,7 +44,7 @@ var css = csjs`
     border: hidden;
   }
   .inputFolder {
-    width: 80%;
+    width: 100%;
   }
-`
-module.exports = css
+`;
+module.exports = css;
