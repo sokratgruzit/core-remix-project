@@ -42,7 +42,7 @@ function HomeTabScamAlert() {
         <span className="mt-1 text-white font-12">
           Beware of online videos promoting "liquidity front runner bots":
           <a
-            className="pl-2 text-blue font-12"
+            className="pl-2 text-blue font-12 learnMoreLinks"
             onClick={() =>
               _paq.push(["trackEvent", "hometab", "scamAlert", "learnMore"])
             }
@@ -55,7 +55,7 @@ function HomeTabScamAlert() {
         <span className="mt-1 text-white font-12">
           Additional safety tips: &nbsp;
           <a
-            className="text-blue font-12"
+            className="text-blue font-12 learnMoreLinks"
             onClick={() =>
               _paq.push(["trackEvent", "hometab", "scamAlert", "safetyTips"])
             }

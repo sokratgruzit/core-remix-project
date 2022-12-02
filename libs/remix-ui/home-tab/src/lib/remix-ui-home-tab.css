@@ -90,6 +90,10 @@
   height: 161px;
   position: relative;
 }
+
+.remixui_home_envButton:hover .remixui_home_cursorStyle {
+  color: #0500ff !important;
+}
 .solidityPluginItem {
   margin-right: 10px;
   width: 303px;
