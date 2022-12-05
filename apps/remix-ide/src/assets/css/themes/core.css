@@ -30,15 +30,20 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 @font-face {
   font-family: "Lack-Regular";
-  src: url('../../fonts/Lack-Regular.eot');
+  src: url("../../fonts/Lack-Regular.eot");
   src: url("../../fonts/Lack-Regular.eot?#iefix") format("embedded-opentype"),
-  url("../../fonts/Lack-Regular.svg#Lack-Regular") format("svg"),
-  url("../../fonts/Lack-Regular.ttf") format("truetype"),
-  url("../../fonts/Lack-Regular.woff") format("woff"),
-  url("../../fonts/Lack-Regular.woff2") format("woff2");
+    url("../../fonts/Lack-Regular.svg#Lack-Regular") format("svg"),
+    url("../../fonts/Lack-Regular.ttf") format("truetype"),
+    url("../../fonts/Lack-Regular.woff") format("woff"),
+    url("../../fonts/Lack-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,10 +52,9 @@
 ::after,
 ::before {
   box-sizing: border-box;
-  font-family: "Lack-Regular";
 }
 html {
-  font-family: sans-serif;
+  font-family: "Lack-Regular", "Nunito Sans", -apple-system, BlinkMacSystemFont;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -69,8 +73,8 @@ section {
 }
 body {
   margin: 0;
-  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  font-family: "Lack-Regular", "Nunito Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
@@ -3364,6 +3368,17 @@ input[type="submit"].btn-block {
 }
 .custom-select option {
   background: #0f1218;
+}
+
+.custom-select::-webkit-outer-spin-button,
+.custom-select::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/* Firefox */
+.custom-select[type="number"] {
+  -moz-appearance: textfield !important;
 }
 
 .custom-select:focus::-ms-value {
@@ -8992,4 +9007,8 @@ a.text-dark:hover {
 }
 .linkDocsIcon:hover {
   opacity: 0.65;
+}
+
+.fileWrapper {
+  height: 36px;
 }

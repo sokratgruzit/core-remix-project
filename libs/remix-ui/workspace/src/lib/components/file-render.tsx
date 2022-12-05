@@ -51,15 +51,15 @@ export const FileRender = (props: RenderFileProps) => {
 
   const labelClass =
     props.focusEdit.element === file.path
-      ? "bg-light"
+      ? "bg-light fileWrapper"
       : props.focusElement.findIndex((item) => item.key === file.path) !== -1
-      ? "bg-secondary"
+      ? "bg-secondary fileWrapper"
       : hover
-      ? "bg-light border"
+      ? "bg-light border fileWrapper"
       : props.focusContext.element === file.path &&
         props.focusEdit.element !== file.path
-      ? "bg-light border"
-      : "";
+      ? "bg-light border fileWrapper"
+      : "fileWrapper";
 
   const spreadProps = {
     onClick: (e) => e.stopPropagation(),
@@ -117,6 +117,7 @@ export const FileRender = (props: RenderFileProps) => {
               handleClickFolder={props.handleClickFolder}
             >
               <div className="d-flex flex-row">
+                no
                 <FileLabel
                   fileDecorations={props.fileDecorations}
                   file={file}

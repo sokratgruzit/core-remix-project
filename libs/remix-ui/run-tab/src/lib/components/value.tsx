@@ -70,7 +70,7 @@ export function ValueUI(props: ValueProps) {
             min="0"
             pattern="^[0-9]"
             step="1"
-            className="form-control udapp_gasNval udapp_col2"
+            className="form-control custom-select udapp_gasNval udapp_col2"
             id="value"
             data-id="dandrValue"
             onKeyPress={validateInputKey}
