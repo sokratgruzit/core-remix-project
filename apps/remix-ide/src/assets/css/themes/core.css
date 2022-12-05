@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap");
 :root {
   --blue: #007aa6;
   --indigo: #6610f2;
@@ -31,16 +30,24 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
 }
+@font-face {
+  font-family: "Lack-Regular";
+  src: url('../../fonts/Lack-Regular.eot');
+  src: url("../../fonts/Lack-Regular.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/Lack-Regular.svg#Lack-Regular") format("svg"),
+  url("../../fonts/Lack-Regular.ttf") format("truetype"),
+  url("../../fonts/Lack-Regular.woff") format("woff"),
+  url("../../fonts/Lack-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
+  font-family: "Lack-Regular";
 }
 html {
   font-family: sans-serif;
