@@ -94,6 +94,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
               </svg>
             </div>
           </div>
+          
           {/* <CustomTooltip
               placement="right-end"
               tooltipText="Plugin info"
