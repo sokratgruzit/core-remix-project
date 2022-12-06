@@ -14,6 +14,7 @@ import HomeTabScamAlert from "./components/homeTabScamAlert";
 import HomeTabGetStarted from "./components/homeTabGetStarted";
 import HomeTabFeatured from "./components/homeTabFeatured";
 import HomeTabFeaturedPlugins from "./components/homeTabFeaturedPlugins";
+import RightSlider from "./components/rightSlider";
 
 declare global {
   interface Window {
@@ -76,46 +77,51 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
   }, []);
 
   return (
-    <div
-      className="d-flex flex-column-reverse trackWidth"
-      style={{
-        minHeight: window.outerHeight,
-        height: "fit-content",
-        width: "calc(100% - 140px)",
-        position: "relative",
-        background: "#010713",
-        overflow: "hidden",
-      }}
-      data-id="remixUIHTAll"
-    >
-      <ThemeContext.Provider value={state.themeQuality}>
-        <div
-          className="px-2 pl-3 justify-content-start d-flex flex-column"
-          id="remixUIHTLeft"
-          style={{
-            height: "fit-content",
-          }}
-        >
-          <HomeTabTitle plugin={plugin} width={width} />
-          {/* <HomeTabLearn plugin={plugin} /> */}
-        </div>
-        <div
-          className="pl-2 pr-3 justify-content-start d-flex flex-column"
-          style={{
-            height: "fit-content",
-          }}
-          id="remixUIHTRight"
-        >
-          <HomeTabFeatured></HomeTabFeatured>
-          <HomeTabGetStarted plugin={plugin} width={width}></HomeTabGetStarted>
-          <HomeTabFeaturedPlugins
-            plugin={plugin}
-            width={width}
-          ></HomeTabFeaturedPlugins>
-          <HomeTabScamAlert></HomeTabScamAlert>
-        </div>
-      </ThemeContext.Provider>
-    </div>
+    <>
+      <RightSlider plugin={plugin} />
+      <div
+        className="d-flex flex-column-reverse trackWidth"
+        style={{
+          minHeight: window.outerHeight,
+          height: "fit-content",
+          position: "relative",
+          background: "#010713",
+          overflow: "hidden",
+        }}
+        data-id="remixUIHTAll"
+      >
+        <ThemeContext.Provider value={state.themeQuality}>
+          <div
+            className="px-2 pl-3 justify-content-start d-flex flex-column"
+            id="remixUIHTLeft"
+            style={{
+              height: "fit-content",
+            }}
+          >
+            <HomeTabTitle plugin={plugin} width={width} />
+            {/* <HomeTabLearn plugin={plugin} /> */}
+          </div>
+          <div
+            className="pl-2 pr-3 justify-content-start d-flex flex-column"
+            style={{
+              height: "fit-content",
+            }}
+            id="remixUIHTRight"
+          >
+            <HomeTabFeatured></HomeTabFeatured>
+            <HomeTabGetStarted
+              plugin={plugin}
+              width={width}
+            ></HomeTabGetStarted>
+            <HomeTabFeaturedPlugins
+              plugin={plugin}
+              width={width}
+            ></HomeTabFeaturedPlugins>
+            <HomeTabScamAlert></HomeTabScamAlert>
+          </div>
+        </ThemeContext.Provider>
+      </div>
+    </>
   );
 };
 
