@@ -1036,7 +1036,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
           </button>
         </div>
         <div
-          className="d-flex align-items-center mx-3 pb-4 mt-2 border-bottom custom-control custom-checkbox"
+          className="d-flex align-items-center mx-3 pb-2 mb-1 mt-2 border-bottom custom-control custom-checkbox"
           style={{ gap: "8px", paddingTop: "30px" }}
         >
           <input

@@ -178,7 +178,7 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
         }} multiple />
         <button className="btn p-2 border my-1" style={{width: 'fit-content'}} onClick={() => connectToLocalhost()}>Connect to Localhost</button> */}
         <label className="text-white font-12">Load From:</label>
-        <div className="d-flex">
+        <div className="d-flex loadFrom">
           <button
             className="btn p-2 border mr-2 text-dark font-12"
             data-id="landingPageImportFromGitHubButton"

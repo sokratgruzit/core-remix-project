@@ -92,9 +92,7 @@ const RemixApp = (props: IRemixAppUi) => {
           ref={sidePanelRef}
           id="side-panel"
           data-id="remixIdeSidePanel"
-          className={`sidepanel border-right border-left ${
-            hideSidePanel ? "d-none" : ""
-          }`}
+          className={`sidepanel border-right ${hideSidePanel ? "d-none" : ""}`}
         >
           {props.app.sidePanel.render()}
         </div>

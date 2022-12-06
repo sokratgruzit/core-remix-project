@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap");
 :root {
   --blue: #007aa6;
   --indigo: #6610f2;
@@ -31,16 +30,24 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
 }
+@font-face {
+  font-family: "Lack-Regular";
+  src: url('../../fonts/Lack-Regular.eot');
+  src: url("../../fonts/Lack-Regular.eot?#iefix") format("embedded-opentype"),
+  url("../../fonts/Lack-Regular.svg#Lack-Regular") format("svg"),
+  url("../../fonts/Lack-Regular.ttf") format("truetype"),
+  url("../../fonts/Lack-Regular.woff") format("woff"),
+  url("../../fonts/Lack-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
+  font-family: "Lack-Regular";
 }
 html {
   font-family: sans-serif;
@@ -1640,11 +1647,8 @@ pre code {
 }
 .form-control:focus {
   color: #dfe1ea;
-  background-color: var(--custom-select);
-  border-color: #27c6ff;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 0 3px rgba(0, 122, 166, 0.25);
+  border-color: #0500ff;
 }
 .form-control::placeholder {
   color: #868e96;
@@ -1801,11 +1805,11 @@ textarea.form-control {
   background-position: center right calc(0.3125em + 0.25rem);
   background-size: calc(0.625em + 0.5rem) calc(0.625em + 0.5rem);
 }
-.form-control.is-valid:focus,
+/* .form-control.is-valid:focus,
 .was-validated .form-control:valid:focus {
   border-color: #32ba89;
   box-shadow: 0 0 0 0.2rem rgba(50, 186, 137, 0.25);
-}
+} */
 .form-control.is-valid ~ .valid-feedback,
 .form-control.is-valid ~ .valid-tooltip,
 .was-validated .form-control:valid ~ .valid-feedback,
@@ -5777,13 +5781,13 @@ button.bg-dark:hover {
   border-top: 1px solid #161b24 !important;
 }
 .border-right {
-  border-right: 1px solid #3f4455 !important;
+  border-right: 1px solid #161b24 !important;
 }
 .border-bottom {
   border-bottom: 1px solid #161b24 !important;
 }
 .border-left {
-  border-left: 1px solid #3f4455 !important;
+  border-left: 1px solid #161b24 !important;
 }
 .border-0 {
   border: 0 !important;
@@ -8948,4 +8952,17 @@ a.text-dark:hover {
 }
 .outsideLinks:hover {
   color: #d19042;
+}
+.loadFrom button {
+  transition: 0.5s;
+}
+.loadFrom button:hover {
+  border-color: #0500ff !important;
+  color: #0500ff !important;
+}
+.socialWrapper button {
+  transition: 0.5s;
+}
+.socialWrapper button:hover {
+  color: #0500ff !important;
 }
