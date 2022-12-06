@@ -3627,6 +3627,7 @@ input[type="submit"].btn-block {
   display: flex;
   justify-content: center;
   border-left: 1px solid #161b24;
+  align-items: center;
 }
 .run-it-inner {
   display: flex;
