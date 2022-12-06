@@ -509,7 +509,7 @@ export function Workspace() {
           className="form-control"
         />
 
-        <div className="d-flex py-2 align-items-center custom-control custom-checkbox">
+        <div className="d-flex py-2 align-items-center custom-control custom-checkbox margin-top">
           <input
             ref={initGitRepoRef}
             id="initGitRepository"

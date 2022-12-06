@@ -1,131 +1,167 @@
-import React, { useRef, useState, useEffect } from 'react' // eslint-disable-line
-import { ModalDialogProps } from './types' // eslint-disable-line
+import React, { useRef, useState, useEffect } from "react"; // eslint-disable-line
+import { ModalDialogProps } from "./types"; // eslint-disable-line
 
-import './remix-ui-modal-dialog.css'
+import "./remix-ui-modal-dialog.css";
 
 declare global {
   // eslint-disable-next-line no-unused-vars
-  interface Window { testmode: boolean; }
+  interface Window {
+    testmode: boolean;
+  }
 }
 
 export const ModalDialog = (props: ModalDialogProps) => {
   const [state, setState] = useState({
-    toggleBtn: true
-  })
-  const calledHideFunctionOnce = useRef<boolean>()
-  const modal = useRef(null)
+    toggleBtn: true,
+  });
+  const calledHideFunctionOnce = useRef<boolean>();
+  const modal = useRef(null);
   const handleHide = () => {
-    if (!calledHideFunctionOnce.current) { props.handleHide() }
-    calledHideFunctionOnce.current = true
-  }
+    if (!calledHideFunctionOnce.current) {
+      props.handleHide();
+    }
+    calledHideFunctionOnce.current = true;
+  };
 
   useEffect(() => {
-    calledHideFunctionOnce.current = props.hide
-    modal.current.focus()
-  }, [props.hide])
+    calledHideFunctionOnce.current = props.hide;
+    modal.current.focus();
+  }, [props.hide]);
 
   useEffect(() => {
-    function handleBlur (e) {
+    function handleBlur(e) {
       if (!e.currentTarget.contains(e.relatedTarget)) {
-        e.stopPropagation()
+        e.stopPropagation();
         if (document.activeElement !== this) {
-          !window.testmode && handleHide()
+          !window.testmode && handleHide();
         }
       }
     }
     if (modal.current) {
-      modal.current.addEventListener('blur', handleBlur)
+      modal.current.addEventListener("blur", handleBlur);
     }
     return () => {
-      modal.current && modal.current.removeEventListener('blur', handleBlur)
-    }
-  }, [modal.current])
+      modal.current && modal.current.removeEventListener("blur", handleBlur);
+    };
+  }, [modal.current]);
 
   const modalKeyEvent = (keyCode) => {
-    if (keyCode === 27) { // Esc
-      if (props.cancelFn) props.cancelFn()
-      handleHide()
-    } else if (keyCode === 13) { // Enter
-      enterHandler()
+    if (keyCode === 27) {
+      // Esc
+      if (props.cancelFn) props.cancelFn();
+      handleHide();
+    } else if (keyCode === 13) {
+      // Enter
+      enterHandler();
     } else if (keyCode === 37) {
       // todo && footerIsActive) { // Arrow Left
-      setState((prevState) => { return { ...prevState, toggleBtn: true } })
+      setState((prevState) => {
+        return { ...prevState, toggleBtn: true };
+      });
     } else if (keyCode === 39) {
       // todo && footerIsActive) { // Arrow Right
-      setState((prevState) => { return { ...prevState, toggleBtn: false } })
+      setState((prevState) => {
+        return { ...prevState, toggleBtn: false };
+      });
     }
-  }
+  };
 
   const enterHandler = () => {
     if (state.toggleBtn) {
-      if (props.okFn) props.okFn()
+      if (props.okFn) props.okFn();
     } else {
-      if (props.cancelFn) props.cancelFn()
+      if (props.cancelFn) props.cancelFn();
     }
-    handleHide()
-  }
+    handleHide();
+  };
 
   return (
     <div
       data-id={`${props.id}ModalDialogContainer-react`}
       data-backdrop="static"
       data-keyboard="false"
-      className='modal'
-      style={{ display: props.hide ? 'none' : 'block' }}
+      className="modal"
+      style={{ display: props.hide ? "none" : "block" }}
       role="dialog"
     >
       <div className="modal-dialog" role="document">
         <div
           ref={modal}
           tabIndex={-1}
-          className={'modal-content remixModalContent ' + (props.modalClass ? props.modalClass : '')}
-          onKeyDown={({ keyCode }) => { modalKeyEvent(keyCode) }}
+          className={
+            "modal-content remixModalContent " +
+            (props.modalClass ? props.modalClass : "")
+          }
+          onKeyDown={({ keyCode }) => {
+            modalKeyEvent(keyCode);
+          }}
         >
           <div className="modal-header">
-            <h6 className="modal-title" data-id={`${props.id}ModalDialogModalTitle-react`}>
+            <h6
+              className="modal-title"
+              data-id={`${props.id}ModalDialogModalTitle-react`}
+            >
               {props.title && props.title}
             </h6>
-            {!props.showCancelIcon &&
+            {!props.showCancelIcon && (
               <span className="modal-close" onClick={() => handleHide()}>
-                <i title="Close" className="fas fa-times" aria-hidden="true"></i>
+                <i
+                  title="Close"
+                  className="fas fa-times"
+                  aria-hidden="true"
+                ></i>
               </span>
-            }
+            )}
           </div>
-          <div className="modal-body text-break remixModalBody" data-id={`${props.id}ModalDialogModalBody-react`}>
+          <div
+            className="modal-body text-break remixModalBody"
+            data-id={`${props.id}ModalDialogModalBody-react`}
+          >
             {props.children ? props.children : props.message}
           </div>
-          <div className="modal-footer" data-id={`${props.id}ModalDialogModalFooter-react`}>
+          <div
+            className="modal-footer"
+            data-id={`${props.id}ModalDialogModalFooter-react`}
+          >
             {/* todo add autofocus ^^ */}
-            { props.okLabel && <button
-              data-id={`${props.id}-modal-footer-ok-react`}
-              className={'modal-ok btn btn-sm ' + (state.toggleBtn ? 'btn-dark' : 'btn-light')}
-              disabled={props.validation && !props.validation.valid}
-              onClick={() => {
-                if (props.validation && !props.validation.valid) return
-                if (props.okFn) props.okFn()
-                handleHide()
-              }}
-            >
-              {props.okLabel ? props.okLabel : 'OK'}
-            </button>
-            }
-            { props.cancelLabel && <button
-              data-id={`${props.id}-modal-footer-cancel-react`}
-              className={'modal-cancel btn btn-sm ' + (state.toggleBtn ? 'btn-light' : 'btn-dark')}
-              data-dismiss="modal"
-              onClick={() => {
-                if (props.cancelFn) props.cancelFn()
-                handleHide()
-              }}
-            >
-              {props.cancelLabel ? props.cancelLabel : 'Cancel'}
-            </button>
-            }
+            {props.okLabel && (
+              <button
+                data-id={`${props.id}-modal-footer-ok-react`}
+                className={
+                  "modal-ok btn btn-sm " +
+                  (state.toggleBtn ? "btn-dark" : "btn-light")
+                }
+                disabled={props.validation && !props.validation.valid}
+                onClick={() => {
+                  if (props.validation && !props.validation.valid) return;
+                  if (props.okFn) props.okFn();
+                  handleHide();
+                }}
+              >
+                {props.okLabel ? props.okLabel : "OK"}
+              </button>
+            )}
+            {props.cancelLabel && (
+              <button
+                data-id={`${props.id}-modal-footer-cancel-react`}
+                className={
+                  "modal-cancel btn btn-sm " +
+                  (state.toggleBtn ? "btn-light" : "btn-dark")
+                }
+                data-dismiss="modal"
+                onClick={() => {
+                  if (props.cancelFn) props.cancelFn();
+                  handleHide();
+                }}
+              >
+                {props.cancelLabel ? props.cancelLabel : "Cancel"}
+              </button>
+            )}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ModalDialog
+export default ModalDialog;

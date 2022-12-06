@@ -133,7 +133,7 @@
 }
 
 #workspacesMenuDropdown > div > ul > a:hover {
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
   /* border: 1px solid var(--secondary); */
   border-radius: 2px;
   color: var(--text);
