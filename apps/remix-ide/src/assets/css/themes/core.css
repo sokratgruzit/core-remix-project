@@ -227,10 +227,9 @@ th {
 }
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   display: inline-block;
-  margin-bottom: 0.5rem;
-  color: #808287;
+  /* color: #808287; */
   letter-spacing: 0.4px;
   font-size: 11px;
   line-height: 12px;
@@ -1762,7 +1761,7 @@ textarea.form-control {
   color: #868e96;
 }
 .form-check-label {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   font-size: 12px;
   line-height: 16px;
   text-transform: initial;
@@ -3643,6 +3642,7 @@ input[type="submit"].btn-block {
   display: flex;
   justify-content: center;
   border-left: 1px solid #161b24;
+  align-items: center;
 }
 .run-it-inner {
   display: flex;
@@ -3659,6 +3659,11 @@ input[type="submit"].btn-block {
   opacity: 0.7;
 }
 /* oposs added styles */
+
+.margin-top {
+  margin-top: 10px;
+  border-radius: 4px;
+}
 
 .inactive-tab {
   margin: 14px 0 0 5px;
@@ -5126,7 +5131,8 @@ a.close.disabled {
   width: 100%;
   color: #fff;
   pointer-events: auto;
-  background-color: var(--body-bg);
+  /* background-color: var(--body-bg); */
+  background-color: #0d1016;
   background-clip: padding-box;
   border: 1px solid #2c3244;
   border-radius: 2px;
@@ -5167,7 +5173,7 @@ a.close.disabled {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 15px;
+  padding: 20px;
 }
 .modal-footer {
   display: flex;
@@ -6975,7 +6981,7 @@ button.bg-dark:hover {
   background-color: #00050f;
   display: flex;
   align-items: center;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   gap: 5px;
   font-size: 12px;
   line-height: 16px;

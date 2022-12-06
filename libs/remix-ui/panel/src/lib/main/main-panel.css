@@ -97,6 +97,7 @@
 }
 .icon-hover-black {
   background-color: #00050f;
+  border: 1px solid #161b24;
   width: 56px;
   height: 56px;
   border-radius: 50%;
