@@ -67,7 +67,9 @@ export const TxBrowser = ({
         disabled={!state.txNumber}
         style={{ pointerEvents: "none", color: "white" }}
       >
-        <span>{debugging ? "Stop" : "Start"} debugging</span>
+        <span className="text-white">
+          {debugging ? "Stop" : "Start"} debugging
+        </span>
       </button>
     </div>
   );

@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--light);
-  padding: 10px;
-  position: sticky;
+  padding: 1rem;
+  gap: 13px;
+  position: initial;
   top: 0;
   z-index: 2;
   margin-bottom: 0px;
@@ -45,15 +46,16 @@
   /* color:  */
 }
 .remixui_versionWarning {
-  padding: 4px;
+  padding: 5px 12px;
   margin: 0 8px;
   font-weight: 700;
-  font-size: 9px;
-  line-height: 12px;
   text-transform: uppercase;
   cursor: default;
-  border: 1px solid;
-  border-radius: 2px;
+  border: 1px solid #4c5057;
+  border-radius: 30px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #4c5057;
 }
 
 .remixui_permissions {
