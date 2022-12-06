@@ -9,7 +9,7 @@ import React, {
 import "./remix-ui-home-tab.css";
 import { ThemeContext, themes } from "./themeContext";
 import HomeTabTitle from "./components/homeTabTitle";
-import HomeTabLearn from "./components/homeTabLearn";
+// import HomeTabLearn from "./components/homeTabLearn";
 import HomeTabScamAlert from "./components/homeTabScamAlert";
 import HomeTabGetStarted from "./components/homeTabGetStarted";
 import HomeTabFeatured from "./components/homeTabFeatured";
