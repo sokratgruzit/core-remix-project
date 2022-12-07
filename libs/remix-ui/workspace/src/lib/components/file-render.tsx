@@ -117,7 +117,6 @@ export const FileRender = (props: RenderFileProps) => {
               handleClickFolder={props.handleClickFolder}
             >
               <div className="d-flex flex-row">
-                no
                 <FileLabel
                   fileDecorations={props.fileDecorations}
                   file={file}
