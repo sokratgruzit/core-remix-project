@@ -24,12 +24,14 @@ declare global {
 
 export interface RemixUiHomeTabProps {
   plugin: any;
+  toggleRightSlider: () => null;
 }
 
 export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
-  const { plugin } = props;
+  const { plugin, toggleRightSlider } = props;
 
   const [width, setWidth] = useState<number | undefined>();
+  const [rightSliderOpen, setRightSliderOpen] = useState<boolean>(true);
 
   const myObserver = new ResizeObserver((entries) => {
     // this will get called whenever div dimension changes
@@ -77,8 +79,20 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
   }, []);
 
   return (
-    <>
-      <RightSlider plugin={plugin} />
+    <div
+      className="test test"
+      style={{
+        width: rightSliderOpen ? "calc(100% - 140px)" : "100%",
+        overflowY: "auto",
+        transition: "0.5s",
+        height: "100%",
+      }}
+    >
+      <RightSlider
+        plugin={plugin}
+        rightSliderOpen={rightSliderOpen}
+        setRightSliderOpen={setRightSliderOpen}
+      />
       <div
         className="d-flex flex-column-reverse trackWidth"
         style={{
@@ -121,7 +135,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
           </div>
         </ThemeContext.Provider>
       </div>
-    </>
+    </div>
   );
 };
 

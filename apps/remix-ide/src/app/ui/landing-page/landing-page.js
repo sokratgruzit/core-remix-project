@@ -42,11 +42,8 @@ export class LandingPage extends ViewPlugin {
     return (
       <div
         id="landingPageHomeContainer"
-        className="remixui_homeContainer justify-content-between bg-light d-flex"
+        className="remixui_homeContainer justify-content-between bg-light d-flex w-100"
         data-id="landingPageHomeContainer"
-        style={{
-          width: "calc(100% - 140px)",
-        }}
       >
         <RemixUiHomeTab plugin={this} />
       </div>
