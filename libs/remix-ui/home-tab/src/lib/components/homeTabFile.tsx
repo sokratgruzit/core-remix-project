@@ -168,7 +168,7 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
         className="justify-content-start d-flex flex-column"
         id="hTFileSection"
       >
-        {/* <label style={{ fontSize: "1rem" }}>Files</label>
+        <label style={{ fontSize: "1rem" }}>Files</label>
         <button
           className="btn btn-primary p-2 border my-1"
           data-id="homeTabNewFile"
@@ -201,7 +201,7 @@ function HomeTabFile({ plugin }: HomeTabFileProps) {
           onClick={() => connectToLocalhost()}
         >
           Connect to Localhost
-        </button> */}
+        </button>
         <label className="text-white font-12">Load From:</label>
         <div className="d-flex loadFrom">
           <button

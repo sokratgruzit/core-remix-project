@@ -9018,3 +9018,28 @@ a.text-dark:hover {
 .fileWrapper {
   height: 36px;
 }
+
+.openRightSlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00050f;
+  border: 1px solid #161b24;
+  box-shadow: 0px 5px 5px #000000;
+  border-radius: 50px 0px 0px 50px;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  right: 0px;
+  top: 534px;
+  z-index: 10;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.openRightSlider:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+.openRightSlider:hover svg {
+  fill: #00050f;
+}
