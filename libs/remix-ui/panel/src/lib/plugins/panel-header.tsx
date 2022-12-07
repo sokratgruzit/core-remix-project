@@ -66,7 +66,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
             <p
               style={{
                 color: toggleExpander ? "#0500FF" : "#343841",
-                transition: ".8s",
+                transition: ".5s",
               }}
             >
               Plugin Info
@@ -94,7 +94,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
               </svg>
             </div>
           </div>
-          
+
           {/* <CustomTooltip
               placement="right-end"
               tooltipText="Plugin info"

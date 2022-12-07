@@ -106,11 +106,24 @@ iframe {
 .terminal-wrap.minimized {
   height: 2rem !important;
 }
+.pluginInfo p {
+  transition: 0.5s;
+}
+.pluginInfo svg path {
+  transition: 0.5s;
+}
+.pluginInfo:hover svg path {
+  fill: #0500ff;
+}
+.pluginInfo:hover p {
+  color: #0500ff !important;
+}
 .pluginInfo {
   display: flex;
-  padding-left: 16px;
+  /* margin-left: 16px; */
   gap: 5px;
   color: #4c5057;
+  cursor: pointer;
 }
 .mb-1 {
   color: #ffff;
