@@ -213,13 +213,13 @@ export function AccountUI(props: AccountProps) {
   return (
     <div className="udapp_crow">
       <div
-        className="d-flex align-center justify-content-between"
+        className="d-flex align-items-center justify-content-between"
         style={{ paddingBottom: "4px" }}
       >
         <label className="udapp_settingsLabel font-14 text-white mb-0">
           Account
         </label>
-        <div className="d-flex align-center">
+        <div className="d-flex align-items-center">
           <CustomTooltip
             placement={"top-start"}
             tooltipClasses="text-wrap"

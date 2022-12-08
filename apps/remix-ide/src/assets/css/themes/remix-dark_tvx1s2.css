@@ -413,7 +413,7 @@ small {
 .mark,
 mark {
   padding: 0.2em;
-  background-color: var(--text-bg-mark);
+  background-color: transparent;
 }
 .list-unstyled {
   padding-left: 0;

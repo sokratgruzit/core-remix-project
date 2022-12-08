@@ -193,7 +193,6 @@ export const EditorUI = (props: EditorUIProps) => {
     if (color.length === 4) {
       color = color.concat(color.substr(1));
     }
-    console.log(color);
     return color;
   };
   const defineAndSetTheme = (monaco) => {

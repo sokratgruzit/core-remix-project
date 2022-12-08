@@ -4,6 +4,7 @@ import { CustomTooltip, getPathIcon } from '@remix-ui/helper'
 import * as path from 'path'
 interface ResultItemProps {
   file: SearchResult
+  toggleExpander: boolean
 }
 
 export const ResultFileName = (props: ResultItemProps) => {
@@ -17,16 +18,34 @@ export const ResultFileName = (props: ResultItemProps) => {
 
   return (
     <>
-      {icon ? <div className={`${icon} caret caret_tv`}></div> : null}
+      {icon ? (
+        <div
+          className={`${icon} caret caret_tv
+          ${props.toggleExpander ? 'text-dark' : 'text-white'}
+
+      `}
+        ></div>
+      ) : null}
       <CustomTooltip
         tooltipText={props.file.filename}
         tooltipClasses="text-nowrap"
         tooltipId="resultFileNameTooltip"
         placement="top-start"
       >
-        <div title={props.file.filename} className="search_plugin_search_file_name ml-2">
+        <div
+          title={props.file.filename}
+          className={`search_plugin_search_file_name ml-2
+          ${props.toggleExpander ? 'text-dark' : 'text-white'}
+          `}
+        >
           {path.basename(props.file.path)}
-          <span className='pl-1 text-muted text-lowercase'>{path.dirname(props.file.path)}</span>
+          <span
+            className={`pl-1  text-lowercase
+          ${props.toggleExpander ? 'text-dark' : 'text-white'}
+          `}
+          >
+            {path.dirname(props.file.path)}
+          </span>
         </div>
       </CustomTooltip>
     </>

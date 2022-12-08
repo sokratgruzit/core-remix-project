@@ -1,120 +1,152 @@
 // eslint-disable-next-line no-use-before-define
-import React, { useEffect, useState } from 'react'
-import { UdappProps } from '../types'
-import { FuncABI } from '@remix-project/core-plugin'
-import { CopyToClipboard } from '@remix-ui/clipboard'
-import * as remixLib from '@remix-project/remix-lib'
-import * as ethJSUtil from 'ethereumjs-util'
-import { ContractGUI } from './contractGUI'
-import { TreeView, TreeViewItem } from '@remix-ui/tree-view'
-import { BN } from 'ethereumjs-util'
-import { CustomTooltip, is0XPrefixed, isHexadecimal, isNumeric, shortenAddress } from '@remix-ui/helper'
+import React, { useEffect, useState } from "react";
+import { UdappProps } from "../types";
+import { FuncABI } from "@remix-project/core-plugin";
+import { CopyToClipboard } from "@remix-ui/clipboard";
+import * as remixLib from "@remix-project/remix-lib";
+import * as ethJSUtil from "ethereumjs-util";
+import { ContractGUI } from "./contractGUI";
+import { TreeView, TreeViewItem } from "@remix-ui/tree-view";
+import { BN } from "ethereumjs-util";
+import {
+  CustomTooltip,
+  is0XPrefixed,
+  isHexadecimal,
+  isNumeric,
+  shortenAddress,
+} from "@remix-ui/helper";
 
-const txHelper = remixLib.execution.txHelper
+const txHelper = remixLib.execution.txHelper;
 
-export function UniversalDappUI (props: UdappProps) {
-  const [toggleExpander, setToggleExpander] = useState<boolean>(true)
-  const [contractABI, setContractABI] = useState<FuncABI[]>(null)
-  const [address, setAddress] = useState<string>('')
-  const [expandPath, setExpandPath] = useState<string[]>([])
-  const [llIError, setLlIError] = useState<string>('')
-  const [calldataValue, setCalldataValue] = useState<string>('')
-  const [evmBC, setEvmBC] = useState(null)
-  const [instanceBalance, setInstanceBalance] = useState(0)
+export function UniversalDappUI(props: UdappProps) {
+  const [toggleExpander, setToggleExpander] = useState<boolean>(true);
+  const [contractABI, setContractABI] = useState<FuncABI[]>(null);
+  const [address, setAddress] = useState<string>("");
+  const [expandPath, setExpandPath] = useState<string[]>([]);
+  const [llIError, setLlIError] = useState<string>("");
+  const [calldataValue, setCalldataValue] = useState<string>("");
+  const [evmBC, setEvmBC] = useState(null);
+  const [instanceBalance, setInstanceBalance] = useState(0);
 
   useEffect(() => {
     if (!props.instance.abi) {
-      const abi = txHelper.sortAbiFunction(props.instance.contractData.abi)
+      const abi = txHelper.sortAbiFunction(props.instance.contractData.abi);
 
-      setContractABI(abi)
+      setContractABI(abi);
     } else {
-      setContractABI(props.instance.abi)
+      setContractABI(props.instance.abi);
     }
-  }, [props.instance.abi])
+  }, [props.instance.abi]);
 
   useEffect(() => {
     if (props.instance.address) {
       // @ts-ignore
-      let address = (props.instance.address.slice(0, 2) === '0x' ? '' : '0x') + props.instance.address.toString('hex')
+      let address =
+        (props.instance.address.slice(0, 2) === "0x" ? "" : "0x") +
+        props.instance.address.toString("hex");
 
-      address = ethJSUtil.toChecksumAddress(address)
-      setAddress(address)
+      address = ethJSUtil.toChecksumAddress(address);
+      setAddress(address);
     }
-  }, [props.instance.address])
+  }, [props.instance.address]);
 
   useEffect(() => {
     if (props.instance.contractData) {
-      setEvmBC(props.instance.contractData.bytecodeObject)
+      setEvmBC(props.instance.contractData.bytecodeObject);
     }
-  }, [props.instance.contractData])
+  }, [props.instance.contractData]);
 
   useEffect(() => {
     if (props.instance.balance) {
-      setInstanceBalance(props.instance.balance)
+      setInstanceBalance(props.instance.balance);
     }
-  }, [props.instance.balance])
+  }, [props.instance.balance]);
 
   const sendData = () => {
-    setLlIError('')
-    const fallback = txHelper.getFallbackInterface(contractABI)
-    const receive = txHelper.getReceiveInterface(contractABI)
+    setLlIError("");
+    const fallback = txHelper.getFallbackInterface(contractABI);
+    const receive = txHelper.getReceiveInterface(contractABI);
     const args = {
       funcABI: fallback || receive,
       address: address,
       contractName: props.instance.name,
-      contractABI: contractABI
-    }
-    const amount = props.sendValue
+      contractABI: contractABI,
+    };
+    const amount = props.sendValue;
 
-    if (amount !== '0') {
+    if (amount !== "0") {
       // check for numeric and receive/fallback
       if (!isNumeric(amount)) {
-        return setLlIError('Value to send should be a number')
-      } else if (!receive && !(fallback && fallback.stateMutability === 'payable')) {
-        return setLlIError("In order to receive Ether transfer the contract should have either 'receive' or payable 'fallback' function")
+        return setLlIError("Value to send should be a number");
+      } else if (
+        !receive &&
+        !(fallback && fallback.stateMutability === "payable")
+      ) {
+        return setLlIError(
+          "In order to receive Ether transfer the contract should have either 'receive' or payable 'fallback' function"
+        );
       }
     }
-    let calldata = calldataValue
+    let calldata = calldataValue;
 
     if (calldata) {
       if (calldata.length < 4 && is0XPrefixed(calldata)) {
-        return setLlIError('The calldata should be a valid hexadecimal value with size of at least one byte.')
+        return setLlIError(
+          "The calldata should be a valid hexadecimal value with size of at least one byte."
+        );
       } else {
         if (is0XPrefixed(calldata)) {
-          calldata = calldata.substr(2, calldata.length)
+          calldata = calldata.substr(2, calldata.length);
         }
         if (!isHexadecimal(calldata)) {
-          return setLlIError('The calldata should be a valid hexadecimal value.')
+          return setLlIError(
+            "The calldata should be a valid hexadecimal value."
+          );
         }
       }
       if (!fallback) {
-        return setLlIError("'Fallback' function is not defined")
+        return setLlIError("'Fallback' function is not defined");
       }
     }
 
-    if (!receive && !fallback) return setLlIError('Both \'receive\' and \'fallback\' functions are not defined')
+    if (!receive && !fallback)
+      return setLlIError(
+        "Both 'receive' and 'fallback' functions are not defined"
+      );
 
     // we have to put the right function ABI:
     // if receive is defined and that there is no calldata => receive function is called
     // if fallback is defined => fallback function is called
-    if (receive && !calldata) args.funcABI = receive
-    else if (fallback) args.funcABI = fallback
+    if (receive && !calldata) args.funcABI = receive;
+    else if (fallback) args.funcABI = fallback;
 
-    if (!args.funcABI) return setLlIError('Please define a \'Fallback\' function to send calldata and a either \'Receive\' or payable \'Fallback\' to send ethers')
-    runTransaction(false, args.funcABI, null, calldataValue)
-  }
+    if (!args.funcABI)
+      return setLlIError(
+        "Please define a 'Fallback' function to send calldata and a either 'Receive' or payable 'Fallback' to send ethers"
+      );
+    runTransaction(false, args.funcABI, null, calldataValue);
+  };
 
   const toggleClass = () => {
-    setToggleExpander(!toggleExpander)
-  }
+    setToggleExpander(!toggleExpander);
+  };
 
   const remove = () => {
-    props.removeInstance(props.index)
-  }
+    props.removeInstance(props.index);
+  };
 
-  const runTransaction = (lookupOnly, funcABI: FuncABI, valArr, inputsValues, funcIndex?: number) => {
-    const functionName = funcABI.type === 'function' ? funcABI.name : `(${funcABI.type})`
-    const logMsg = `${lookupOnly ? 'call' : 'transact'} to ${props.instance.name}.${functionName}`
+  const runTransaction = (
+    lookupOnly,
+    funcABI: FuncABI,
+    valArr,
+    inputsValues,
+    funcIndex?: number
+  ) => {
+    const functionName =
+      funcABI.type === "function" ? funcABI.name : `(${funcABI.type})`;
+    const logMsg = `${lookupOnly ? "call" : "transact"} to ${
+      props.instance.name
+    }.${functionName}`;
 
     props.runTransactions(
       props.index,
@@ -129,85 +161,105 @@ export function UniversalDappUI (props: UdappProps) {
       props.mainnetPrompt,
       props.gasEstimationPrompt,
       props.passphrasePrompt,
-      funcIndex)
-  }
+      funcIndex
+    );
+  };
 
   const extractDataDefault = (item, parent?) => {
-    const ret: any = {}
+    const ret: any = {};
 
     if (BN.isBN(item)) {
-      ret.self = item.toString(10)
-      ret.children = []
+      ret.self = item.toString(10);
+      ret.children = [];
     } else {
       if (item instanceof Array) {
         ret.children = item.map((item, index) => {
-          return { key: index, value: item }
-        })
-        ret.self = 'Array'
-        ret.isNode = true
-        ret.isLeaf = false
+          return { key: index, value: item };
+        });
+        ret.self = "Array";
+        ret.isNode = true;
+        ret.isLeaf = false;
       } else if (item instanceof Object) {
         ret.children = Object.keys(item).map((key) => {
-          return { key: key, value: item[key] }
-        })
-        ret.self = 'Object'
-        ret.isNode = true
-        ret.isLeaf = false
+          return { key: key, value: item[key] };
+        });
+        ret.self = "Object";
+        ret.isNode = true;
+        ret.isLeaf = false;
       } else {
-        ret.self = item
-        ret.children = null
-        ret.isNode = false
-        ret.isLeaf = true
+        ret.self = item;
+        ret.children = null;
+        ret.isNode = false;
+        ret.isLeaf = true;
       }
     }
-    return ret
-  }
+    return ret;
+  };
 
   const handleExpand = (path: string) => {
     if (expandPath.includes(path)) {
-      const filteredPath = expandPath.filter(value => value !== path)
+      const filteredPath = expandPath.filter((value) => value !== path);
 
-      setExpandPath(filteredPath)
+      setExpandPath(filteredPath);
     } else {
-      setExpandPath([...expandPath, path])
+      setExpandPath([...expandPath, path]);
     }
-  }
+  };
 
   const handleCalldataChange = (e) => {
-    const value = e.target.value
+    const value = e.target.value;
 
-    setCalldataValue(value)
-  }
+    setCalldataValue(value);
+  };
 
   const label = (key: string | number, value: string) => {
     return (
       <div className="d-flex mt-2 flex-row label_item">
-        <label className="small font-weight-bold mb-0 pr-1 label_key">{key}:</label>
+        <label className="small font-weight-bold mb-0 pr-1 label_key">
+          {key}:
+        </label>
         <label className="m-0 label_value">{value}</label>
       </div>
-    )
-  }
+    );
+  };
 
   const renderData = (item, parent, key: string | number, keyPath: string) => {
-    const data = extractDataDefault(item, parent)
+    const data = extractDataDefault(item, parent);
     const children = (data.children || []).map((child, index) => {
-      return (
-        renderData(child.value, data, child.key, keyPath + '/' + child.key)
-      )
-    })
+      return renderData(
+        child.value,
+        data,
+        child.key,
+        keyPath + "/" + child.key
+      );
+    });
 
     if (children && children.length > 0) {
       return (
-        <TreeViewItem id={`treeViewItem${key}`} key={keyPath} label={label(key, data.self)} onClick={() => handleExpand(keyPath)} expand={expandPath.includes(keyPath)}>
+        <TreeViewItem
+          id={`treeViewItem${key}`}
+          key={keyPath}
+          label={label(key, data.self)}
+          onClick={() => handleExpand(keyPath)}
+          expand={expandPath.includes(keyPath)}
+        >
           <TreeView id={`treeView${key}`} key={keyPath}>
             {children}
           </TreeView>
         </TreeViewItem>
-      )
+      );
     } else {
-      return <TreeViewItem id={key.toString()} key={keyPath} label={label(key, data.self)} onClick={() => handleExpand(keyPath)} expand={expandPath.includes(keyPath)} />
+      return (
+        <TreeViewItem
+          id={key.toString()}
+          key={keyPath}
+          label={label(key, data.self)}
+          onClick={() => handleExpand(keyPath)}
+          expand={expandPath.includes(keyPath)}
+        />
+      );
     }
-  }
+  };
 
   return (
     <div
@@ -220,7 +272,7 @@ export function UniversalDappUI (props: UdappProps) {
       <div className="udapp_title pb-0 alert alert-secondary">
         <span
           data-id={`universalDappUiTitleExpander${props.index}`}
-          className="btn udapp_titleExpander"
+          className="btn udapp_titleExpander d-flex align-items-center"
           onClick={toggleClass}
         >
           <i
@@ -238,7 +290,7 @@ export function UniversalDappUI (props: UdappProps) {
             </span>
           </div>
           <div className="btn-group">
-            <button className="btn p-1 btn-secondary">
+            <button className="btn p-1">
               <CopyToClipboard content={address} direction={"top"} />
             </button>
           </div>
@@ -250,7 +302,7 @@ export function UniversalDappUI (props: UdappProps) {
           tooltipText="Remove from the list"
         >
           <button
-            className="udapp_udappClose mr-1 p-1 btn btn-secondary align-items-center"
+            className="udapp_udappClose mr-1 align-items-center"
             data-id="universalDappUiUdappClose"
             onClick={remove}
           >

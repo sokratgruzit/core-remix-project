@@ -424,7 +424,7 @@ small {
 .mark,
 mark {
   padding: 0.2em;
-  background-color: var(--text-bg-mark);
+  background-color: transparent;
 }
 .list-unstyled {
   padding-left: 0;
@@ -5730,9 +5730,7 @@ button.bg-primary:hover {
 .bg-secondary {
   background-color: #0500ff !important;
   height: 36px;
-  width: 294px;
   color: white;
-  padding-left: 10px;
   font-weight: 400;
   font-size: 12px;
   border-radius: 4px;
@@ -9017,6 +9015,8 @@ a.text-dark:hover {
 
 .fileWrapper {
   height: 36px;
+  padding-left: 10px;
+  border-radius: 4px;
 }
 .openRightSlider {
   display: flex;

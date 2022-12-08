@@ -6,6 +6,7 @@ import { Include } from './Include'
 import { Exclude } from './Exclude'
 import { FindContainer } from './FindContainer'
 import { Undo } from './Undo'
+import { SearchMatch } from './SearchMatch'
 
 export const SearchTab = (props) => {
   const plugin = props.plugin
@@ -17,6 +18,7 @@ export const SearchTab = (props) => {
           <FindContainer></FindContainer>
           <Include></Include>
           <Exclude></Exclude>
+          <SearchMatch></SearchMatch>
           <Undo></Undo>
           <Results></Results>
         </SearchProvider>

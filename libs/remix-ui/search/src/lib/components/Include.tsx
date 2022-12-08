@@ -21,7 +21,7 @@ export const Include = (props) => {
 
   return (
     <>
-      <div className="search_plugin_find-part pl-3">
+      <div className="search_plugin_find-part">
         <label className="mt-2">Files to include</label>
         <input
           id="search_include"

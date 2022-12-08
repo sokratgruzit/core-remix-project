@@ -1,11 +1,21 @@
 .search_plugin_search_result_item_title {
   display: flex;
+  border-radius: 4px;
+  height: 36px;
+  margin-top: 8px;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
   cursor: pointer;
   align-items: center;
+}
+.search_plugin_search_result_item_title:hover {
+  background: #0f1218;
+}
+
+.expandedPluginSearch {
+  background: #0f1218;
 }
 
 .search_plugin_wrap_summary {
@@ -27,12 +37,17 @@
 .search_plugin_controls {
   display: flex;
   margin-top: 15px;
+  gap: 5px;
 }
 
 .search_plugin_search_tab .search_plugin_search_line_container {
   display: flex;
   flex-direction: row;
   position: relative;
+}
+.search_plugin_search_line_container {
+  margin-left: 18px;
+  padding-left: 13px;
 }
 
 .search_plugin_search_tab .search_plugin_search_line {
@@ -46,6 +61,15 @@
   position: absolute;
   right: 0px;
   top: 0px;
+}
+
+.search_plugin_search_line:hover .search_plugin_summary_right,
+.search_plugin_search_line:hover .search_plugin_summary_left,
+.search_plugin_search_line:hover .search_plugin_summary_left {
+  color: #fff;
+}
+.search_plugin_summary_center {
+  color: #ff7152;
 }
 
 .search_plugin_summary_right {
@@ -92,7 +116,7 @@
 }
 
 .search_plugin_search_tab .checked {
-  background-color: var(--secondary);
+  background-color: #161b24;
 }
 
 .search_plugin_search_tab .search_plugin_search_file_name {
@@ -108,13 +132,24 @@
   justify-content: flex-end;
 }
 
+.search_plugin_result_count {
+  padding-right: 8px;
+}
+
 .search_plugin_search_tab .search_plugin_result_count_number {
-  font-size: x-small;
+  font-size: 12px;
+  line-height: 16px;
+}
+.tooManyResults {
+  position: relative;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .search_plugin_find_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .search_plugin_find_container_internal {
@@ -132,7 +167,8 @@
 .search_plugin_wrap_summary_replace {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-top: 5px;
 }
 
 .undo-button {
@@ -159,6 +195,18 @@
   color: #0500ff;
   margin: 0 0 0 10px;
 }
+.replace svg path {
+  transition: 0.5s;
+}
+.replace:hover svg path {
+  fill: #ff7152;
+}
+.replace p {
+  transition: 0.5s;
+}
+.replace:hover p {
+  color: #ff7152;
+}
 .search-field {
   position: relative;
 }
@@ -174,15 +222,12 @@
   right: 7px;
   cursor: pointer;
 }
-.replace svg path {
-  transition: 0.5s;
-}
-.replace:hover svg path {
-  fill: #fff;
-}
-.replace p {
-  transition: 0.5s;
-}
-.replace:hover p {
-  color: #fff;
+.searchMatch {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px;
+  width: 32px !important;
+  height: 32px !important;
+  cursor: pointer;
 }

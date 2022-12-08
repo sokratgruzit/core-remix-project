@@ -28,7 +28,7 @@ export function EnvironmentUI(props: EnvironmentProps) {
         >
           Environment
         </label>
-        <div className="d-flex align-center">
+        <div className="d-flex align-items-center">
           <span
             onClick={() => {
               handleChangeExEnv();
