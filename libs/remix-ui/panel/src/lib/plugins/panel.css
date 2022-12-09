@@ -126,7 +126,7 @@ iframe {
   cursor: pointer;
 }
 .mb-1 {
-  color: #ffff;
+  margin-bottom: 0.25rem !important;
 }
 .maxHeight {
   max-height: 100px;

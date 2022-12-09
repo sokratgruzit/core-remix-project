@@ -68,7 +68,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #a2a3bd;
+  color: #808287;
   text-align: left;
   background-color: var(--body-bg);
 }
@@ -4013,9 +4013,7 @@ input[type="submit"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #2e3145;
   background-clip: border-box;
-  border: 1px solid #2c3244;
   border-radius: 2px;
 }
 .card > hr {
@@ -4054,8 +4052,11 @@ input[type="submit"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+}
+.card-header:hover {
+  background: #0f1218;
 }
 .card-header:first-child {
   border-radius: calc(2px - 1px) calc(2px - 1px) 0 0;

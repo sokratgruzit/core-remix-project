@@ -24,7 +24,7 @@
   --text-background: #222336;
   --text-bg-mark: #8388b2;
   --custom-select: #0d1016;
-  --body-bg: #222336;
+  --body-bg: #00050f;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -79,9 +79,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #a2a3bd;
+  color: #808287;
   text-align: left;
-  background-color: #0d1016;
+  background-color: #00050f;
 }
 *::-webkit-scrollbar {
   width: 8px;
@@ -4085,9 +4085,7 @@ input[type="submit"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #2e3145;
   background-clip: border-box;
-  border: 1px solid #2c3244;
   border-radius: 2px;
 }
 .card > hr {
@@ -6973,7 +6971,7 @@ button.bg-dark:hover {
   padding-right: 0.5rem !important;
 }
 .pb-2 {
-  color: #ffffff;
+  padding-bottom: 0.5rem !important;
 }
 .py-2 {
   background-color: #00050f;

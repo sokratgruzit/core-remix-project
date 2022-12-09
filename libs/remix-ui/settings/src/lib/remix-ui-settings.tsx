@@ -212,7 +212,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
         >
           <div className="d-flex justify-content-end pr-4">
             <button
-              className="btn btn-sm btn-secondary ml-2"
+              className="btn btn-sm btn-secondary ml-2 w-100"
               onClick={() => {
                 try {
                   if ((window as any).remixFileSystem.name === "indexedDB") {
@@ -418,7 +418,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
 
   const swarmSettings = () => (
     <div className="border-top">
-      <div className="card-body pt-3 pb-2">
+      <div className="card-body pt-3 pb-3">
         <h6 className="card-title">{swarmSettingsTitle}</h6>
         <div className="pt-2 pt-2 mb-0 pb-0">
           <label className="m-0">PRIVATE BEE ADDRESS:</label>
@@ -445,9 +445,9 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
             <div className="d-flex justify-content-end pt-2"></div>
           </div>
         </div>
-        <div className="d-flex justify-content-end pt-2">
+        <div className="d-flex justify-content-end pt-2 w-100">
           <input
-            className="btn btn-sm btn-primary ml-2"
+            className="btn btn-sm btn-primary w-100"
             id="saveswarmsettings"
             data-id="settingsTabSaveSwarmSettings"
             onClick={() => saveSwarmSettings()}
@@ -511,7 +511,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
 
   const ipfsSettings = () => (
     <div className="border-top">
-      <div className="card-body pt-3 pb-2">
+      <div className="card-body pt-3 pb-3">
         <h6 className="card-title">{ipfsSettingsText}</h6>
         <div className="pt-2 mb-0">
           <label className="m-0">IPFS HOST:</label>
@@ -579,7 +579,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
         </div>
         <div className="d-flex justify-content-end pt-2">
           <input
-            className="btn btn-sm btn-primary ml-2"
+            className="btn btn-sm btn-primary w-100"
             id="saveIpfssettings"
             data-id="settingsTabSaveIpfsSettings"
             onClick={() => saveIpfsSettings()}
