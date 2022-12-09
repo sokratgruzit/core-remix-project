@@ -108,6 +108,7 @@ iframe {
 }
 .pluginInfo p {
   transition: 0.5s;
+  margin-bottom: 0 !important;
 }
 .pluginInfo svg path {
   transition: 0.5s;

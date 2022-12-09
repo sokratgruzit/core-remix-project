@@ -1,4 +1,3 @@
-import { CustomTooltip } from '@remix-ui/helper'
 import React, { useContext, useEffect, useState } from 'react'
 import { SearchContext } from '../context/context'
 
@@ -8,9 +7,9 @@ export const Find = () => {
     cancelSearch,
     startSearch,
     state,
-    toggleCaseSensitive,
-    toggleMatchWholeWord,
-    toggleUseRegex,
+    // toggleCaseSensitive,
+    // toggleMatchWholeWord,
+    // toggleUseRegex,
   } = useContext(SearchContext)
 
   const [inputValue, setInputValue] = useState('')
