@@ -421,7 +421,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
       <div className="card-body pt-3 pb-3">
         <h6 className="card-title">{swarmSettingsTitle}</h6>
         <div className="pt-2 pt-2 mb-0 pb-0">
-          <label className="m-0">PRIVATE BEE ADDRESS:</label>
+          <label className="m-0 font-14 text-white">PRIVATE BEE ADDRESS:</label>
           <div className="text-secondary mb-0 h6">
             <input
               id="swarmprivatebeeaddress"
@@ -433,7 +433,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
           </div>
         </div>
         <div className="pt-2 mb-0 pb-0">
-          <label className="m-0">POSTAGE STAMP ID:</label>
+          <label className="m-0 font-14 text-white">POSTAGE STAMP ID:</label>
           <div className="text-secondary mb-0 h6">
             <input
               id="swarmpostagestamp"
@@ -514,7 +514,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
       <div className="card-body pt-3 pb-3">
         <h6 className="card-title">{ipfsSettingsText}</h6>
         <div className="pt-2 mb-0">
-          <label className="m-0">IPFS HOST:</label>
+          <label className="m-0 font-14 text-white">IPFS HOST:</label>
           <div className="text-secondary mb-0 h6">
             <input
               placeholder="e.g. ipfs.infura.io"
@@ -527,7 +527,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
           </div>
         </div>
         <div className="pt-2 mb-0 pb-0">
-          <label className="m-0">IPFS PROTOCOL:</label>
+          <label className="m-0 font-14 text-white">IPFS PROTOCOL:</label>
           <div className="text-secondary mb-0 h6">
             <input
               placeholder="e.g. https"
@@ -540,7 +540,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
           </div>
         </div>
         <div className="pt-2 mb-0 pb-0">
-          <label className="m-0">IPFS PORT:</label>
+          <label className="m-0 font-14 text-white">IPFS PORT:</label>
           <div className="text-secondary mb-0 h6">
             <input
               placeholder="e.g. 5001"
@@ -553,7 +553,9 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
           </div>
         </div>
         <div className="pt-2 mb-0 pb-0">
-          <label className="m-0">IPFS PROJECT ID [ INFURA ]:</label>
+          <label className="m-0 font-14 text-white">
+            IPFS PROJECT ID [ INFURA ]:
+          </label>
           <div className="text-secondary mb-0 h6">
             <input
               id="settingsIpfsProjectId"
@@ -565,7 +567,9 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
           </div>
         </div>
         <div className="pt-2 mb-0 pb-0">
-          <label className="m-0">IPFS PROJECT SECRET [ INFURA ]:</label>
+          <label className="m-0 font-14 text-white">
+            IPFS PROJECT SECRET [ INFURA ]:
+          </label>
           <div className="text-secondary mb-0 h6">
             <input
               id="settingsIpfsProjectSecret"

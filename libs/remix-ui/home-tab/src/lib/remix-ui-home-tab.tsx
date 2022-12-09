@@ -15,6 +15,7 @@ import HomeTabGetStarted from "./components/homeTabGetStarted";
 import HomeTabFeatured from "./components/homeTabFeatured";
 import HomeTabFeaturedPlugins from "./components/homeTabFeaturedPlugins";
 import RightSlider from "./components/rightSlider";
+import HomeTabLearn from "./components/homeTabLearn";
 
 declare global {
   interface Window {

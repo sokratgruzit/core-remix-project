@@ -817,7 +817,7 @@ export function Workspace() {
         >
           <div>
             <header>
-              <div className="mx-2 mb-2 d-flex flex-column">
+              <div className="mx-2 d-flex flex-column">
                 <div className="d-flex justify-content-between">
                   <span className="d-flex align-items-end">
                     <label

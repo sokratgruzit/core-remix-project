@@ -5,7 +5,6 @@ import { GithubSettingsProps } from "../types";
 import {
   gitAccessTokenTitle,
   gitAccessTokenText,
-  gitAccessTokenText2,
   gitAccessTokenLink,
 } from "./constants";
 
@@ -56,14 +55,51 @@ export function GithubSettings(props: GithubSettingsProps) {
       <div className="card-body pt-3 pb-3">
         <h6 className="card-title">{gitAccessTokenTitle}</h6>
         <p className="mb-1">{gitAccessTokenText}</p>
-        <p className="">{gitAccessTokenText2}</p>
-        <p className="mb-1">
-          <a className="text-primary" target="_blank" href={gitAccessTokenLink}>
-            {gitAccessTokenLink}
+        <p className="">
+          <a
+            className="outsideLinks mb-1"
+            target="_blank"
+            href={gitAccessTokenLink}
+          >
+            Go to github token page
           </a>
+          &nbsp;to create a new token and save it in Remix. Make sure this token
+          has only \'create gist\' permission.
         </p>
         <div>
-          <label className="mb-0 pb-0">TOKEN:</label>
+          <div className="d-flex justify-content-between align-items-center mb-1">
+            <label className="mb-0 pb-0 font-14 text-white">TOKEN:</label>
+            <div className="input-group-append">
+              <CopyToClipboard
+                content={githubToken}
+                data-id="copyToClipboardCopyIcon"
+                className="far fa-copy ml-1 p-2 mt-1"
+                direction={"top"}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.3346 10.7501V14.2501C13.3346 17.1667 12.168 18.3334 9.2513 18.3334H5.7513C2.83464 18.3334 1.66797 17.1667 1.66797 14.2501V10.7501C1.66797 7.83341 2.83464 6.66675 5.7513 6.66675H9.2513C12.168 6.66675 13.3346 7.83341 13.3346 10.7501Z"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M18.3346 5.75008V9.25008C18.3346 12.1667 17.168 13.3334 14.2513 13.3334H13.3346V10.7501C13.3346 7.83341 12.168 6.66675 9.2513 6.66675H6.66797V5.75008C6.66797 2.83341 7.83464 1.66675 10.7513 1.66675H14.2513C17.168 1.66675 18.3346 2.83341 18.3346 5.75008Z"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </CopyToClipboard>
+            </div>
+          </div>
           <div className="input-group text-secondary mb-0 h6">
             <input
               id="gistaccesstoken"
@@ -73,18 +109,10 @@ export function GithubSettings(props: GithubSettingsProps) {
               onChange={(e) => handleChangeTokenState(e)}
               value={githubToken}
             />
-            <div className="input-group-append">
-              <CopyToClipboard
-                content={githubToken}
-                data-id="copyToClipboardCopyIcon"
-                className="far fa-copy ml-1 p-2 mt-1"
-                direction={"top"}
-              />
-            </div>
           </div>
         </div>
         <div>
-          <label className="pt-2 mb-0 pb-0">USERNAME:</label>
+          <label className="pt-2 mb-0 pb-0 font-14 text-white">USERNAME:</label>
           <div className="text-secondary mb-0 h6">
             <input
               id="githubusername"
@@ -97,7 +125,7 @@ export function GithubSettings(props: GithubSettingsProps) {
           </div>
         </div>
         <div>
-          <label className="pt-2 mb-0 pb-0">EMAIL:</label>
+          <label className="pt-2 mb-0 pb-0 font-14 text-white">EMAIL:</label>
           <div className="text-secondary mb-0 h6">
             <input
               id="githubemail"

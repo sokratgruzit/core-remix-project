@@ -74,7 +74,7 @@ export const FileExplorerMenu = (props: FileExplorerMenuProps) => {
           {props.title}
         </span>
       </CustomTooltip>
-      <span className="pl-2">
+      <span className="pl-2 pt-2 d-flex" style={{ gap: "5px" }}>
         {state.menuItems.map(({ action, title, icon, placement }, index) => {
           if (action === "uploadFile") {
             return (
@@ -85,23 +85,25 @@ export const FileExplorerMenu = (props: FileExplorerMenuProps) => {
                 tooltipText={title}
                 key={index}
               >
-                <label
-                  id={action}
-                  data-id={"fileExplorerUploadFile" + action}
-                  className={icon + " mb-0 remixui_newFile"}
-                >
-                  <input
-                    id="fileUpload"
-                    data-id="fileExplorerFileUpload"
-                    type="file"
-                    onChange={(e) => {
-                      e.stopPropagation();
-                      props.uploadFile(e.target);
-                      e.target.value = null;
-                    }}
-                    multiple
-                  />
-                </label>
+                <div className="remixui_newFile">
+                  <label
+                    id={action}
+                    data-id={"fileExplorerUploadFile" + action}
+                    className={icon}
+                  >
+                    <input
+                      id="fileUpload"
+                      data-id="fileExplorerFileUpload"
+                      type="file"
+                      onChange={(e) => {
+                        e.stopPropagation();
+                        props.uploadFile(e.target);
+                        e.target.value = null;
+                      }}
+                      multiple
+                    />
+                  </label>
+                </div>
               </CustomTooltip>
             );
           } else {
@@ -113,29 +115,31 @@ export const FileExplorerMenu = (props: FileExplorerMenuProps) => {
                 tooltipText={title}
                 key={`${action}-${title}-${index}`}
               >
-                <span
-                  id={action}
-                  data-id={"fileExplorerNewFile" + action}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    _paq.push([
-                      "trackEvent",
-                      "fileExplorer",
-                      "fileAction",
-                      action,
-                    ]);
-                    if (action === "createNewFile") {
-                      props.createNewFile();
-                    } else if (action === "createNewFolder") {
-                      props.createNewFolder();
-                    } else if (action === "publishToGist") {
-                      props.publishToGist();
-                    } else {
-                      state.actions[action]();
-                    }
-                  }}
-                  className={"newFile " + icon + " remixui_newFile"}
-                ></span>
+                <div className="remixui_newFile">
+                  <span
+                    id={action}
+                    data-id={"fileExplorerNewFile" + action}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      _paq.push([
+                        "trackEvent",
+                        "fileExplorer",
+                        "fileAction",
+                        action,
+                      ]);
+                      if (action === "createNewFile") {
+                        props.createNewFile();
+                      } else if (action === "createNewFolder") {
+                        props.createNewFolder();
+                      } else if (action === "publishToGist") {
+                        props.publishToGist();
+                      } else {
+                        state.actions[action]();
+                      }
+                    }}
+                    className={"newFile " + icon}
+                  ></span>
+                </div>
               </CustomTooltip>
             );
           }
