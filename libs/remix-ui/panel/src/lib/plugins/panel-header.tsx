@@ -1,9 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useRef, useState } from "react"; // eslint-disable-line
 import { PluginRecord } from "../types";
 import "./panel.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-// import { CustomTooltip } from '@remix-ui/helper'
 
 export interface RemixPanelProps {
   plugins: Record<string, PluginRecord>;
@@ -25,10 +23,6 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
   const toggleClass = () => {
     setToggleExpander(!toggleExpander);
   };
-
-  // const tooltipChild = (
-  //   <i className={`px-1 ml-2 pt-1 pb-2 ${!toggleExpander ? 'fas fa-angle-right' : 'fas fa-angle-down bg-light'}`} aria-hidden="true"></i>
-  // )
 
   return (
     <header className="d-flex flex-column" style={{ background: "#00050F" }}>
@@ -94,15 +88,6 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
               </svg>
             </div>
           </div>
-
-          {/* <CustomTooltip
-              placement="right-end"
-              tooltipText="Plugin info"
-              tooltipId="pluginInfoTooltip"
-              tooltipClasses="text-nowrap"
-            >
-              {tooltipChild}
-            </CustomTooltip> */}
         </div>
       </div>
       <div

@@ -4,9 +4,9 @@ import { SearchContext } from '../context/context'
 
 export const SearchMatch = () => {
   const {
-    setFind,
-    cancelSearch,
-    startSearch,
+    // setFind,
+    // cancelSearch,
+    // startSearch,
     state,
     toggleCaseSensitive,
     toggleMatchWholeWord,
