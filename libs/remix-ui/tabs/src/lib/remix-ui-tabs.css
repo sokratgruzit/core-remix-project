@@ -56,3 +56,20 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.run-it {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  border-left: 1px solid #161b24;
+}
+.run-it-inner {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+.run-it-inner p {
+  margin: 0 !important;
+}

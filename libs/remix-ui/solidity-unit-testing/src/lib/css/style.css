@@ -17,11 +17,15 @@
   font-weight: bold;
 }
 .testPass {
+  position: relative;
+}
+.testFail {
+  position: relative;
 }
 .testLog {
   margin-bottom: 1%;
   border-radius: 4px;
-  padding: 1% 1% 1% 5%;
+  padding: 20px !important;
 }
 .title {
   font-size: 1.1em;

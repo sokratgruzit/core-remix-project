@@ -17,7 +17,7 @@ const profile = {
   location: "sidePanel",
   documentation: "https://remix-ide.readthedocs.io/en/latest/run.html",
   version: packageJson.version,
-  maintainedBy: "Remix",
+  maintainedBy: "CORE",
   permission: true,
   events: ["newTransaction"],
   methods: [

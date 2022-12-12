@@ -454,8 +454,12 @@ export const RemixUiTerminal = (props: RemixUiTerminalProps) => {
                <path d="M1.41 -4.62904e-07L6 4.58L10.59 -6.16331e-08L12 1.41L6 7.41L-6.16331e-08 1.41L1.41 -4.62904e-07Z"/>
           </svg>
           <div className="mx-2 remix_ui_terminal_console" id="clearConsole" data-id="terminalClearConsole" onClick={handleClearConsole} >
-            <i className="far fa-ban" aria-hidden="true" title="Clear console"
-            ></i>
+            {/* <i className="far fa-ban" aria-hidden="true" title="Clear console"
+            ></i> */}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.99984 1.6665C5.39984 1.6665 1.6665 5.39984 1.6665 9.99984C1.6665 14.5998 5.39984 18.3332 9.99984 18.3332C14.5998 18.3332 18.3332 14.5998 18.3332 9.99984C18.3332 5.39984 14.5998 1.6665 9.99984 1.6665ZM9.99984 16.6665C6.3165 16.6665 3.33317 13.6832 3.33317 9.99984C3.33317 8.45817 3.85817 7.0415 4.7415 5.9165L14.0832 15.2582C12.9582 16.1415 11.5415 16.6665 9.99984 16.6665ZM15.2582 14.0832L5.9165 4.7415C7.0415 3.85817 8.45817 3.33317 9.99984 3.33317C13.6832 3.33317 16.6665 6.3165 16.6665 9.99984C16.6665 11.5415 16.1415 12.9582 15.2582 14.0832Z" fill="white"/>
+            </svg>
+
           </div>
           <div className="mx-2" title='Pending Transactions'>0</div>
           <div className="pt-1 h-80 mx-3 align-items-center remix_ui_terminal_listenOnNetwork custom-control custom-checkbox">

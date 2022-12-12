@@ -25,7 +25,7 @@ const profile = {
   description: "Write and run unit tests for your contracts in Solidity",
   location: "sidePanel",
   documentation: "https://remix-ide.readthedocs.io/en/latest/unittesting.html",
-  maintainedBy: "Remix",
+  maintainedBy: "CORE",
 };
 
 module.exports = class TestTab extends ViewPlugin {

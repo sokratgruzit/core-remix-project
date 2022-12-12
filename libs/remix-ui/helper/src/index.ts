@@ -7,3 +7,4 @@ export * from "./lib/components/custom-tooltip";
 export { default as CornerDecor } from "./lib/components/CornerDecor";
 export { default as CornerDecorRed } from "./lib/components/CornerDecorRed";
 export { default as CornerDecorYellow } from "./lib/components/CornerDecorYellow";
+export { default as CornerDecorGreen } from "./lib/components/CornerDecorGreen";

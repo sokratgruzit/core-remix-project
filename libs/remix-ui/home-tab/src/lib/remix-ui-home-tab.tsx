@@ -114,7 +114,6 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
             }}
           >
             <HomeTabTitle plugin={plugin} width={width} />
-            {/* <HomeTabLearn plugin={plugin} /> */}
           </div>
           <div
             className="pl-2 pr-3 justify-content-start d-flex flex-column"
@@ -132,6 +131,7 @@ export const RemixUiHomeTab = (props: RemixUiHomeTabProps) => {
               plugin={plugin}
               width={width}
             ></HomeTabFeaturedPlugins>
+            <HomeTabLearn plugin={plugin} width={width} />
             <HomeTabScamAlert></HomeTabScamAlert>
           </div>
         </ThemeContext.Provider>

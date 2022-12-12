@@ -32,7 +32,7 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
         </h6>
         <div className="d-flex flex-row">
           <div className="d-flex flex-row">
-            {plugin?.profile?.maintainedBy?.toLowerCase() === "remix" && (
+            {plugin?.profile?.maintainedBy?.toLowerCase() === "CORE" && (
               <OverlayTrigger
                 placement="right"
                 overlay={
@@ -104,7 +104,10 @@ const RemixUIPanelHeader = (props: RemixPanelProps) => {
         {plugin?.profile?.maintainedBy && (
           <span className="d-flex flex-row align-items-center">
             <label className="mb-0 pr-2">Maintained by:</label>
-            <span> {plugin?.profile.maintainedBy} </span>
+            <span style={{ color: "#FF7152" }}>
+              {" "}
+              {plugin?.profile.maintainedBy}{" "}
+            </span>
           </span>
         )}
         {plugin?.profile?.documentation && (

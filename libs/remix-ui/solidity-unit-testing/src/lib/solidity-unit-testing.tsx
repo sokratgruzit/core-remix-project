@@ -8,6 +8,7 @@ import { Toaster } from "@remix-ui/toaster"; // eslint-disable-line
 import { format } from "util";
 import "./css/style.css";
 import { CustomTooltip } from "@remix-ui/helper";
+import { CornerDecorGreen, CornerDecorRed } from "@remix-ui/helper";
 
 const _paq = ((window as any)._paq = (window as any)._paq || []); // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -353,7 +354,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
         <div
           id={runningTestFileName}
           data-id="testTabSolidityUnitTestsOutputheader"
-          className="pt-1"
+          className="py-1"
         >
           <span className="font-weight-bold">
             {contract ? contract : ""} ({filename})
@@ -365,9 +366,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
     }
     let label;
     if (index > -1) {
-      const className =
-        "alert-danger d-inline-block mb-1 mr-1 p-1 failed_" +
-        runningTestFileName;
+      const className = "failedTests " + runningTestFileName;
       label = (
         <CustomTooltip
           placement={"right"}
@@ -379,9 +378,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
         </CustomTooltip>
       );
     } else {
-      const className =
-        "alert-success d-inline-block mb-1 mr-1 p-1 passed_" +
-        runningTestFileName;
+      const className = "passedTests " + runningTestFileName;
       label = (
         <CustomTooltip
           placement={"top-end"}
@@ -398,7 +395,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
       <div
         id={runningTestFileName}
         data-id="testTabSolidityUnitTestsOutputheader"
-        className="pt-1"
+        className="py-1"
       >
         {label}
         <span className="font-weight-bold">
@@ -456,11 +453,12 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
             <div
               id={runningTestFileName}
               data-id="testTabSolidityUnitTestsOutputheader"
-              className="testPass testLog bg-light mb-2 px-2 text-success border-0"
+              className="testPass testLog bg-light mb-2 text-success border-0"
               onClick={() => discardHighlight()}
             >
-              <div className="d-flex my-1 align-items-start justify-content-between">
-                <span> ✓ {test.value}</span>
+              <CornerDecorGreen />
+              <div className="d-flex my-1 align-items-center justify-content-between">
+                <span className="text-white font-12"> ✓ {test.value}</span>
                 {debugBtn}
               </div>
             </div>
@@ -480,8 +478,8 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
                     highlightLocation(test.location, test.filename);
                 }}
               >
-                <div className="d-flex my-1 align-items-start justify-content-between">
-                  <span> ✘ {test.value}</span>
+                <div className="d-flex align-items-center justify-content-between">
+                  <span className="text-white font-12"> ✘ {test.value}</span>
                   {debugBtn}
                 </div>
                 <span className="text-dark">Error Message:</span>
@@ -499,13 +497,14 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
               test.assertMethod === "ok" ? "'true'" : test.expected;
             const testFailCard2: ReactElement = (
               <div
-                className="bg-light mb-2 px-2 testLog d-flex flex-column text-danger border-0"
+                className="testFail bg-light mb-2 testLog d-flex flex-column text-danger border-0"
                 id={"UTContext" + test.context}
                 onClick={() => {
                   if (test.location)
                     highlightLocation(test.location, test.filename);
                 }}
               >
+                <CornerDecorRed />
                 <div className="d-flex my-1 align-items-start justify-content-between">
                   <span> ✘ {test.value}</span>
                   {debugBtn}
@@ -601,8 +600,8 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
       const testSummary = fileTestsResult["summary"];
       if (testSummary && testSummary.filename && !testSummary.rendered) {
         const summaryCard: ReactElement = (
-          <div className="d-flex alert-secondary mb-3 p-3 flex-column">
-            <span className="font-weight-bold">
+          <div className="d-flex mb-3 flex-column">
+            <span className="text-white">
               Result for {testSummary.filename}
             </span>
             <span className="text-success">Passed: {testSummary.passed}</span>
@@ -1084,7 +1083,7 @@ export const SolidityUnitTesting = (props: Record<string, any>) => {
             : "No test file available"}{" "}
         </div>
         <div className="align-items-start flex-column mt-2 mx-3 mb-0">
-          <span className="text-info h6" hidden={progressBarHidden}>
+          <span className="text-info font-12" hidden={progressBarHidden}>
             Progress: {readyTestsNumber} finished (of {runningTestsNumber})
           </span>
           <label

@@ -568,7 +568,7 @@ export const RemixUiStaticAnalyser = (props: RemixUiStaticAnalyserProps) => {
                   {category[0].categoryDisplayName}
                 </label>
               }
-              labelClass="flex-row-reverse justify-content-between"
+              labelClass="flex-row-reverse justify-content-between staticAnalysisHover"
               iconX="fas fa-chevron-down"
               iconY="fas fa-chevron-up"
               isExpandedClass="staticAnalysisExpanded"

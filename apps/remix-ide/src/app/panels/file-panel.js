@@ -49,13 +49,13 @@ const profile = {
     "workspaceCreated",
   ],
   icon: "assets/img/fileManager.webp",
-  description: "Remix IDE file explorer",
+  description: "CORE IDE file explorer",
   kind: "fileexplorer",
   location: "sidePanel",
   documentation:
     "https://remix-ide.readthedocs.io/en/latest/file_explorer.html",
   version: packageJson.version,
-  maintainedBy: "Remix",
+  maintainedBy: "CORE",
 };
 module.exports = class Filepanel extends ViewPlugin {
   constructor(appManager) {

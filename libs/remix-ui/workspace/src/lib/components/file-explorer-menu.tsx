@@ -74,7 +74,7 @@ export const FileExplorerMenu = (props: FileExplorerMenuProps) => {
           {props.title}
         </span>
       </CustomTooltip>
-      <span className="pl-2 pt-2 d-flex" style={{ gap: "5px" }}>
+      <span className="pt-2 pb-2 d-flex" style={{ gap: "5px" }}>
         {state.menuItems.map(({ action, title, icon, placement }, index) => {
           if (action === "uploadFile") {
             return (
@@ -90,6 +90,7 @@ export const FileExplorerMenu = (props: FileExplorerMenuProps) => {
                     id={action}
                     data-id={"fileExplorerUploadFile" + action}
                     className={icon}
+                    style={{ marginBottom: 0 }}
                   >
                     <input
                       id="fileUpload"

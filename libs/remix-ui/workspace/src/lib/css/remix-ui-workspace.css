@@ -188,6 +188,14 @@
   top: 0;
   left: 0;
 }
+.decorBox__topLeft__top__green {
+  position: absolute;
+  background: linear-gradient(90deg, #00c27c 0%, rgba(0, 194, 124, 0) 100%);
+  width: 25px;
+  height: 1px;
+  top: 0;
+  left: 0;
+}
 .decorBox__topLeft__left {
   position: absolute;
   background: linear-gradient(180deg, #7060ce 0%, rgba(112, 97, 207, 0) 100%);
@@ -207,6 +215,14 @@
 .decorBox__topLeft__left__yellow {
   position: absolute;
   background: linear-gradient(180deg, #d19042 0%, rgba(209, 144, 66, 0) 100%);
+  width: 1px;
+  height: 25px;
+  top: 0;
+  left: 0;
+}
+.decorBox__topLeft__left__green {
+  position: absolute;
+  background: linear-gradient(180deg, #00c27c 0%, rgba(0, 194, 124, 0) 100%);
   width: 1px;
   height: 25px;
   top: 0;
@@ -241,6 +257,14 @@
   top: 0;
   right: 0;
 }
+.decorBox__topRight__top__green {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0, 194, 124, 0) 0%, #00c27c 100%);
+  width: 25px;
+  height: 1px;
+  top: 0;
+  right: 0;
+}
 .decorBox__topRight__right {
   position: absolute;
   background: linear-gradient(180deg, #7060ce 0%, rgba(112, 97, 207, 0) 100%);
@@ -265,7 +289,14 @@
   top: 0;
   right: -1px;
 }
-
+.decorBox__topRight__right__green {
+  position: absolute;
+  background: linear-gradient(180deg, #00c27c 0%, rgba(0, 194, 124, 0) 100%);
+  width: 1px;
+  height: 25px;
+  top: 0;
+  right: -1px;
+}
 .decorBox__bottomRight {
   right: -1px;
   bottom: -1px;
@@ -289,6 +320,14 @@
 .decorBox__bottomRight__bottom__yellow {
   position: absolute;
   background: linear-gradient(90deg, rgba(209, 144, 66, 0) 0%, #d19042 100%);
+  width: 25px;
+  height: 1px;
+  bottom: 0;
+  right: 0;
+}
+.decorBox__bottomRight__bottom__green {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(0, 194, 124, 0) 0%, #00c27c 100%);
   width: 25px;
   height: 1px;
   bottom: 0;
@@ -318,7 +357,14 @@
   top: -1px;
   right: -1px;
 }
-
+.decorBox__bottomRight__right__green {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 194, 124, 0) 0%, #00c27c 100%);
+  width: 1px;
+  height: 25px;
+  top: -1px;
+  right: -1px;
+}
 .decorBox__bottomLeft {
   left: -1px;
   bottom: -1px;
@@ -347,6 +393,14 @@
   bottom: 0;
   right: -1px;
 }
+.decorBox__bottomLeft__bottom__green {
+  position: absolute;
+  background: linear-gradient(90deg, #00c27c 0%, rgba(0, 194, 124, 0) 100%);
+  width: 25px;
+  height: 1px;
+  bottom: 0;
+  right: -1px;
+}
 .decorBox__bottomLeft__left {
   position: absolute;
   background: linear-gradient(180deg, rgba(112, 97, 207, 0) 0%, #7060ce 100%);
@@ -366,6 +420,14 @@
 .decorBox__bottomLeft__left__yellow {
   position: absolute;
   background: linear-gradient(180deg, rgba(209, 144, 66, 0) 0%, #d19042 100%);
+  width: 1px;
+  height: 25px;
+  top: -1px;
+  left: 0;
+}
+.decorBox__bottomLeft__left__green {
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 194, 124, 0) 0%, #00c27c 100%);
   width: 1px;
   height: 25px;
   top: -1px;

@@ -1709,8 +1709,7 @@ select.form-control:focus::-ms-value {
   padding-left: 0;
 }
 .form-control-sm {
-  height: calc(1.5em + 0.5rem + 2px);
-  padding: 0.25rem 0.5rem;
+  height: 42px;
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 2px;
@@ -2180,6 +2179,7 @@ fieldset:disabled a.btn {
   border-radius: 4px !important;
   font-size: 12px;
   line-height: 16px;
+  padding: 0 10px;
 }
 .btn-secondary:hover {
   color: #fff;
@@ -2207,35 +2207,36 @@ fieldset:disabled a.btn {
 }
 .btn-success {
   color: #fff;
-  background-color: #32ba89;
-  border-color: #32ba89;
+  background: #0500ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  transition: 0.5s;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 10px;
 }
 .btn-success:hover {
-  color: #fff;
-  background-color: #2a9c73;
-  border-color: #27926b;
+  opacity: 0.65;
 }
-.btn-success.focus,
-.btn-success:focus {
-  box-shadow: 0 0 0 0.2rem rgba(81, 196, 155, 0.5);
+.btn-sucess.disabled,
+.btn-sucess:disabled {
+  opacity: 0.3;
+}
+/* .btn-success {
+  color: #fff;
+  background-color: #32ba89;
+  border-color: #32ba89;
+} */
+.btn-success:hover {
+  opacity: 0.65;
 }
 .btn-success.disabled,
 .btn-success:disabled {
-  color: #fff;
-  background-color: #32ba89;
-  border-color: #32ba89;
-}
-.btn-success:not(:disabled):not(.disabled).active,
-.btn-success:not(:disabled):not(.disabled):active,
-.show > .btn-success.dropdown-toggle {
-  color: #fff;
-  background-color: #27926b;
-  border-color: #248864;
-}
-.btn-success:not(:disabled):not(.disabled).active:focus,
-.btn-success:not(:disabled):not(.disabled):active:focus,
-.show > .btn-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(81, 196, 155, 0.5);
+  opacity: 0.3;
 }
 .btn-info {
   color: #fff;
@@ -2331,8 +2332,9 @@ fieldset:disabled a.btn {
 }
 .btn-light {
   color: #fff;
-  background-color: #2a2c3f;
-  border-color: #2a2c3f;
+  /* background-color: #2a2c3f; */
+  background-color: #0f1218;
+  /* border-color: #2a2c3f; */
 }
 .btn-light:hover {
   color: #fff;
@@ -2341,7 +2343,7 @@ fieldset:disabled a.btn {
 }
 .btn-light.focus,
 .btn-light:focus {
-  box-shadow: 0 0 0 0.2rem rgba(74, 76, 92, 0.5);
+  box-shadow: none;
 }
 .btn-light.disabled,
 .btn-light:disabled {
@@ -2356,11 +2358,11 @@ fieldset:disabled a.btn {
   background-color: #161720;
   border-color: #111119;
 }
-.btn-light:not(:disabled):not(.disabled).active:focus,
+/* .btn-light:not(:disabled):not(.disabled).active:focus,
 .btn-light:not(:disabled):not(.disabled):active:focus,
 .show > .btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(74, 76, 92, 0.5);
-}
+} */
 .btn-dark {
   color: #fff;
   background-color: var(--body-bg);
@@ -3650,7 +3652,7 @@ input[type="submit"].btn-block {
   cursor: pointer;
 }
 .run-it-inner p {
-  margin: 0 0 0 5px !important;
+  margin: 0 !important;
 }
 .run-it-inner img {
   transition: 0.5s;
@@ -4575,9 +4577,7 @@ a.badge-dark:focus {
   color: #001a23;
 }
 .alert-secondary {
-  color: #fff;
-  background-color: #2a2c3f;
-  border-color: #2a2c3f;
+  background-color: #00050f;
 }
 .alert-secondary hr {
   border-top-color: #c3c3cd;
@@ -8667,12 +8667,9 @@ a.text-success:hover {
   color: #227e5d !important;
 }
 .text-info {
-  color: #355f7d !important;
+  color: #fff !important;
 }
-a.text-info:focus,
-a.text-info:hover {
-  color: #1e3647 !important;
-}
+
 .text-warning {
   color: #c97539 !important;
 }
@@ -8965,9 +8962,13 @@ a.text-dark:hover {
   font-size: 12px;
   line-height: 16px;
 }
-
-.staticAnalysisExpanded {
+.staticAnalysisHover {
   border-radius: 4px;
+}
+.staticAnalysisExpanded {
+  background: #0f1218;
+}
+.staticAnalysisHover:hover {
   background: #0f1218;
 }
 
@@ -9039,4 +9040,30 @@ a.text-dark:hover {
 }
 .openRightSlider:hover svg {
   fill: #00050f;
+}
+.failedTests {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.4px;
+  width: 39px;
+  height: 26px;
+  border: 1px solid #e94b4b;
+  border-radius: 16px;
+  color: #e94b4b;
+  font-size: 12px;
+  line-height: 16px;
+}
+.passedTests {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.4px;
+  width: 45px;
+  height: 26px;
+  border: 1px solid #00c27c;
+  border-radius: 16px;
+  color: #00c27c;
+  font-size: 12px;
+  line-height: 16px;
 }
