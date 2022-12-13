@@ -1,38 +1,49 @@
 /* eslint-disable no-undef */
-import React, { forwardRef, useEffect, useRef, useState } from 'react' // eslint-disable-line
-import { PluginRecord } from '../types'
-import './panel.css'
+import React, { forwardRef, useEffect, useRef, useState } from "react"; // eslint-disable-line
+import { PluginRecord } from "../types";
+import "./panel.css";
 interface panelPLuginProps {
-  pluginRecord: PluginRecord
+  pluginRecord: PluginRecord;
 }
 
 const RemixUIPanelPlugin = (props: panelPLuginProps, panelRef: any) => {
-  const localRef = useRef<HTMLDivElement>(null)
-  const [view, setView] = useState<JSX.Element | HTMLDivElement>()
+  const localRef = useRef<HTMLDivElement>(null);
+  const [view, setView] = useState<JSX.Element | HTMLDivElement>();
   useEffect(() => {
-    
-    const ref:any = panelRef || localRef
+    const ref: any = panelRef || localRef;
     if (ref.current) {
       if (props.pluginRecord.view) {
         if (React.isValidElement(props.pluginRecord.view)) {
-          setView(props.pluginRecord.view)
+          setView(props.pluginRecord.view);
         } else {
-          ref.current.appendChild(props.pluginRecord.view)
+          ref.current.appendChild(props.pluginRecord.view);
         }
       }
     }
-  }, [])
+
+    setTimeout(() => {
+      // console.log(props.pluginRecord.view);
+      console.log(props.pluginRecord.view?.contentWindow?.document);
+      // props.pluginRecord.view?.contentWindow?.postMessage(
+      //   {
+      //     type: "style",
+      //     text: "p { color: red; }",
+      //   },
+      //   "*"
+      // );
+    }, 2000);
+  }, []);
 
   return (
     <div
       className={
-        props.pluginRecord.active ? `${props.pluginRecord.class}` : 'd-none'
+        props.pluginRecord.active ? `${props.pluginRecord.class}` : "d-none"
       }
       ref={panelRef || localRef}
     >
       {view}
     </div>
-  )
-}
+  );
+};
 
-export default forwardRef(RemixUIPanelPlugin)
+export default forwardRef(RemixUIPanelPlugin);

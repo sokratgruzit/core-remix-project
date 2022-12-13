@@ -44,18 +44,18 @@ function HomeTabGetStarted({ plugin, width }: HomeTabGetStartedProps) {
       e.stopPropagation();
       let nextSlide = 0;
       if (e.wheelDelta < 0) {
-        nextSlide = carouselRef.current.state.currentSlide + 1;
+        nextSlide = carouselRef?.current?.state?.currentSlide + 1;
         if (
-          (carouselRef.current.state.totalItems -
-            carouselRef.current.state.currentSlide) *
-            carouselRef.current.state.itemWidth +
+          (carouselRef?.current?.state?.totalItems -
+            carouselRef?.current?.state?.currentSlide) *
+            carouselRef?.current?.state?.itemWidth +
             5 <
-          carouselRef.current.state.containerWidth
+          carouselRef?.current?.state?.containerWidth
         )
           return; // 5 is approx margins
         carouselRef.current.goToSlide(nextSlide);
       } else {
-        nextSlide = carouselRef.current.state.currentSlide - 1;
+        nextSlide = carouselRef?.current?.state?.currentSlide - 1;
         if (nextSlide < 0) nextSlide = 0;
         carouselRef.current.goToSlide(nextSlide);
       }
