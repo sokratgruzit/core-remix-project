@@ -3,9 +3,7 @@ import React, {
   useEffect,
   useRef,
   useContext,
-  SyntheticEvent,
   ChangeEvent,
-  KeyboardEvent,
 } from "react"; // eslint-disable-line
 import { Dropdown } from "react-bootstrap";
 import {
@@ -183,13 +181,12 @@ export function Workspace() {
   };
 
   const onFinishCreateWorkspace = async () => {
-    if (workspaceCreateInput.current === undefined) return;
+    if (workspaceCreateInput.current === undefined) return
     // @ts-ignore: Object is possibly 'null'.
-    const workspaceName = workspaceCreateInput.current.value;
+    const workspaceName = workspaceCreateInput.current.value
     // @ts-ignore: Object is possibly 'null'.
-    const workspaceTemplateName =
-      workspaceCreateTemplateInput.current.value || "remixDefault";
-    const initGitRepo = initGitRepoRef.current.checked;
+    const workspaceTemplateName = workspaceCreateTemplateInput.current.value || 'remixDefault'
+    const initGitRepo = initGitRepoRef.current.checked
     const opts = {
       // @ts-ignore: Object is possibly 'null'.
       mintable: mintableCheckboxRef.current.checked,
@@ -198,23 +195,14 @@ export function Workspace() {
       // @ts-ignore: Object is possibly 'null'.
       pausable: pausableCheckboxRef.current.checked,
       // @ts-ignore: Object is possibly 'null'.
-      upgradeable: transparentRadioRef.current.checked
-        ? transparentRadioRef.current.value
-        : uupsRadioRef.current.checked
-        ? uupsRadioRef.current.value
-        : false,
-    };
+      upgradeable: transparentRadioRef.current.checked ? transparentRadioRef.current.value : ( uupsRadioRef.current.checked ? uupsRadioRef.current.value : false )
+    }
 
     try {
-      await global.dispatchCreateWorkspace(
-        workspaceName,
-        workspaceTemplateName,
-        opts,
-        initGitRepo
-      );
+      await global.dispatchCreateWorkspace(workspaceName, workspaceTemplateName, opts, initGitRepo)
     } catch (e) {
-      global.modal("Create Workspace", e.message, "OK", () => {}, "");
-      console.error(e);
+      global.modal('Create Workspace', e.message, 'OK', () => {}, '')
+      console.error(e)
     }
   };
 
@@ -244,28 +232,22 @@ export function Workspace() {
 
   const updateWsName = () => {
     // @ts-ignore
-    if (
-      workspaceCreateTemplateInput.current.value.startsWith("oz") &&
-      displayOzCustomRef &&
-      displayOzCustomRef.current
-    ) {
-      displayOzCustomRef.current.style.display = "block";
+    if (workspaceCreateTemplateInput.current.value.startsWith('oz') && displayOzCustomRef && displayOzCustomRef.current) {
+      displayOzCustomRef.current.style.display = 'block'
       // @ts-ignore
-      mintableCheckboxRef.current.checked = false;
+      mintableCheckboxRef.current.checked = false
       // @ts-ignore
-      burnableCheckboxRef.current.checked = false;
+      burnableCheckboxRef.current.checked = false
       // @ts-ignore
-      pausableCheckboxRef.current.checked = false;
+      pausableCheckboxRef.current.checked = false
       // @ts-ignore
-      transparentRadioRef.current.checked = false;
+      transparentRadioRef.current.checked = false
       // @ts-ignore
-      uupsRadioRef.current.checked = false;
-    } else displayOzCustomRef.current.style.display = "none";
+      uupsRadioRef.current.checked = false
+    } else displayOzCustomRef.current.style.display = 'none'
 
     // @ts-ignore
-    workspaceCreateInput.current.value = `${
-      workspaceCreateTemplateInput.current.value || "remixDefault"
-    }_${Date.now()}`;
+    workspaceCreateInput.current.value = `${workspaceCreateTemplateInput.current.value || 'remixDefault'}_${Date.now()}`
   };
 
   const handleTypingUrl = () => {
@@ -290,9 +272,7 @@ export function Workspace() {
 
   const handleUpgradeability = () => {
     // @ts-ignore
-    workspaceCreateInput.current.value = `${
-      workspaceCreateTemplateInput.current.value + "_upgradeable"
-    }_${Date.now()}`;
+    workspaceCreateInput.current.value = `${workspaceCreateTemplateInput.current.value + '_upgradeable'}_${Date.now()}`
   };
 
   const toggleBranches = (isOpen: boolean) => {
