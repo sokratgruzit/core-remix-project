@@ -15,8 +15,8 @@ export function Web3ProviderDialog (props: web3ProviderDialogProps) {
   return (
     <>
       <div className="">
-          Note: To use Geth & https://remix.ethereum.org, configure it to allow requests from Remix:(see <a href="https://geth.ethereum.org/docs/rpc/server" target="_blank" rel="noreferrer">Geth Docs on rpc server</a>)
-        <div className="border p-1">geth --http --http.corsdomain https://remix.ethereum.org</div>
+          Note: To use Geth & http://core-remix.shopgeorgia.ge, configure it to allow requests from Remix:(see <a href="https://geth.ethereum.org/docs/rpc/server" target="_blank" rel="noreferrer">Geth Docs on rpc server</a>)
+        <div className="border p-1">geth --http --http.corsdomain http://core-remix.shopgeorgia.ge</div>
         <br />
         To run Remix & a local Geth test node, use this command: (see <a href="https://geth.ethereum.org/getting-started/dev-mode" target="_blank" rel="noreferrer">Geth Docs on Dev mode</a>)
         <div className="border p-1">geth --http --http.corsdomain="{window.origin}" --http.api web3,eth,debug,personal,net --vmdebug --datadir {thePath} --dev console</div>

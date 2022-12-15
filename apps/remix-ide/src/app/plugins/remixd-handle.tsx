@@ -212,8 +212,7 @@ function remixdDialog() {
         <div className="mb-2 text-break">
           The remixd command without options uses the terminal's current
           directory as the shared directory and the shared Remix domain can only
-          be https://remix.ethereum.org, https://remix-alpha.ethereum.org, or
-          https://remix-beta.ethereum.org
+          be http://core-remix.shopgeorgia.ge.
         </div>
         <div className="mb-2 text-break">
           Example command with flags: <br />
