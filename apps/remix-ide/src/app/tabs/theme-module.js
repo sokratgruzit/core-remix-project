@@ -6,7 +6,7 @@ import Registry from "../state/registry";
 const _paq = (window._paq = window._paq || []);
 
 const themes = [
-  { name: "CORE", quality: "dark", url: "assets/css/themes/core.css" },
+  { name: "Dark", quality: "dark", url: "assets/css/themes/core.css" },
   // {
   //   name: "Dark",
   //   quality: "dark",
@@ -176,7 +176,7 @@ export class ThemeModule extends Plugin {
    * @param {element} [image] - the dom element which invert should be fixed to increase visibility
    */
   fixInvert(image) {
-    const invert = this.currentTheme().quality === "dark" ? 1 : 0;
+    const invert = this.currentTheme()?.quality === "dark" ? 1 : 0;
     if (image) {
       image.style.filter = `invert(${invert})`;
     }

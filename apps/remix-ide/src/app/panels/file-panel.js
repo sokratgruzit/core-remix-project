@@ -49,7 +49,7 @@ const profile = {
     "workspaceCreated",
   ],
   icon: "assets/img/fileManager.webp",
-  description: "CORE IDE file explorer",
+  description: "Apeirogon IDE file explorer",
   kind: "fileexplorer",
   location: "sidePanel",
   documentation:

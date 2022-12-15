@@ -1,12 +1,12 @@
 ## Remix Url Resolver
+
 [![npm version](https://badge.fury.io/js/%40remix-project%2Fremix-url-resolver.svg)](https://www.npmjs.com/package/@remix-project/remix-url-resolver)
 [![npm](https://img.shields.io/npm/dt/@remix-project/remix-url-resolver.svg?label=Total%20Downloads)](https://www.npmjs.com/package/@remix-project/remix-url-resolver)
 [![npm](https://img.shields.io/npm/dw/@remix-project/remix-url-resolver.svg)](https://www.npmjs.com/package/@remix-project/remix-url-resolver)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/ethereum/remix-project/tree/master/libs/remix-url-resolver)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ethereum/remix-project/issues)
 
-
-`@remix-project/remix-url-resolver` is a tool to handle import from different sources and resolve the content. It is used in Remix IDE to handle imports from `GitHub`, `Swarm`, `IPFS` and other URLs. 
+`@remix-project/remix-url-resolver` is a tool to handle import from different sources and resolve the content. It is used in Apeirogon IDE to handle imports from `GitHub`, `Swarm`, `IPFS` and other URLs.
 
 ### Installation
 
@@ -59,29 +59,31 @@ export declare class RemixURLResolver {
 `resolve(url, customHandlers)` function should be called from within `handleImportCb` function of `solc.compile(input, handleImportCb)`.
 
 ```ts
-import { RemixURLResolver } from 'remix-url-resolver'
+import { RemixURLResolver } from "remix-url-resolver";
 
-const urlResolver = new RemixURLResolver()
-const fileName: string = '../greeter.sol'
-urlResolver.resolve(fileName, urlHandler)
-	.then((sources: object) => {
-		console.log(sources)
-	})
-	.catch((e: Error) => {
-		throw e
-	})
+const urlResolver = new RemixURLResolver();
+const fileName: string = "../greeter.sol";
+urlResolver
+  .resolve(fileName, urlHandler)
+  .then((sources: object) => {
+    console.log(sources);
+  })
+  .catch((e: Error) => {
+    throw e;
+  });
 ```
 
 #### References
 
-* [TypeScript Publishing](http://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html)
-* [DefinitelyTyped 'Create a new package' guide](https://github.com/DefinitelyTyped/DefinitelyTyped#create-a-new-package)
+- [TypeScript Publishing](http://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html)
+- [DefinitelyTyped 'Create a new package' guide](https://github.com/DefinitelyTyped/DefinitelyTyped#create-a-new-package)
 
 ### Contribute
 
-Please feel free to open an issue or a pull request. 
+Please feel free to open an issue or a pull request.
 
-In case you want to add some code, do have a look to our contribution guidelnes [here](https://github.com/ethereum/remix-project/blob/master/CONTRIBUTING.md). Reach us on [Gitter](https://gitter.im/ethereum/remix) in case of any queries.   
+In case you want to add some code, do have a look to our contribution guidelnes [here](https://github.com/ethereum/remix-project/blob/master/CONTRIBUTING.md). Reach us on [Gitter](https://gitter.im/ethereum/remix) in case of any queries.
 
 ### License
+
 MIT © 2018-21 Remix Team

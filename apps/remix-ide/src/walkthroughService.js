@@ -26,7 +26,7 @@ export class WalkthroughService extends Plugin {
         .setOptions({
           steps: [
             {
-              title: "Welcome to Remix IDE",
+              title: "Welcome to Apeirogon IDE",
               intro:
                 "Click to launch the Home tab that contains links, tips, and shortcuts..",
               element: document.querySelector("#verticalIconsHomeIcon"),

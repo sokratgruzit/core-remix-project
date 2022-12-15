@@ -147,7 +147,7 @@ export const Preload = () => {
         <div className="preload-logo pb-4">
           {logo}
           <div className="info-secondary splash">
-            REMIX IDE
+            Apeirogon IDE
             <br />
             <span className="version"> v{packageJson.version}</span>
           </div>

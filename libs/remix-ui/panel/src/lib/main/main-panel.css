@@ -15,10 +15,14 @@
   position: fixed;
   top: 53px;
   right: 0;
-  width: 140px;
   background-color: #00050f;
   height: 100%;
   border-left: 1px solid #161b24;
+  width: 140px;
+  transition: 0.5s;
+}
+.rightSliderTranslate {
+  transform: translateX(140px);
 }
 .right-panel-inner {
   display: flex;

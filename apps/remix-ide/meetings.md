@@ -4,18 +4,16 @@
 
 #### doc update for release
 
-For each remix IDE PR, check whether the documentation needs to be updated.
-If so, either 
-    - update the doc with and link to the PR
-    - create an issue with the label "documentation"
+For each Apeirogon IDE PR, check whether the documentation needs to be updated.
+If so, either - update the doc with and link to the PR - create an issue with the label "documentation"
 
-Before releasing (better a few days before), we take time to address documentation issues that *needs* to be done. @rob is committing to checking and organize our work on this.
+Before releasing (better a few days before), we take time to address documentation issues that _needs_ to be done. @rob is committing to checking and organize our work on this.
 
 #### monthly doc update
 
 We setup a monthly call where we read through the documentation and check what should be added / updated / improved
 
-#### move to remix IDE
+#### move to Apeirogon IDE
 
 we move the documentation to the remix-ide repository
 
@@ -31,7 +29,7 @@ we still need to validate the framework but "shepherd" seems to be the one.
 It will work as a native plugin, started by default.
 Each other native plugin can request a guided tour with:
 `this.call('guidedtour', 'start', 'debugger')`
-Other type of plugin may be able to the native plugin guided tour but we won't push this if the integration is not working out of the box. 
+Other type of plugin may be able to the native plugin guided tour but we won't push this if the integration is not working out of the box.
 We rather update the remix-plugin doc saying that `guided tour framework name` is the prefferred one.
 
 ## web site
@@ -45,9 +43,10 @@ We don't need to have a framework (hugo, hexo) if that's too much overhead.
 ## solidity tutorial framework
 
 it will be set of file:
- - md
- - solidity contract
- - test contract
+
+- md
+- solidity contract
+- test contract
 
 we only support md for now and move to supporting other format if needded.
 It requires the "test" native plugin to extend its API.
@@ -57,7 +56,6 @@ It requires the "test" native plugin to extend its API.
 
 the current workshop should either be removed or converted to the md tutorial framework.
 @rob/@francois are managing that
-
 
 ## coding best practices
 
@@ -78,12 +76,12 @@ RemixProject/component:
 /tabs
 /dialog
 /fs
-                      
+
 RemixProject/libs:
 /Solidity
 /Tests
 /FsProvider
-                 
+
 RemixProject/IDE
 
 ## browser test
@@ -95,11 +93,11 @@ It iwll be followed by other PRs, aiming to improve process of writting browser 
 
 we will propose an offline version using electron (@yann)
 first steps :
+
 - put all the public link to the local package
 - basic electron wrapper
 
 ## out reach beyond community
 
-We agree it is something interesting to explore, 
+We agree it is something interesting to explore,
 It is not 100% dev tool nor remix so we should organize call with other people from EF at least
-                      

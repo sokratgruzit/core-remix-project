@@ -76,8 +76,8 @@ function HomeTabLearn({ plugin, width }: HomeTabLearnProps) {
             <div className="pt-2 d-flex flex-column text-left">
               <label className="m-0 font-12 text-white">Remix Basics</label>
               <span>
-                Introduction to Remix's interface and concepts used in Ethereum,
-                as well as the basics of Solidity.
+                Introduction to Remix's interface and concepts used in CORE, as
+                well as the basics of Solidity.
               </span>
             </div>
             <button

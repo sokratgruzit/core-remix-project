@@ -104,7 +104,7 @@ iframe {
 }
 
 .terminal-wrap.minimized {
-  height: 2rem !important;
+  height: 60px !important;
 }
 .pluginInfo p {
   transition: 0.5s;

@@ -58,10 +58,10 @@ function HomeTabFeatured() {
                 <div className="h6 w-50 p-4" style={{ flex: "1" }}>
                   <h5>JUMP INTO WEB3</h5>
                   <p>
-                    The Remix Project is a rich toolset which can be used for
-                    the entire journey of contract development by users of any
-                    knowledge level, and as a learning lab for teaching and
-                    experimenting with Ethereum.
+                    The Apeirogon Project is a rich toolset which can be used
+                    for the entire journey of contract development by users of
+                    any knowledge level, and as a learning lab for teaching and
+                    experimenting with CORE.
                   </p>
                   <a
                     className="remixui_home_text"
@@ -87,13 +87,14 @@ function HomeTabFeatured() {
                   alt=""
                 ></img>
                 <div className="h6 p-4" style={{ flex: "1" }}>
-                  <h5>REMIX REWARDS</h5>
+                  <h5>APEIROGON REWARDS</h5>
                   <p style={{ fontStyle: "italic" }}>NFTs for our users!</p>
                   <p>
-                    Remix Project rewards contributors, beta testers, and UX
-                    research participants with NFTs deployed on Optimism. Remix
-                    Reward holders are able to mint a second “Remixer” user NFT
-                    badge to give to any other user of their choice.
+                    Apeirogon Project rewards contributors, beta testers, and UX
+                    research participants with NFTs deployed on Optimism.
+                    Apeirogon Reward holders are able to mint a second
+                    “Apeirogon” user NFT badge to give to any other user of
+                    their choice.
                   </p>
                   <a
                     className="remixui_home_text"
@@ -124,8 +125,8 @@ function HomeTabFeatured() {
                     Our community supports us.
                   </p>
                   <p>
-                    You can join Beta Testing before each release of Remix IDE.
-                    Help us test now and get a handle on new features!
+                    You can join Beta Testing before each release of Apeirogon
+                    IDE. Help us test now and get a handle on new features!
                   </p>
                   <a
                     className="remixui_home_text"

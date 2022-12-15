@@ -21,7 +21,7 @@ const profile = {
   name: "terminal",
   methods: ["log", "logHtml"],
   events: [],
-  description: "CORE IDE terminal",
+  description: "Apeirogon IDE terminal",
   version: packageJson.version,
 };
 

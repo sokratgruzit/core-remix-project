@@ -46,8 +46,7 @@ function RightSlider({
         </svg>
       </div>
       <div
-        className="right-panel"
-        style={{ display: !rightSliderOpen && "none" }}
+        className={`right-panel ${!rightSliderOpen && "rightSliderTranslate"}`}
       >
         <div className="right-panel-inner">
           <img className="core-logo" src="assets/img/core.svg" />

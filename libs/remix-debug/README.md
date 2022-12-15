@@ -1,13 +1,15 @@
 ## Remix Debug`
+
 [![npm version](https://badge.fury.io/js/%40remix-project%2Fremix-debug.svg)](https://www.npmjs.com/package/@remix-project/remix-debug)
 [![npm](https://img.shields.io/npm/dt/@remix-project/remix-debug.svg?label=Total%20Downloads)](https://www.npmjs.com/package/@remix-project/remix-debug)
 [![npm](https://img.shields.io/npm/dw/@remix-project/remix-debug.svg)](https://www.npmjs.com/package/@remix-project/remix-debug)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/ethereum/remix-project/tree/master/libs/remix-debug)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ethereum/remix-project/issues)
 
-`@remix-project/remix-debug` is a tool to debug Ethereum transactions on different Remix environments (VM, testnet etc.). It works underneath Remix IDE "DEBUGGER" plugin which is used to analyse step-to-step executioon of a transaction to debug it.
+`@remix-project/remix-debug` is a tool to debug CORE transactions on different Remix environments (VM, testnet etc.). It works underneath Apeirogon IDE "DEBUGGER" plugin which is used to analyse step-to-step executioon of a transaction to debug it.
 
 ### Installation
+
 `@remix-project/remix-debug` is an NPM package and can be installed using NPM as:
 
 `yarn add @remix-project/remix-debug`
@@ -49,21 +51,21 @@ debugger.event.register('newTraceLoaded', () => {
 debugger.callTree.register('callTreeReady', () => {
   // start doing more complex stuff like resolvng local variables
   breakPointManager.jumpNextBreakpoint(true)
-  
-  var storageView = debugger.storageViewAt(38, <contract address>, 
+
+  var storageView = debugger.storageViewAt(38, <contract address>,
   storageView.storageSlot(0, (error, storage) => {})
   storageView.storageRange(error, storage) => {}) // retrieve 0 => 1000 slots
 
   debugger.extractStateAt(23, (error, state) => {
     debugger.decodeStateAt(23, state, (error, decodedState) => {})
   })
-  
+
   debugger.sourceLocationFromVMTraceIndex(<contract address>, 23, (error, location) => {
     debugger.decodeLocalsAt(23, location, (error, decodedlocals) => {})
   })
-  
+
   debugger.extractLocalsAt(23, (null, locals) => {})
-  
+
 })
 ```
 
@@ -88,7 +90,7 @@ It exports:
 
 Some of the class details are as:
 
-- - - -
+---
 
 **BreakpointManager**
 
@@ -108,7 +110,7 @@ Some of the class details are as:
 
 `remove(sourceLocation)` : remove a breakpoint from the manager
 
-- - - -
+---
 
 **StorageViewer**
 
@@ -126,7 +128,7 @@ Some of the class details are as:
 
 `extractMappingsLocationChanges(sourceLocation)` : retrieve mapping location changes from the storage changes.
 
-- - - -
+---
 
 **StorageResolver**
 
@@ -142,10 +144,10 @@ Some of the class details are as:
 
 ### Contribute
 
-Please feel free to open an issue or a pull request. 
+Please feel free to open an issue or a pull request.
 
 In case you want to add some code, do have a look to our contribution guidelnes [here](https://github.com/ethereum/remix-project/blob/master/CONTRIBUTING.md). Reach us on [Gitter](https://gitter.im/ethereum/remix) in case of any queries.
 
 ### License
-MIT © 2018-21 Remix Team
 
+MIT © 2018-21 Remix Team

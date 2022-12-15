@@ -375,7 +375,7 @@ export const RemixUiSettings = (props: RemixUiSettingsProps) => {
                 className="outsideLinks"
               >
                 {" "}
-                Analytics in Remix IDE
+                Analytics in Apeirogon IDE
               </a>{" "}
               <span>&</span>{" "}
               <a

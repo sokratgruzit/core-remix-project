@@ -8,7 +8,7 @@ import { PluginViewWrapper } from "@remix-ui/helper";
 const profile = {
   name: "hiddenPanel",
   displayName: "Hidden Panel",
-  description: "CORE IDE hidden panel",
+  description: "Apeirogon IDE hidden panel",
   version: packageJson.version,
   methods: ["addView", "removeView"],
 };

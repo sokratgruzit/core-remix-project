@@ -7,7 +7,7 @@ import { PluginViewWrapper } from "@remix-ui/helper";
 const profile = {
   name: "mainPanel",
   displayName: "Main Panel",
-  description: "CORE IDE main panel",
+  description: "Apeirogon IDE main panel",
   version: packageJson.version,
   methods: ["addView", "removeView", "showContent"],
 };

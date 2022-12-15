@@ -185,7 +185,7 @@ function remixdDialog() {
     <>
       <div className="">
         <div className="mb-2 text-break">
-          Access your local file system from Remix IDE using{" "}
+          Access your local file system from Apeirogon IDE using{" "}
           <a
             target="_blank"
             href="https://www.npmjs.com/package/@remix-project/remixd"
