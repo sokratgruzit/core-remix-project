@@ -20,18 +20,6 @@ const RemixUIPanelPlugin = (props: panelPLuginProps, panelRef: any) => {
         }
       }
     }
-
-    setTimeout(() => {
-      // console.log(props.pluginRecord.view);
-      console.log(props.pluginRecord.view?.contentWindow?.document);
-      // props.pluginRecord.view?.contentWindow?.postMessage(
-      //   {
-      //     type: "style",
-      //     text: "p { color: red; }",
-      //   },
-      //   "*"
-      // );
-    }, 2000);
   }, []);
 
   return (
