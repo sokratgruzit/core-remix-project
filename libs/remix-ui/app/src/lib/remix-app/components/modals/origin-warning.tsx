@@ -22,13 +22,13 @@ const OriginWarning = () => {
       );
     } else if (
       window.location.protocol.indexOf("http") === 0 &&
-      window.location.hostname !== "core-remix.shopgeorgia.ge" &&
+      window.location.hostname !== "core-ide.shopgeorgia.ge" &&
       window.location.hostname !== "localhost" &&
       window.location.hostname !== "127.0.0.1"
     ) {
       setContent(`The Apeirogon IDE has moved to http://core-ide.shopgeorgia.ge.\n
       This instance of Remix you are visiting WILL NOT BE UPDATED.\n
-      Please make a backup of your contracts and start using core-remix.shopgeorgia.ge`);
+      Please make a backup of your contracts and start using core-ide.shopgeorgia.ge`);
     }
   }, []);
 
