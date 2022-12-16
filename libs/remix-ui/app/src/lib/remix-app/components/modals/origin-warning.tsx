@@ -18,17 +18,17 @@ const OriginWarning = () => {
         window.location.pathname.indexOf("/remix-live-alpha") === 0)
     ) {
       setContent(
-        "Welcome to the Remix alpha instance. Please use it to try out latest features. But use preferably http://core-remix.shopgeorgia.ge for any production work."
+        "Welcome to the Remix alpha instance. Please use it to try out latest features. But use preferably http://core-ide.shopgeorgia.ge for any production work."
       );
     } else if (
       window.location.protocol.indexOf("http") === 0 &&
-      window.location.hostname !== "core-remix.shopgeorgia.ge" &&
+      window.location.hostname !== "core-ide.shopgeorgia.ge" &&
       window.location.hostname !== "localhost" &&
       window.location.hostname !== "127.0.0.1"
     ) {
-      setContent(`The Apeirogon IDE has moved to http://core-remix.shopgeorgia.ge.\n
+      setContent(`The Apeirogon IDE has moved to http://core-ide.shopgeorgia.ge.\n
       This instance of Remix you are visiting WILL NOT BE UPDATED.\n
-      Please make a backup of your contracts and start using core-remix.shopgeorgia.ge`);
+      Please make a backup of your contracts and start using core-ide.shopgeorgia.ge`);
     }
   }, []);
 
