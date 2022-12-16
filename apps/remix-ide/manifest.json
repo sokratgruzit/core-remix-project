@@ -1,7 +1,7 @@
 {
   "name": "Solidity",
   "description": "Realtime compiler and runtime",
-  "update_url": "http://core-remix.shopgeorgia.ge",
+  "update_url": "http://core-ide.shopgeorgia.ge",
   "version": "1.1",
   "manifest_version": 2,
   "background": {
